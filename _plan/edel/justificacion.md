@@ -26,3 +26,4 @@
 - Tomas más largas del proceso (imprimir → plotter → depilado) y de tarjetas: hoy los tramos limpios duran 4 s.
 - Videos de las máquinas en horizontal (escritorio) y vertical (celular), en alta.
 - 2026-10-28 · Medios (Pablo): IG-35 se usa con su rótulo «Team Mate o Team Café»; fotos del equipo IG-18 #3/#4 aprobadas pese a la franja e isotipo; proceso en un solo video de 12,8 s con pasos marcados; tarjeta Galvanos fuera hasta tener foto; montaje de portada aprobado.
+- 2026-10-28 · Fase 9: base en /nueva/ (tools/boceto_nv1.py, css/nv1, js/nv1). Carga con % real (fuentes, póster, primeros 3 s del video; mín 3 s, tope 8 s). Apertura «la e se abre»: la contraforma del isotipo es la ventana al video de las máquinas; zoom que acelera y desvanece primero el naranjo. publish.py adaptado de almud_bar y probado (falla con archivo faltante o interno).
