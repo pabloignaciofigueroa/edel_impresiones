@@ -9,3 +9,7 @@
 - Horario de atención (no está publicado).
 - Nombres del equipo (IG-18) si quieren aparecer.
 - Videos originales en horizontal y vertical de las máquinas (los de IG son 720p).
+- 2026-10-28 · Titular de portada: «Tu marca empieza por una buena impresión» [IG-16] (Pablo). «Hacemos realidad tus proyectos» [IG-22] y «Las ideas son infinitas… y nosotros tenemos cómo hacerlas realidad» [IG-20] se usan dentro de la página (Pablo).
+- 2026-10-28 · Movimiento: intermedio-festivo (Pablo). Se suma «Entretención» a la evaluación.
+- 2026-10-28 · Equipo sin nombres (Pablo); se piden en el dossier.
+- 2026-10-28 · XS Joyas (IG-26) y Sigma (IG-28) se muestran como clientes; en el dossier se pregunta si son reales (Pablo).
