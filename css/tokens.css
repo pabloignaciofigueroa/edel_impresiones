@@ -1,0 +1,16 @@
+/* Paleta Edel Impresiones — ver brand/palette.md (contraste verificado con tools/contraste.py) */
+:root{
+  --tinta:#05263f;        /* marino del logo: el único "negro" */
+  --azul:#0358a5;         /* azul de sus piezas 2026 */
+  --cian:#0195ca;         /* degradado del isotipo */
+  --cian-luz:#3bb6e6;     /* cian para texto sobre tinta */
+  --naranja:#fa621f;      /* naranja del isotipo */
+  --naranja-banda:#ce4204;/* banda de rótulos con texto blanco */
+  --uv:#2e279f;           /* luz de la impresora UV (fondo) */
+  --uv-luz:#545fe0;       /* resplandor UV (solo decorativo) */
+  --madera:#d3a03c;       /* muros de madera del taller */
+  --papel:#f3f0eb;        /* papel / fondo claro */
+  --gris:#5f6062;         /* gris de las letras "edel" */
+  --blanco:#ffffff;
+  --tornasol:linear-gradient(115deg,#6b9fd7 0%,#cc7c9c 38%,#5e5da8 70%,#6b9fd7 100%); /* stickers plateados IG-29 */
+}

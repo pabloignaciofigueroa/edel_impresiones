@@ -19,3 +19,4 @@ Autoalojados en `assets/fonts/` solo los woff2 usados (subconjuntos latin y lati
 - Oswald en mayúsculas con tracking .14–.2em, sobre banda de color (naranja o azul), como en sus piezas.
 - Montserrat para todo texto corrido; mínimo 16 px (regla 10), cuerpo 17–18 px.
 - Licencias: SIL Open Font License 1.1 (las tres).
+- Comillas en Anton: sus «» se ven chicas (parecen "<<"); en citas se usan comillas “ ” o una comilla grande decorativa en Oswald.
