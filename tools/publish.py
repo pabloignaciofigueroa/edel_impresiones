@@ -19,8 +19,8 @@ OUT = ROOT / 'public'
 
 # Trabajo (fase 9): la versión en curso vive en /nueva/ (noindex). La raíz redirige ahí mientras se trabaja.
 # Al cerrar (fase 20): la versión aprobada pasa a la raíz y las /nueva*/ quedan con 301 a /.
-INCLUDE_FILES = ['nueva/index.html', 'nueva_v2/index.html', 'nueva_v3/index.html', 'nueva_v4/index.html', 'nueva_v5/index.html', '404.html', 'robots.txt']
-INCLUDE_DIRS = ['vendor', 'assets/fonts', 'assets/video', 'assets/img', 'brand', 'css', 'js/nv1', 'js/nv2', 'js/nv3', 'js/nv4', 'js/nv5']
+INCLUDE_FILES = ['nueva/index.html', 'nueva_v2/index.html', 'nueva_v3/index.html', 'nueva_v4/index.html', 'nueva_v5/index.html', 'nueva_v6/index.html', '404.html', 'robots.txt']
+INCLUDE_DIRS = ['vendor', 'assets/fonts', 'assets/video', 'assets/img', 'brand', 'css', 'js/nv1', 'js/nv2', 'js/nv3', 'js/nv4', 'js/nv5', 'js/nv6']
 ALL_DIRS = []
 BLOCKED_EXT = {'.md', '.py', '.csv', '.json', '.pyc', '.sh', '.ipynb'}
 BLOCKED_DIRS = {'assets/raw'}
@@ -49,7 +49,7 @@ HEADERS = """\
 /js/*
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 """
-REDIRECTS = """/ /nueva_v5/ 302
+REDIRECTS = """/ /nueva_v6/ 302
 """
 
 
