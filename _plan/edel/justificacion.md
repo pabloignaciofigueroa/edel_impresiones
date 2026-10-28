@@ -18,3 +18,4 @@
 - 2026-10-28 · Carga: se descarta el cabezal; queda la versión de dibujo a lápiz (`_qa/logo/dibujo_logo.mp4`): contorno, relleno, «edel» trazo a trazo y bajada (Pablo).
 - 2026-10-28 · Carga: se descarta el cabezal (Pablo: se veía feo y bajaba la calidad). Queda la versión de dibujo a lápiz (`_qa/logo/dibujo_logo.mp4`): contorno, relleno, «edel» trazo a trazo y bajada.
 - 2026-10-28 · Guion (fase 6) en content/copy.md. Pendientes al cliente sumados: foto 2026 de pendones/rollers; confirmar Despensa Chiloé (IG-29) como cliente.
+- 2026-10-28 · Guion cerrado (Pablo): rótulo portada «Pioneros en Chiloé · Más de 20 años…» [BIO]; bajada intro IG-22; proceso en tres pasos (IG-30 partida, autorizado); equipo con juego «Team Mate / Team Café» (IG-35); Cotiza con IG-38; pie sin crédito de Bergerac.

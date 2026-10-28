@@ -2,7 +2,7 @@
 
 Regla: todo texto visible es literal de la marca o un dato verificable. Fuentes: [IG-NN] post, [BIO] bio de Instagram, [FB-INTRO]/[FB-CONTACTO] Facebook, [PIEZA] texto que se lee en sus piezas, [DATO] verificable, [RESEÑA] cita literal, [UI] interfaz (se traduce).
 Inglés: se traduce solo la interfaz (botones, rótulos, alt, aria). Las frases de la marca se muestran en español y llevan una glosa en inglés con el mismo tono, solo como subtítulo pequeño en la versión EN.
-⚠ = elección pendiente de Pablo.
+Todas las elecciones resueltas por Pablo el 2026-10-28.
 
 ---
 
@@ -12,19 +12,14 @@ Inglés: se traduce solo la interfaz (botones, rótulos, alt, aria). Las frases 
 
 ## 1. Portada — fondo Tinta, video de máquinas
 - Titular H1: **«Tu marca empieza por una buena impresión»** [IG-16] — EN glosa: «Your brand starts with a good impression»
-- Rótulo sobre el titular ⚠ elegir uno:
-  - A) «Imprenta y gráfica de Altos estándares» [BIO]
-  - B) «Pioneros en Chiloé · Más de 20 años de experiencia nos respaldan» [BIO]
-  - C) «Pendones, Rollers, Adhesivos · Grabado y Corte Láser» [FB-INTRO]
+- Rótulo sobre el titular: «Pioneros en Chiloé · Más de 20 años de experiencia nos respaldan» [BIO] (elegido por Pablo)
 - Botón principal: «Cotiza por WhatsApp» [UI; «cotiza» es su verbo en IG-29, IG-46, IG-47] → wa.me/56982823772 — EN «Get a quote on WhatsApp»
 - Botón secundario: «Ver trabajos» [UI] — EN «See our work»
 - Video: montaje de máquinas trabajando, sin rótulos (fase 7): UV (IG-16, IG-47), plotter (IG-30, IG-36), láser (IG-44), depilado (IG-37).
 
 ## 2. Intro — fondo Papel
 - H2: **«Hacemos realidad tus proyectos»** [IG-22] — EN «We make your projects happen»
-- Bajada ⚠ elegir una:
-  - A) «Desde tarjetas de presentación hasta piezas gráficas completas, cuidamos cada detalle para que tu marca destaque.» [IG-22]
-  - B) «En Edel Impresiones hacemos realidad tus proyectos con soluciones para cada necesidad: publicidad, papelería, material gráfico, personalización y mucho más 🙌» [IG-31]
+- Bajada: «Desde tarjetas de presentación hasta piezas gráficas completas, cuidamos cada detalle para que tu marca destaque.» [IG-22] (elegida por Pablo)
 - Cifras (chips): «Más de 20 años de experiencia» [BIO] · «Pioneros en Chiloé» [BIO] · «4,6 en Google» [DATO 2026-10-28] · «100 % recomendado en Facebook» [DATO]
 
 ## 3. Servicios — fondo Azul Edel
@@ -53,7 +48,7 @@ Inglés: se traduce solo la interfaz (botones, rótulos, alt, aria). Las frases 
 
 ## 4. Proceso — fondo Luz UV
 - H2: **«Así nace cada etiqueta»** [IG-30, primer fragmento]
-- Tres pasos ⚠ (adaptación: partir una frase en tres, con aprobación):
+- Tres pasos (adaptación aprobada por Pablo 2026-10-28: la frase de IG-30 partida en tres):
   1. «primero imprimimos con alta calidad» — video impresora (IG-30/IG-45)
   2. «luego el plotter de corte da forma a cada detalle» — video plotter (IG-30/IG-36)
   3. «finalmente hacemos el depilado para dejarlas listas para usar 💫» — video depilado (IG-37/IG-36)
@@ -72,8 +67,8 @@ Inglés: se traduce solo la interfaz (botones, rótulos, alt, aria). Las frases 
 - H2: **«Detrás de cada negocio, existe un equipo humano que día a día lo da todo para brindarles el mejor servicio ✨»** [IG-18]
 - Bajada: «En Edel Impresiones nos preocupamos de siempre ser ese equipo que le trae soluciones y cumple los proyectos que necesitan 🧑‍💻👩‍💻» [IG-18]
 - Fotos IG-18 (4), sin nombres (decisión de Pablo).
-- Momento festivo ⚠: tarjeta que gira con el reel IG-35 y «No importa si eres Team Mate o Team Café, lo importante es que no te falte a la hora de trabajar 🙂‍↔️✨» / «Y tú, de que Team eres?» [IG-35, ortografía original] — botones «Team Mate» / «Team Café» que solo cambian el video/estado (juego, sin guardar nada).
-- Otra opción ⚠: reel IG-33 «Si el cliente lo pide, quienes somos nosotros para negarnos 🙂‍↔️🙂‍↔️» (el más visto, 158 likes).
+- Momento festivo (elegido por Pablo): tarjeta que gira con el reel IG-35 y «No importa si eres Team Mate o Team Café, lo importante es que no te falte a la hora de trabajar 🙂‍↔️✨» / «Y tú, de que Team eres?» [IG-35, ortografía original] — botones «Team Mate» / «Team Café» que solo cambian el video/estado (juego, sin guardar nada).
+- Descartado por ahora: reel IG-33 «Si el cliente lo pide, quienes somos nosotros para negarnos 🙂‍↔️🙂‍↔️» (el más visto, 158 likes).
 
 ## 7. Reseñas — fondo Naranja
 - Rótulo: «4,6 en Google · 100 % recomendado en Facebook» [DATO]
@@ -88,10 +83,7 @@ Inglés: se traduce solo la interfaz (botones, rótulos, alt, aria). Las frases 
   8. “Buen servicio, 10/10” — Luis, Chile, vía Google
 
 ## 8. Cotiza — fondo Tinta + cian
-- H2 ⚠ elegir uno:
-  - A) «Háblanos al DM y descubre un mundo de posibilidades sin límites, para tus proyectos» [IG-45]
-  - B) «No importa como expreses el tamaño del trabajo que necesitas, nosotros lo resolveremos y te entenderemos» [IG-38]
-  - C) «Si buscas hacer realidad un proyecto, nosotros te ayudamos ✨» [IG-32]
+- H2: **«No importa como expreses el tamaño del trabajo que necesitas, nosotros lo resolveremos y te entenderemos»** [IG-38] (elegido por Pablo; ortografía original)
 - Botones: «Escríbenos por WhatsApp» [UI] +56 9 8282 3772 [IG-29, FB-CONTACTO] · «Mensaje en Instagram» [UI] @edel.chiloe · «Correo» edelimpresiones@hotmail.com [FB-CONTACTO]
 - Dirección: Eduardo Provasoli 619, Castro [BIO] + Google Maps siempre activo
 - Horario: **falta** (no publicado). Mientras tanto no se muestra horario; se pide en el dossier.
@@ -100,7 +92,7 @@ Inglés: se traduce solo la interfaz (botones, rótulos, alt, aria). Las frases 
 - Logo horizontal claro
 - «Imprenta y gráfica de Altos estándares · Pioneros en Chiloé · Más de 20 años de experiencia nos respaldan» [BIO]
 - @edel.chiloe · Facebook Imprenta y Gráfica Edel - Castro
-- Crédito ⚠: «Sitio hecho por Bergerac» con enlace a bergerac.cl, ¿o sin crédito?
+- Sin crédito (Pablo: «esta es la página de Edel, no de nosotros»).
 
 ## Interfaz [UI] (ES / EN)
 Menú: Servicios / Services · Proceso / Process · Trabajos / Work · Equipo / Team · Reseñas / Reviews · Cotiza / Get a quote · Idioma: ES | EN
