@@ -19,3 +19,9 @@
 - 2026-10-28 · Carga: se descarta el cabezal (Pablo: se veía feo y bajaba la calidad). Queda la versión de dibujo a lápiz (`_qa/logo/dibujo_logo.mp4`): contorno, relleno, «edel» trazo a trazo y bajada.
 - 2026-10-28 · Guion (fase 6) en content/copy.md. Pendientes al cliente sumados: foto 2026 de pendones/rollers; confirmar Despensa Chiloé (IG-29) como cliente.
 - 2026-10-28 · Guion cerrado (Pablo): rótulo portada «Pioneros en Chiloé · Más de 20 años…» [BIO]; bajada intro IG-22; proceso en tres pasos (IG-30 partida, autorizado); equipo con juego «Team Mate / Team Café» (IG-35); Cotiza con IG-38; pie sin crédito de Bergerac.
+- 2026-10-28 · Medios (fase 7): 18 videos en loop sin rótulos y 12 fotos limpias (tools/medios.py, hojas en _qa/medios). Descartados por texto encima: reels IG-16 (IMPRESIÓN UV) e IG-36 (burbujas de chat); fotos IG-15, 17, 19, 20, 21, 22, 23, 32 y IG-18 #1/#2.
+## Pedidos al cliente (medios)
+- Originales sin rótulos de los reels IG-16 (impresora UV) e IG-36 (Buena Pizza Social Club).
+- Fotos sin texto de: galvanos (IG-15), llaveros (IG-17), tarjetas (IG-22/23), stickers troquelados (IG-21).
+- Tomas más largas del proceso (imprimir → plotter → depilado) y de tarjetas: hoy los tramos limpios duran 4 s.
+- Videos de las máquinas en horizontal (escritorio) y vertical (celular), en alta.

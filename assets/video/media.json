@@ -1,0 +1,421 @@
+{
+ "hero": {
+  "fuente": "IG-45, IG-47, IG-30, IG-44, IG-37",
+  "uso": "portada: máquinas trabajando",
+  "duracion": 9.8,
+  "tramos": [
+   [
+    "45",
+    0.6,
+    3.2
+   ],
+   [
+    "47",
+    4.0,
+    6.5
+   ],
+   [
+    "30",
+    2.0,
+    5.0
+   ],
+   [
+    "44",
+    5.0,
+    7.0
+   ],
+   [
+    "37",
+    3.5,
+    5.3
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoJABAAA4BaJZgCdAYtzvvZjzuCf7AA/toZK8GyDFyP9v85W8ZQIrvGne0tHgtPD+VXybLdF1TcuJ5rmW71HeBVprS9k13tClgfoUneM9Ko4UzYAAA=",
+  "kb": {
+   ".mp4": 3891,
+   ".webm": 2744,
+   "-poster.webp": 41
+  }
+ },
+ "plateados": {
+  "fuente": "IG-29",
+  "uso": "servicio: plateados tornasol",
+  "duracion": 8.4,
+  "tramos": [
+   [
+    "29",
+    3.5,
+    12.8
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAQCdASoJABAAA4BaJagCdAD5ZxUdgAD+l3AUdrgrnLow+lwtYp6B9B7xlJmX6zz+3iaCl2D7SMJ04WBZbFZ5m/8dcEWXLg9bu7CMJuFWNTPtgV66oQAA",
+  "kb": {
+   ".mp4": 1092,
+   ".webm": 1785,
+   "-poster.webp": 63
+  }
+ },
+ "transparentes": {
+  "fuente": "IG-46",
+  "uso": "servicio: transparentes (vaso Dulce Enlatta)",
+  "duracion": 8.6,
+  "tramos": [
+   [
+    "46",
+    1.0,
+    10.5
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoJABAAA4BaJaACdAEOzDemRCfQAP58r8VYgrWMVLjvJfNPdCbduZLTt/MyX0AD0akUcIOOwioqEXOCChVJkGUYqQ36RtAA",
+  "kb": {
+   ".mp4": 370,
+   ".webm": 410,
+   "-poster.webp": 16
+  }
+ },
+ "uv": {
+  "fuente": "IG-45, IG-44, IG-47",
+  "uso": "servicio: impresión UV",
+  "duracion": 6.6,
+  "tramos": [
+   [
+    "45",
+    0.6,
+    3.2
+   ],
+   [
+    "44",
+    3.5,
+    7.0
+   ],
+   [
+    "47",
+    4.0,
+    6.0
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoJABAAA4BaJZgCdAYtzvvZjzuCf7AA/toZK8GyDFyP9v85W8ZQIrvGne0tHgtPD+VXybLdF1TcuJ5rmW71HeBVprS9kB6sDY7ZgOH4DCSdG67AAAA=",
+  "kb": {
+   ".mp4": 969,
+   ".webm": 1107,
+   "-poster.webp": 28
+  }
+ },
+ "diplomas": {
+  "fuente": "IG-47",
+  "uso": "servicio: diplomas (Dekra)",
+  "duracion": 6.0,
+  "tramos": [
+   [
+    "47",
+    6.0,
+    9.3
+   ],
+   [
+    "47",
+    10.0,
+    13.9
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoJABAAA4BaJbACdAEWX6Liv4AA/U1WcgJz4CdP9BXwGWlb02CKsJMv/vvamxLJ2Ofd8b9rHCp247rT0J6XL3rJItiHUAAA",
+  "kb": {
+   ".mp4": 582,
+   ".webm": 634,
+   "-poster.webp": 19
+  }
+ },
+ "laser": {
+  "fuente": "IG-24",
+  "uso": "servicio: corte láser, mostrador",
+  "duracion": 7.6,
+  "tramos": [
+   [
+    "24",
+    9.5,
+    18.0
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoJABAAA4BaJZQCdAEQLoTI/+AA/O4VR61lbuYxO47Coq+SodUvAfb4EthxIdMtWr0a33r1JNtlh7TWt2CblXVCNAAAAA==",
+  "kb": {
+   ".mp4": 331,
+   ".webm": 312,
+   "-poster.webp": 11
+  }
+ },
+ "bitacoras": {
+  "fuente": "IG-25",
+  "uso": "servicio: bitácoras (Chiloé Náutica)",
+  "duracion": 8.6,
+  "tramos": [
+   [
+    "25",
+    5.0,
+    14.5
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoJABAAA4BaJQAAU0v5otAAAP7Aa2lpwq1H+U4XMYYqAPsTP/WlRYDPrYNEwLh/cka91rYu2T0k09Gkh4AAAA==",
+  "kb": {
+   ".mp4": 661,
+   ".webm": 786,
+   "-poster.webp": 16
+  }
+ },
+ "prendas": {
+  "fuente": "IG-42",
+  "uso": "servicio: prendas (SSC Rental)",
+  "duracion": 6.2,
+  "tramos": [
+   [
+    "42",
+    1.0,
+    3.8
+   ],
+   [
+    "42",
+    4.5,
+    8.4
+   ],
+   [
+    "42",
+    9.0,
+    10.0
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoJABAAA4BaJZACdAD0liabIMAA+XPwf3ZJwZ+AeFKsBtCDSt2WVBAGPXhst2m1BwEnq7AnNKVCGgHk20VES2Wc6sAAAA==",
+  "kb": {
+   ".mp4": 719,
+   ".webm": 679,
+   "-poster.webp": 22
+  }
+ },
+ "medallas": {
+  "fuente": "IG-44",
+  "uso": "servicio: medallas (RevelArte)",
+  "duracion": 7.0,
+  "tramos": [
+   [
+    "44",
+    0.0,
+    3.0
+   ],
+   [
+    "44",
+    7.5,
+    12.7
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoJABAAA4BaJYwCdAEPCyi+EBAA/sBR02y0yNWPVpjLoWMZpu/FfNHyG4P+K49Y8MxOmv2e/EIMdeLl3GavsXrp5wz5iEbocbpc/MhWqFXputShC2RkkAAA",
+  "kb": {
+   ".mp4": 729,
+   ".webm": 907,
+   "-poster.webp": 29
+  }
+ },
+ "letreros": {
+  "fuente": "IG-34",
+  "uso": "servicio: letreros (Pilates & Skincare)",
+  "duracion": 6.3,
+  "tramos": [
+   [
+    "34",
+    3.5,
+    7.0
+   ],
+   [
+    "34",
+    17.5,
+    21.5
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoJABAAA4BaJYgCdAEO5fURaAD+5smPeAsfJfKT3TdNKDb3gWteXg3Dt8aFGdYfHQZMiHq7XYrFrrWWpTv8AAAA",
+  "kb": {
+   ".mp4": 699,
+   ".webm": 898,
+   "-poster.webp": 21
+  }
+ },
+ "stickers": {
+  "fuente": "IG-37, IG-31",
+  "uso": "servicio: stickers y etiquetas",
+  "duracion": 6.9,
+  "tramos": [
+   [
+    "37",
+    0.0,
+    5.3
+   ],
+   [
+    "31",
+    12.0,
+    14.8
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAQCdASoJABAAA4BaJagCdADdtDz4AAD+6fh10eDKPxKemTPsRxkaw6HAiFSibxP4DI++xaQ1GpZvEM18/b3Fuv7Wl43YdpDYnFlwb1sFoNSrtNht0AAA",
+  "kb": {
+   ".mp4": 1163,
+   ".webm": 1477,
+   "-poster.webp": 46
+  }
+ },
+ "tarjetas": {
+  "fuente": "IG-45, IG-31",
+  "uso": "servicio: tarjetas",
+  "duracion": 3.8,
+  "tramos": [
+   [
+    "45",
+    5.5,
+    8.0
+   ],
+   [
+    "31",
+    3.0,
+    4.4
+   ],
+   [
+    "45",
+    8.0,
+    9.4
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAwAgCdASoJABAAA4BaJYwCdAYoBuK1aU4iAAD+i6FJAB30HRGf/uj8ePhWSVg+dx0QkwaLP1sx4jwcPy9EFT+HT4EwAAAA",
+  "kb": {
+   ".mp4": 287,
+   ".webm": 390,
+   "-poster.webp": 19
+  }
+ },
+ "diseno": {
+  "fuente": "IG-44, IG-33",
+  "uso": "servicio: diseño",
+  "duracion": 8.1,
+  "tramos": [
+   [
+    "44",
+    0.0,
+    1.4
+   ],
+   [
+    "33",
+    12.0,
+    19.9
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAQCdASoJABAAA4BaJYwCdAEPCzGyBgAA/sBR02y0lJhuV/8XQsYzTd93L2ZCPq/4TTonfgX8t4nfofa4pHfXr1/wwvoPrqhX91Zy4v5+s9acQVQ/tkJ54tvQAA==",
+  "kb": {
+   ".mp4": 809,
+   ".webm": 1165,
+   "-poster.webp": 28
+  }
+ },
+ "p1-imprimir": {
+  "fuente": "IG-45, IG-30, IG-37",
+  "uso": "proceso 1",
+  "duracion": 4.2,
+  "tramos": [
+   [
+    "45",
+    0.6,
+    3.2
+   ],
+   [
+    "30",
+    0.0,
+    1.8
+   ],
+   [
+    "37",
+    2.0,
+    3.3
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoJABAAA4BaJZgCdAYtzvvZjzuCf7AA/toZK8GyDFyP9v85W8ZQIrvGne0tHgtPD+VXybLdF1TcuJ5rmW71HeBVprS9kB6sDY7ZgOH4DCSdG67AAAA=",
+  "kb": {
+   ".mp4": 765,
+   ".webm": 808,
+   "-poster.webp": 28
+  }
+ },
+ "p2-plotter": {
+  "fuente": "IG-30, IG-31",
+  "uso": "proceso 2",
+  "duracion": 4.3,
+  "tramos": [
+   [
+    "30",
+    2.0,
+    6.2
+   ],
+   [
+    "31",
+    12.0,
+    13.3
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoJABAAA4BaJagCdADdtCXNwhoAAP7tHapb2wWIg7aYEKCmGSpxdXIMrTtI2UUP7jhFE13hL6NKBvNxAT2Xggps+yEyB8IXiovTOcIqF3PaUQAA",
+  "kb": {
+   ".mp4": 614,
+   ".webm": 655,
+   "-poster.webp": 20
+  }
+ },
+ "p3-depilado": {
+  "fuente": "IG-30, IG-37",
+  "uso": "proceso 3",
+  "duracion": 4.1,
+  "tramos": [
+   [
+    "30",
+    6.3,
+    9.8
+   ],
+   [
+    "37",
+    3.5,
+    5.3
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoJABAAA4BaJYgCdADdKFV8eAD9U/UC7LmKu0t8gTEDEbcT/sXxLm+AZpHAMs2PnpIXjj5iIZw9QbB9cQrxWz08TMp5CdqgAAA=",
+  "kb": {
+   ".mp4": 1048,
+   ".webm": 1363,
+   "-poster.webp": 27
+  }
+ },
+ "equipo": {
+  "fuente": "IG-33",
+  "uso": "equipo",
+  "duracion": 10.6,
+  "tramos": [
+   [
+    "33",
+    0.0,
+    11.5
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQAgCdASoJABAAA4BaJaACdAEOaTzbUG4AAP6HSwDFe/cOXKcidf3oG7nCymJCwhRt4vcQWSlJIjrR5gJhp5uoOEBX3wVVFXSF6W+RJNmjINjiZZdb4wyBHYeYYAAA",
+  "kb": {
+   ".mp4": 1530,
+   ".webm": 2258,
+   "-poster.webp": 40
+  }
+ },
+ "equipo-2": {
+  "fuente": "IG-38",
+  "uso": "equipo",
+  "duracion": 7.4,
+  "tramos": [
+   [
+    "38",
+    0.0,
+    8.3
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoJABAAA4BaJZwAAl1xiQzrgAD+acfTZ3WJHfgoxn6BpFh7hVvyop5ODbE31BXGtlLG3QDME7o5qoC1gEAAAA==",
+  "kb": {
+   ".mp4": 487,
+   ".webm": 560,
+   "-poster.webp": 16
+  }
+ }
+}
