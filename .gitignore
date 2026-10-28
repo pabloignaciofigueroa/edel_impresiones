@@ -1,0 +1,8 @@
+assets/raw/
+node_modules/
+__pycache__/
+.DS_Store
+_qa/
+*.master.*
+dossier/out/
+dossier/*.pdf
