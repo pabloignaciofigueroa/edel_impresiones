@@ -11,7 +11,7 @@
 | 6. Guion | hecho (elecciones de Pablo) |
 | 7. Medios | hecho (decisiones de Pablo) |
 | 8. Dirección de arte | hecho (OK Pablo) |
-| 9. Base y publicación | nueva/ + publish.py; despliegue Cloudflare en curso |
+| 9. Base y publicación | hecho — https://edelimpresiones.pages.dev/nueva/ (Cloudflare Pages, proyecto edelimpresiones, main, salida public) |
 
 ## Bitácora
 - 2026-10-28: repo creado, permisos (computer use, Chrome, Descargas). Medios bajados vía paquete .tar desde Chrome (diálogos "Guardar como" quedaron abiertos en el PC: cancelar al volver).
