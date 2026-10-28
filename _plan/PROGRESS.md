@@ -17,4 +17,5 @@
 - 2026-10-28: repo creado, permisos (computer use, Chrome, Descargas). Medios bajados vía paquete .tar desde Chrome (diálogos "Guardar como" quedaron abiertos en el PC: cancelar al volver).
 - Pendiente revisar: destacadas IG (Trabajos, Clientes, adhesivos), reseñas Google.
 | 10–15. Secciones festivas | hecho (OK Pablo, /nueva_v2/) |
-| 16–17. Micro-interacciones, responsive y accesibilidad | /nueva_v3/ (nv3) |
+| 16–17. Micro-interacciones, responsive y accesibilidad | hecho (OK Pablo, /nueva_v3/) |
+| 18. QA | hecho — correcciones en /nueva_v4/ (nv4) |
