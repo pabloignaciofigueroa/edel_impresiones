@@ -14,3 +14,4 @@
 - 2026-10-28 · Equipo sin nombres (Pablo); se piden en el dossier.
 - 2026-10-28 · XS Joyas (IG-26) y Sigma (IG-28) se muestran como clientes; en el dossier se pregunta si son reales (Pablo).
 - 2026-10-28 · Imagen para compartir: plotter de corte cortando etiquetas «RESERVADO» (IG-30). En una imprenta, lo que vende es la máquina trabajando.
+- 2026-10-28 · Prueba de carga con cabezal de impresión (`_qa/logo/cabezal_logo.mp4`): contorno a lápiz, cuatro pasadas de ida y vuelta que imprimen el isotipo, luego «edel» trazo a trazo. En celular se usa el logo vertical para que el isotipo se vea grande.
