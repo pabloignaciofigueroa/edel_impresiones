@@ -2,7 +2,7 @@
 Videos: tramos sin rótulos, siempre hacia adelante, fundido final→inicio de 0,9 s (loop sin salto), sin audio.
 Salida: assets/video/<id>.mp4 (h264 faststart) + .webm (VP9) + -poster.jpg ; manifiesto assets/video/media.json
 Fotos: assets/img/<id>-<ancho>.webp + LQIP ; manifiesto assets/img/media.json
-Uso: python3 tools/medios.py [video|foto|todo]"""
+Uso: python3 tools/medios.py [video|foto|todo] [ids…]  (con ids solo rehace esos; SIN ids rehace todos y pisa los congelados)"""
 import subprocess, json, os, sys, base64, io
 from PIL import Image
 RAW='assets/raw/ig/'
@@ -31,20 +31,82 @@ VIDEOS={
  'team':      ([('35',0.0,4.6)],'IG-35','equipo: Team Mate o Team Café (con su rótulo, decisión de Pablo)'),
  'equipo':    ([('33',0.0,11.5)],'IG-33','equipo'),
  'equipo-2':  ([('38',0.0,8.3)],'IG-38','equipo'),
+ # Fase 19 — ids nuevos con sufijo 8 (los de arriba quedan intactos para las copias congeladas /nueva_v1..v7).
+ # Cortes verificados cuadro a cuadro: IG-45 pasa de la impresora de rollo a la UV en 1,633 s (antes el loop arrastraba 4 cuadros de rollo);
+ # IG-34 corta del póster a la mano en 4,5 s (y el barrido al póster termina en 17,9); IG-24 tiene un salto en 11,0 (se funde) y su último cuadro es 17,9; IG-37 corta en 2,133 / 3,6 / 5,667; IG-44 en 5,233; IG-30 en 1,967 / 6,5.
+ 'hero8':     ([('45',1.62,3.12,{}),('47',1.65,2.85,{}),('30',2.0,6.0,{}),('44',5.25,7.45,{}),('37',3.62,5.62,{})],'IG-45, IG-47, IG-30, IG-44, IG-37','portada: máquinas trabajando (sin cuadros intrusos ni diplomas legibles)'),
+ 'uv8':       ([('45',1.62,3.55,{'v':0.85}),('44',3.5,5.22,{'v':0.85}),('44',5.25,7.45,{'v':0.85}),('47',1.65,2.85,{'v':0.85}),('47',4.12,5.7,{'v':0.85,'cens':True})],'IG-45, IG-44, IG-47','servicio: impresión UV (diplomas con nombres y QR difuminados)'),
+ 'proceso8':  ([('45',1.62,3.55,{}),('30',0.0,1.8,{}),('30',2.0,6.2,{}),('31',12.0,13.28,{}),('30',6.52,9.8,{}),('37',3.62,5.3,{})],'IG-45, IG-30, IG-31, IG-37','proceso: imprimir → plotter → depilado en un solo video'),
+ 'p1-imprimir8':([('45',1.62,3.55,{}),('30',0.0,1.8,{}),('37',2.15,3.55,{})],'IG-45, IG-30, IG-37','proceso 1'),
+ 'letreros8': ([('34',4.52,7.3,{}),('37',8.05,11.03,{}),('34',17.9,21.7,{})],'IG-34, IG-37','servicio: letreros (Pilates & Skincare), sin rótulos ni póster intruso'),
+ 'diplomas8': ([('47',1.65,2.85,{'v':0.95}),('47',4.12,5.7,{'v':0.95,'cens':True}),('47',5.75,7.8,{'v':0.95,'cens':True}),('47',7.85,9.55,{'v':0.95,'cens':True}),('47',10.27,11.9,{'v':0.95,'cens':True}),('47',11.97,13.98,{'v':0.95,'cens':True})],'IG-47','servicio: diplomas (Dekra), nombres y QR difuminados'),
+ 'tarjetas8': ([('45',5.75,7.82,{'v':0.62,'interp':True}),('31',3.05,4.48,{'v':0.62,'interp':True}),('40',9.3,11.05,{'v':0.62,'interp':True}),('40',0.0,1.08,{'v':0.62,'interp':True})],'IG-45, IG-31, IG-40','servicio: tarjetas (Hojalatería Erice, XS Joyas, Sigma), sin el cuaderno Reiver'),
+ 'team8':     ([('35',1.12,4.5,{'v':0.4,'interp':True})],'IG-35','equipo: Team Mate o Team Café; el loop se funde con el rótulo ya quieto'),
+ 'medallas8': ([('44',1.32,3.0,{}),('44',3.5,5.22,{}),('44',5.25,7.45,{}),('44',7.52,10.2,{}),('44',10.52,12.58,{})],'IG-44','servicio: medallas (RevelArte): láser, UV, medalla y entrega'),
+ 'stickers8': ([('37',0.0,2.1,{'v':0.9}),('37',2.17,3.58,{'v':0.9}),('37',3.62,5.62,{'v':0.9}),('31',10.4,11.85,{'v':0.9}),('31',12.0,13.28,{'v':0.9}),('31',13.33,14.72,{'v':0.9})],'IG-37, IG-31','servicio: stickers y etiquetas'),
+ # Trabajos (D-1): tomas distintas de las de Servicios
+ 'trab-medallas8':([('44',7.52,10.2,{}),('44',10.52,12.58,{})],'IG-44','trabajo: medallas RevelArte, medalla y entrega en escenario'),
+ 'trab-letreros8':([('34',17.9,24.5,{})],'IG-34','trabajo: letrero Pilates & Skincare terminado'),
+ 'trab-bitacoras8':([('25',2.25,4.8,{}),('25',15.3,17.13,{}),('25',17.2,18.8,{})],'IG-25','trabajo: bitácoras Chiloé Náutica (tapas y en mano)'),
+ 'laser8':    ([('24',7.0,10.97,{}),('24',11.03,17.88,{})],'IG-24','servicio: corte láser, mostrador'),
 }
+# segundos en que cambia el paso del proceso (revisados cuadro a cuadro a 5 fps)
+PASOS={'proceso':{"1": 0.0, "2": 2.9, "3": 7.8},'proceso8':{'2':2.6,'3':7.3}}
 XF=0.3   # fundido entre tramos
 LOOP=0.9 # fundido final → inicio
 def run(c): subprocess.run(c,check=True)
 def dur(f): return float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',f]))
+def _o(p): return p[3] if len(p)>3 else {}
+def _len(p): return (p[2]-p[1])/_o(p).get('v',1)
+def censurar(r,a,b):
+    """Fase 19 (privacidad): difumina texto oscuro fino y QR (nombres de alumnos, códigos) cuadro a cuadro.
+    Máscara = black-hat morfológico (trazos oscuros finos sobre papel claro) excepto verdes saturados (logos achs/DEKRA quedan nítidos),
+    dilatada y suavizada; la zona se reemplaza por un mosaico desenfocado (ilegible y no escaneable). Devuelve un clip intermedio [a,b)."""
+    import cv2, numpy as np
+    out=f'/tmp/med_cens_{r}_{a}_{b}.mp4'
+    if os.path.exists(out): return out
+    W,H=720,1280
+    dec=subprocess.Popen(['ffmpeg','-v','error','-i',RAW+R(r)+'.mp4','-vf',f'trim={a}:{b},setpts=PTS-STARTPTS,fps=30,scale={W}:{H}','-f','rawvideo','-pix_fmt','bgr24','-'],stdout=subprocess.PIPE)
+    enc=subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','bgr24','-s',f'{W}x{H}','-r','30','-i','-','-c:v','libx264','-preset','veryfast','-crf','8','-pix_fmt','yuv420p',out],stdin=subprocess.PIPE)
+    k1=cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(25,25)); k2=cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(45,45)); prev=None
+    while True:
+        buf=dec.stdout.read(W*H*3)
+        if len(buf)<W*H*3: break
+        f=np.frombuffer(buf,np.uint8).reshape(H,W,3)
+        g=cv2.cvtColor(f,cv2.COLOR_BGR2GRAY); sat=cv2.cvtColor(f,cv2.COLOR_BGR2HSV)[...,1]
+        bh=cv2.morphologyEx(g,cv2.MORPH_BLACKHAT,k1)
+        hue=cv2.cvtColor(f,cv2.COLOR_BGR2HSV)[...,0]; verde=(hue>=30)&(hue<=95)&(sat>60)  # logos achs/DEKRA quedan nítidos
+        m=cv2.dilate(((bh>24)&~verde).astype(np.uint8)*255,k2)
+        m=cv2.GaussianBlur(m,(0,0),8).astype(np.float32)/255
+        if prev is not None: m=np.maximum(m,prev*0.6)
+        prev=m
+        bl=cv2.GaussianBlur(cv2.resize(cv2.resize(f,(W//10,H//10),interpolation=cv2.INTER_AREA),(W,H),interpolation=cv2.INTER_LINEAR),(0,0),6)
+        o=(f*(1-m[...,None])+bl*m[...,None]).astype(np.uint8)
+        enc.stdin.write(o.tobytes())
+    enc.stdin.close(); enc.wait(); dec.wait()
+    return out
 def build_video(vid,parts,w=720,crf=24,tag=''):
+    """parts: (reel, desde, hasta[, opciones]). Con 4.º elemento (aunque sea {}) el tramo usa largo exacto. Opciones (fase 19, solo ids nuevos): v=velocidad (0,6 = más lento),
+    interp=True interpola cuadros al ralentizar, cens=True difumina nombres/QR (censurar). Sin opciones el filtro es idéntico al original."""
     os.makedirs('assets/video',exist_ok=True); tmp=f'/tmp/med_{vid}{tag}.mp4'
     ins=[];fl=[];n=len(parts)
-    for i,(r,a,b) in enumerate(parts):
-        ins+=['-i',RAW+R(r)+'.mp4']
-        fl.append(f'[{i}:v]trim={a}:{b},setpts=PTS-STARTPTS,fps=30,scale={w}:-2:flags=lanczos,setsar=1,format=yuv420p[s{i}]')
-    cur='s0'; L=parts[0][2]-parts[0][1]
+    for i,p in enumerate(parts):
+        r,a,b=p[:3]; o=_o(p)
+        if len(p)<=3:  # tramos originales: filtro idéntico al de siempre
+            ins+=['-i',RAW+R(r)+'.mp4']
+            fl.append(f'[{i}:v]trim={a}:{b},setpts=PTS-STARTPTS,fps=30,scale={w}:-2:flags=lanczos,setsar=1,format=yuv420p[s{i}]')
+            continue
+        src=censurar(r,a,b) if o.get('cens') else RAW+R(r)+'.mp4'
+        ta,tb=(0,round(b-a,3)) if o.get('cens') else (a,b)
+        v=o.get('v',1)
+        sp=f'setpts=(PTS-STARTPTS)/{v},' if v!=1 else 'setpts=PTS-STARTPTS,'
+        rate='minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1,' if (v!=1 and o.get('interp')) else 'fps=30,'
+        ins+=['-i',src]
+        # largo exacto: se rellena con el último cuadro y se recorta a (b-a)/v, así cada fundido calza con su offset
+        fl.append(f'[{i}:v]trim={ta}:{tb},{sp}{rate}tpad=stop_mode=clone:stop_duration=1,trim=duration={_len(p):.4f},scale={w}:-2:flags=lanczos,setsar=1,format=yuv420p[s{i}]')
+    cur='s0'; L=_len(parts[0])
     for i in range(1,n):
-        Li=parts[i][2]-parts[i][1]; fl.append(f'[{cur}][s{i}]xfade=transition=fade:duration={XF}:offset={L-XF:.3f}[c{i}]'); cur=f'c{i}'; L=L+Li-XF
+        Li=_len(parts[i]); fl.append(f'[{cur}][s{i}]xfade=transition=fade:duration={XF}:offset={L-XF:.3f}[c{i}]'); cur=f'c{i}'; L=L+Li-XF
     # loop: cuerpo = [LOOP, L], cola = [0, LOOP] fundida sobre el final
     fl.append(f'[{cur}]split[x][y];[x]trim={LOOP}:{L:.3f},setpts=PTS-STARTPTS[body];[y]trim=0:{LOOP},setpts=PTS-STARTPTS[head];'
               f'[body][head]xfade=transition=fade:duration={LOOP}:offset={L-2*LOOP:.3f}[out]')
@@ -62,12 +124,17 @@ def videos():
     man.update({k:v for k,v in old.items() if k in VIDEOS})
     for vid,(parts,src,uso) in VIDEOS.items():
         if only and vid not in only: continue
-        w,crf=(720,24) if vid=='hero' else (540,28)
+        w,crf=(720,24) if vid in('hero','hero8') else (540,28)
         d=build_video(vid,parts,w=w,crf=crf); webm(vid); lq=poster(vid)
         if vid=='hero':  # versión liviana para celular
             build_video(vid,parts,w=540,crf=30,tag='-540'); webm(vid,'-540')
+        ks=['.mp4','.webm','-poster.webp']
+        if vid=='hero8':  # liviana (540, crf 30) y extra liviana para el primer pantallazo (540, crf 33, solo mp4; como hero-540b de la fase 18)
+            build_video(vid,parts,w=540,crf=30,tag='-540'); webm(vid,'-540'); build_video(vid,parts,w=540,crf=33,tag='-540b')
+            ks+=['-540.mp4','-540.webm','-540b.mp4']
         man[vid]=dict(fuente=src,uso=uso,duracion=round(d,2),tramos=parts,lqip=lq,
-            kb={k:os.path.getsize(f'assets/video/{vid}{k}')//1024 for k in ['.mp4','.webm','-poster.webp']})
+            kb={k:os.path.getsize(f'assets/video/{vid}{k}')//1024 for k in ks})
+        if vid in PASOS: man[vid]['pasos']=PASOS[vid]
         print(vid,round(d,1),'s',man[vid]['kb'])
     json.dump(man,open('assets/video/media.json','w'),ensure_ascii=False,indent=1)
 # Fotos limpias (sin texto encima). IG-18 #3/#4 llevan un isotipo chico en una esquina: pendiente de Pablo.

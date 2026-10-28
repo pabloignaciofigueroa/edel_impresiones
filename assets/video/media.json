@@ -483,5 +483,561 @@
    ".webm": 412,
    "-poster.webp": 31
   }
+ },
+ "hero8": {
+  "fuente": "IG-45, IG-47, IG-30, IG-44, IG-37",
+  "uso": "portada: máquinas trabajando (sin cuadros intrusos ni diplomas legibles)",
+  "duracion": 8.8,
+  "tramos": [
+   [
+    "45",
+    1.62,
+    3.12,
+    {}
+   ],
+   [
+    "47",
+    1.65,
+    2.85,
+    {}
+   ],
+   [
+    "30",
+    2.0,
+    6.0,
+    {}
+   ],
+   [
+    "44",
+    5.25,
+    7.45,
+    {}
+   ],
+   [
+    "37",
+    3.62,
+    5.62,
+    {}
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAQCdASoJABAAA4BaJbACdAEQEEjTIAD+72o4KxIQ2bwXHdI0yUNyV0r876CSzXhl5SG/pdyNfuLzhQVTrxTX6KI4jrhtYSuIilT9T856CnboeNbgTJWMaAA=",
+  "kb": {
+   ".mp4": 3700,
+   ".webm": 2662,
+   "-poster.webp": 43,
+   "-540.mp4": 1250,
+   "-540.webm": 1946,
+   "-540b.mp4": 915
+  }
+ },
+ "uv8": {
+  "fuente": "IG-45, IG-44, IG-47",
+  "uso": "servicio: impresión UV (diplomas con nombres y QR difuminados)",
+  "duracion": 8.07,
+  "tramos": [
+   [
+    "45",
+    1.62,
+    3.55,
+    {
+     "v": 0.85
+    }
+   ],
+   [
+    "44",
+    3.5,
+    5.22,
+    {
+     "v": 0.85
+    }
+   ],
+   [
+    "44",
+    5.25,
+    7.45,
+    {
+     "v": 0.85
+    }
+   ],
+   [
+    "47",
+    1.65,
+    2.85,
+    {
+     "v": 0.85
+    }
+   ],
+   [
+    "47",
+    4.12,
+    5.7,
+    {
+     "v": 0.85,
+     "cens": true
+    }
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoJABAAA4BaJagCsAEQC1UWqNAAAP7vVNaBdWBVEOWAU5l3i+lkCf73wiU79dJPCQkhBxoj3fAH/Rcp6wntHefS0LQt+TBjUkmeOGAA",
+  "kb": {
+   ".mp4": 1027,
+   ".webm": 1130,
+   "-poster.webp": 29
+  }
+ },
+ "proceso8": {
+  "fuente": "IG-45, IG-30, IG-31, IG-37",
+  "uso": "proceso: imprimir → plotter → depilado en un solo video",
+  "duracion": 11.77,
+  "tramos": [
+   [
+    "45",
+    1.62,
+    3.55,
+    {}
+   ],
+   [
+    "30",
+    0.0,
+    1.8,
+    {}
+   ],
+   [
+    "30",
+    2.0,
+    6.2,
+    {}
+   ],
+   [
+    "31",
+    12.0,
+    13.28,
+    {}
+   ],
+   [
+    "30",
+    6.52,
+    9.8,
+    {}
+   ],
+   [
+    "37",
+    3.62,
+    5.3,
+    {}
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoJABAAA4BaJbACdAEQEEkXpQwA/u9qOCsSENm8Fx3SNMlDcldK/O+gks14ZeUhwaZK4OgLUUKwbtAfFdZGh54LBV2SwLlnjphzT40CJsCZKxjQAAA=",
+  "kb": {
+   ".mp4": 2195,
+   ".webm": 2610,
+   "-poster.webp": 28
+  },
+  "pasos": {
+   "2": 2.6,
+   "3": 7.3
+  }
+ },
+ "p1-imprimir8": {
+  "fuente": "IG-45, IG-30, IG-37",
+  "uso": "proceso 1",
+  "duracion": 3.63,
+  "tramos": [
+   [
+    "45",
+    1.62,
+    3.55,
+    {}
+   ],
+   [
+    "30",
+    0.0,
+    1.8,
+    {}
+   ],
+   [
+    "37",
+    2.15,
+    3.55,
+    {}
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoJABAAA4BaJbACdAEQEEkXpQwA/u9qOCsSENm8Fx3SNMlDcldK/O+gks14ZeUhwaZK4OgLUUKwbtAfFdZGh54LBV2SwLlnjphzT40CJsCZKxjQAAA=",
+  "kb": {
+   ".mp4": 663,
+   ".webm": 692,
+   "-poster.webp": 28
+  }
+ },
+ "letreros8": {
+  "fuente": "IG-34, IG-37",
+  "uso": "servicio: letreros (Pilates & Skincare), sin rótulos ni póster intruso",
+  "duracion": 8.07,
+  "tramos": [
+   [
+    "34",
+    4.52,
+    7.3,
+    {}
+   ],
+   [
+    "37",
+    8.05,
+    11.03,
+    {}
+   ],
+   [
+    "34",
+    17.9,
+    21.7,
+    {}
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoJABAAA4BaJZgCdH8AFbD8liAA/r2iPt7xEtaHJvTMRp+NWfkg7ndaQ6oG+f3VDSD4uXl0CySzviz+CILOlJAAAAA=",
+  "kb": {
+   ".mp4": 872,
+   ".webm": 1133,
+   "-poster.webp": 28
+  }
+ },
+ "laser8": {
+  "fuente": "IG-24",
+  "uso": "servicio: corte láser, mostrador",
+  "duracion": 9.63,
+  "tramos": [
+   [
+    "24",
+    7.0,
+    10.97,
+    {}
+   ],
+   [
+    "24",
+    11.03,
+    17.88,
+    {}
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoJABAAA4BaJZQCdAEONJCxAAD5MFuBzt9bpLnxFNoCFONh+0Sg9UtEN6FdZt8Jq+40DZ0Y0XRnQFHRF8AAAA==",
+  "kb": {
+   ".mp4": 397,
+   ".webm": 371,
+   "-poster.webp": 8
+  }
+ },
+ "tarjetas8": {
+  "fuente": "IG-45, IG-31, IG-40",
+  "uso": "servicio: tarjetas (Hojalatería Erice, XS Joyas, Sigma), sin el cuaderno Reiver",
+  "duracion": 8.4,
+  "tramos": [
+   [
+    "45",
+    5.75,
+    7.82,
+    {
+     "v": 0.62,
+     "interp": true
+    }
+   ],
+   [
+    "31",
+    3.05,
+    4.48,
+    {
+     "v": 0.62,
+     "interp": true
+    }
+   ],
+   [
+    "40",
+    9.3,
+    11.05,
+    {
+     "v": 0.62,
+     "interp": true
+    }
+   ],
+   [
+    "40",
+    0.0,
+    1.08,
+    {
+     "v": 0.62,
+     "interp": true
+    }
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAwAgCdASoJABAAA4BaJYwCdAYoBuK1aecmAAD+i6FJAB30HRGgOCtIZiBFXLdORCKFyWilFuaB8UFKGTDl+vJYq+oCBAAA",
+  "kb": {
+   ".mp4": 352,
+   ".webm": 448,
+   "-poster.webp": 18
+  }
+ },
+ "team8": {
+  "fuente": "IG-35",
+  "uso": "equipo: Team Mate o Team Café; el loop se funde con el rótulo ya quieto",
+  "duracion": 7.63,
+  "tramos": [
+   [
+    "35",
+    1.12,
+    4.5,
+    {
+     "v": 0.4,
+     "interp": true
+    }
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoJABAAA4BaJQBOj+ADBnOSwBgA/tDOFqBE34i/VyarDO/cVjNpFvhSMGi644kQIsCmHLi/cAwuwdpCkGiGM/yJZAuEDM3wENPoEaeCF5lAAA==",
+  "kb": {
+   ".mp4": 349,
+   ".webm": 462,
+   "-poster.webp": 30
+  }
+ },
+ "diplomas8": {
+  "fuente": "IG-47",
+  "uso": "servicio: diplomas (Dekra), nombres y QR difuminados",
+  "duracion": 8.3,
+  "tramos": [
+   [
+    "47",
+    1.65,
+    2.85,
+    {
+     "v": 0.95
+    }
+   ],
+   [
+    "47",
+    4.12,
+    5.7,
+    {
+     "v": 0.95,
+     "cens": true
+    }
+   ],
+   [
+    "47",
+    5.75,
+    7.8,
+    {
+     "v": 0.95,
+     "cens": true
+    }
+   ],
+   [
+    "47",
+    7.85,
+    9.55,
+    {
+     "v": 0.95,
+     "cens": true
+    }
+   ],
+   [
+    "47",
+    10.27,
+    11.9,
+    {
+     "v": 0.95,
+     "cens": true
+    }
+   ],
+   [
+    "47",
+    11.97,
+    13.98,
+    {
+     "v": 0.95,
+     "cens": true
+    }
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAQCdASoJABAAA4BaJZQCw7DzU5AAAP5AylvygUPtyYSjwg1+TTWRRelK0jg8Ya/q7v2FV6orIG+OxoR4kseB4XKp/S5lJAAAAA==",
+  "kb": {
+   ".mp4": 532,
+   ".webm": 346,
+   "-poster.webp": 7
+  }
+ },
+ "medallas8": {
+  "fuente": "IG-44",
+  "uso": "servicio: medallas (RevelArte): láser, UV, medalla y entrega",
+  "duracion": 8.23,
+  "tramos": [
+   [
+    "44",
+    1.32,
+    3.0,
+    {}
+   ],
+   [
+    "44",
+    3.5,
+    5.22,
+    {}
+   ],
+   [
+    "44",
+    5.25,
+    7.45,
+    {}
+   ],
+   [
+    "44",
+    7.52,
+    10.2,
+    {}
+   ],
+   [
+    "44",
+    10.52,
+    12.58,
+    {}
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoJABAAA4BaJZgCdAD0coSlIbAAAP7xAqOiO6cyzv+eFVT1IZnOf1C57c9FoGYBX5U4zFPsDRe1gy40HJT42KFopPkZAAAA",
+  "kb": {
+   ".mp4": 974,
+   ".webm": 1262,
+   "-poster.webp": 19
+  }
+ },
+ "stickers8": {
+  "fuente": "IG-37, IG-31",
+  "uso": "servicio: stickers y etiquetas",
+  "duracion": 8.3,
+  "tramos": [
+   [
+    "37",
+    0.0,
+    2.1,
+    {
+     "v": 0.9
+    }
+   ],
+   [
+    "37",
+    2.17,
+    3.58,
+    {
+     "v": 0.9
+    }
+   ],
+   [
+    "37",
+    3.62,
+    5.62,
+    {
+     "v": 0.9
+    }
+   ],
+   [
+    "31",
+    10.4,
+    11.85,
+    {
+     "v": 0.9
+    }
+   ],
+   [
+    "31",
+    12.0,
+    13.28,
+    {
+     "v": 0.9
+    }
+   ],
+   [
+    "31",
+    13.33,
+    14.72,
+    {
+     "v": 0.9
+    }
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoJABAAA4BaJagCdADcMrR5wAAA/un+NyVbKGHt5lcBo4WNoF62AjCj7TRTGC/lFORG1UBh8wZ0D/OP18gcWsX7tsNlZj9VG+YEklPiXRwZX/zAAAA=",
+  "kb": {
+   ".mp4": 1514,
+   ".webm": 1920,
+   "-poster.webp": 46
+  }
+ },
+ "trab-medallas8": {
+  "fuente": "IG-44",
+  "uso": "trabajo: medallas RevelArte, medalla y entrega en escenario",
+  "duracion": 3.53,
+  "tramos": [
+   [
+    "44",
+    7.52,
+    10.2,
+    {}
+   ],
+   [
+    "44",
+    10.52,
+    12.58,
+    {}
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwAgCdASoJABAAA4BaJZACdAD0fn2Y1eViAAD+3foKKVulMkWXjp585FCCbqWT8nwm2CJiztQSm8eEYkZ2y2gm7OAMz8K2QaMno/M5zrlt/ybhwJGOAA==",
+  "kb": {
+   ".mp4": 371,
+   ".webm": 493,
+   "-poster.webp": 37
+  }
+ },
+ "trab-letreros8": {
+  "fuente": "IG-34",
+  "uso": "trabajo: letrero Pilates & Skincare terminado",
+  "duracion": 5.7,
+  "tramos": [
+   [
+    "34",
+    17.9,
+    24.5,
+    {}
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoJABAAA4BaJZgCdAEOaRihEoAA/eOMfyZxQP7ITCzTQehjUXCLvvXQRdPpShW4VegpXj0G9c7jtCr1RSzA9UaPKbvrPj9zkW8MAAAA",
+  "kb": {
+   ".mp4": 332,
+   ".webm": 503,
+   "-poster.webp": 22
+  }
+ },
+ "trab-bitacoras8": {
+  "fuente": "IG-25",
+  "uso": "trabajo: bitácoras Chiloé Náutica (tapas y en mano)",
+  "duracion": 4.47,
+  "tramos": [
+   [
+    "25",
+    2.25,
+    4.8,
+    {}
+   ],
+   [
+    "25",
+    15.3,
+    17.13,
+    {}
+   ],
+   [
+    "25",
+    17.2,
+    18.8,
+    {}
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoJABAAA4BaJagCdADdrzUQ8QAA/sT4x4Ak1AxXpdzuCvz1Nv5HUuiv4C1zlJs5F0DcTwCMAuyVNwSt4HPGX3Xe2tEheHWmUMj+FTAA",
+  "kb": {
+   ".mp4": 293,
+   ".webm": 290,
+   "-poster.webp": 8
+  }
  }
 }
