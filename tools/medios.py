@@ -27,6 +27,8 @@ VIDEOS={
  'p1-imprimir':([('45',0.6,3.2),('30',0.0,1.8),('37',2.0,3.3)],'IG-45, IG-30, IG-37','proceso 1'),
  'p2-plotter':([('30',2.0,6.2),('31',12.0,13.3)],'IG-30, IG-31','proceso 2'),
  'p3-depilado':([('30',6.3,9.8),('37',3.5,5.3)],'IG-30, IG-37','proceso 3'),
+ 'proceso':   ([('45',0.6,3.2),('30',0.0,1.8),('30',2.0,6.2),('31',12.0,13.3),('30',6.3,9.8),('37',3.5,5.3)],'IG-45, IG-30, IG-31, IG-37','proceso: imprimir → plotter → depilado en un solo video (Pablo)'),
+ 'team':      ([('35',0.0,4.6)],'IG-35','equipo: Team Mate o Team Café (con su rótulo, decisión de Pablo)'),
  'equipo':    ([('33',0.0,11.5)],'IG-33','equipo'),
  'equipo-2':  ([('38',0.0,8.3)],'IG-38','equipo'),
 }
@@ -56,7 +58,10 @@ def poster(vid):
     t=im.copy(); t.thumbnail((16,16)); b=io.BytesIO(); t.save(b,'WEBP',quality=40); return 'data:image/webp;base64,'+base64.b64encode(b.getvalue()).decode()
 def videos():
     man={}
+    only=sys.argv[2:] ; old=json.load(open('assets/video/media.json')) if only and os.path.exists('assets/video/media.json') else {}
+    man.update({k:v for k,v in old.items() if k in VIDEOS})
     for vid,(parts,src,uso) in VIDEOS.items():
+        if only and vid not in only: continue
         w,crf=(720,24) if vid=='hero' else (540,28)
         d=build_video(vid,parts,w=w,crf=crf); webm(vid); lq=poster(vid)
         if vid=='hero':  # versión liviana para celular

@@ -35,7 +35,6 @@ Todas las elecciones resueltas por Pablo el 2026-10-28.
 | Impresión UV | «Impresión UV en acción» | IG-16 | reels IG-16, IG-47 |
 | Tarjetas de presentación | «Tu carta de presentación habla por ti 🔥» + «Creamos tarjetas con acabados precisos y profesionales para que dejes una impresión inolvidable.» | IG-23 | fotos IG-23, IG-22 |
 | Corte y grabado láser | «Podemos hacer realidad tu propuesta con nuestro servicio de corte y grabado láser; trabajamos en acrílico y madera 🪵» | IG-17 | reel IG-24, fotos IG-17, IG-20 |
-| Galvanos | «¿Sabías que podemos personalizar tu Galvano?» | IG-15 | foto IG-15 |
 | Gráfica vehicular | «Tu vehículo también puede convertirse en una publicidad que trabaja por ti las 24 horas del día. 💪» | IG-39 | carrusel IG-39 |
 | Letreros y señaléticas | «Un letrero bien pensado es una inversión para tu negocio.» | IG-34 | reel IG-34, foto IG-28 |
 | Bitácoras | «Porque no solo imprimimos… creamos piezas que cuentan historias 📖» | IG-25 | reels IG-25, IG-40 |
@@ -52,21 +51,21 @@ Todas las elecciones resueltas por Pablo el 2026-10-28.
   1. «primero imprimimos con alta calidad» — video impresora (IG-30/IG-45)
   2. «luego el plotter de corte da forma a cada detalle» — video plotter (IG-30/IG-36)
   3. «finalmente hacemos el depilado para dejarlas listas para usar 💫» — video depilado (IG-37/IG-36)
-  Fuente completa: IG-30.
+  Fuente completa: IG-30. Un solo video de 12,8 s (`proceso`) con los tres pasos; el paso activo se marca según el tiempo (1: 0 s, 2: 2,9 s, 3: 7,8 s).
 - Cierre de sección: «Detrás de cada proyecto hay mucho trabajo hecho con cariño ✨» [IG-44]
 
 ## 5. Trabajos y clientes — fondo Papel + tornasol
 - H2: **«El detalle hace la diferencia»** [IG-21] — EN «Detail makes the difference»
 - Bajada: «Estos son algunos de los trabajos que hemos realizado para emprendimientos locales, cuidando cada detalle para que sus productos, empaques y entregas tengan ese toque especial que los hace únicos. 🫶🏻» [IG-43]
 - Grilla (nombre del cliente leído en la pieza [PIEZA] + rótulo del trabajo [UI]):
-  Puro Lomo — gráfica vehicular (IG-39) · Chiloé Náutica — bitácoras (IG-25, IG-31) · Reiver Chiloé — bitácoras y check list (IG-32, IG-40, IG-45) · La Cocina D'León — tarjetas (IG-22) · Buena Pizza Social Club — stickers (IG-36) · Miel Chiloé, Naguara, Berries & Miel Chiloé — etiquetas (IG-43) · Dulce Enlatta — vasos grabados (IG-46) · SSC Rental — prendas (IG-42) · Dekra — diplomas (IG-47) · RevelArte — medallas (IG-44) · Pilates & Skincare — letrero (IG-34) · Federación de Taxis Colectivos «Nueva Esperanza» — galvano (IG-15) · XS Joyas — etiquetas (IG-26) · Sigma — señaléticas (IG-28) · Despensa Chiloé — stickers plateados (IG-29)
+  Puro Lomo — gráfica vehicular (IG-39) · Chiloé Náutica — bitácoras (IG-25, IG-31) · Reiver Chiloé — bitácoras y check list (IG-32, IG-40, IG-45) · La Cocina D'León — tarjetas (IG-22) · Buena Pizza Social Club — stickers (IG-36) · Miel Chiloé, Naguara, Berries & Miel Chiloé — etiquetas (IG-43) · Dulce Enlatta — vasos grabados (IG-46) · SSC Rental — prendas (IG-42) · Dekra — diplomas (IG-47) · RevelArte — medallas (IG-44) · Pilates & Skincare — letrero (IG-34) · XS Joyas — etiquetas (IG-26) · Sigma — señaléticas (IG-28) · Despensa Chiloé — stickers plateados (IG-29)
   (XS Joyas, Sigma y Despensa Chiloé: se confirman en el dossier.)
 
 ## 6. Equipo — fondo Madera
 - Rótulo: «Equipo humano» [PIEZA IG-18]
 - H2: **«Detrás de cada negocio, existe un equipo humano que día a día lo da todo para brindarles el mejor servicio ✨»** [IG-18]
 - Bajada: «En Edel Impresiones nos preocupamos de siempre ser ese equipo que le trae soluciones y cumple los proyectos que necesitan 🧑‍💻👩‍💻» [IG-18]
-- Fotos IG-18 (4), sin nombres (decisión de Pablo).
+- Fotos IG-18 #3 y #4 (traen franja azul e isotipo chico del carrusel; aprobadas por Pablo), videos IG-33 e IG-38, sin nombres.
 - Momento festivo (elegido por Pablo): tarjeta que gira con el reel IG-35 y «No importa si eres Team Mate o Team Café, lo importante es que no te falte a la hora de trabajar 🙂‍↔️✨» / «Y tú, de que Team eres?» [IG-35, ortografía original] — botones «Team Mate» / «Team Café» que solo cambian el video/estado (juego, sin guardar nada).
 - Descartado por ahora: reel IG-33 «Si el cliente lo pide, quienes somos nosotros para negarnos 🙂‍↔️🙂‍↔️» (el más visto, 158 likes).
 

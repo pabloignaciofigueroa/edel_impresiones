@@ -25,3 +25,4 @@
 - Fotos sin texto de: galvanos (IG-15), llaveros (IG-17), tarjetas (IG-22/23), stickers troquelados (IG-21).
 - Tomas más largas del proceso (imprimir → plotter → depilado) y de tarjetas: hoy los tramos limpios duran 4 s.
 - Videos de las máquinas en horizontal (escritorio) y vertical (celular), en alta.
+- 2026-10-28 · Medios (Pablo): IG-35 se usa con su rótulo «Team Mate o Team Café»; fotos del equipo IG-18 #3/#4 aprobadas pese a la franja e isotipo; proceso en un solo video de 12,8 s con pasos marcados; tarjeta Galvanos fuera hasta tener foto; montaje de portada aprobado.

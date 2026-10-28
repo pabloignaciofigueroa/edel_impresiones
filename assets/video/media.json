@@ -417,5 +417,71 @@
    ".webm": 560,
    "-poster.webp": 16
   }
+ },
+ "proceso": {
+  "fuente": "IG-45, IG-30, IG-31, IG-37",
+  "uso": "proceso: imprimir → plotter → depilado en un solo video (Pablo)",
+  "duracion": 12.8,
+  "tramos": [
+   [
+    "45",
+    0.6,
+    3.2
+   ],
+   [
+    "30",
+    0.0,
+    1.8
+   ],
+   [
+    "30",
+    2.0,
+    6.2
+   ],
+   [
+    "31",
+    12.0,
+    13.3
+   ],
+   [
+    "30",
+    6.3,
+    9.8
+   ],
+   [
+    "37",
+    3.5,
+    5.3
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoJABAAA4BaJZgCdAYtzvvZjzuCf7AA/toZK8GyDFyP9v85W8ZQIrvGne0tHgtPD+VXybLdF1TcuJ5rmW71HeBVprS9kB6sDY7ZgOH4DCSdG67AAAA=",
+  "kb": {
+   ".mp4": 2340,
+   ".webm": 2745,
+   "-poster.webp": 28
+  },
+  "pasos": {
+   "1": 0.0,
+   "2": 2.9,
+   "3": 7.8
+  }
+ },
+ "team": {
+  "fuente": "IG-35",
+  "uso": "equipo: Team Mate o Team Café (con su rótulo, decisión de Pablo)",
+  "duracion": 3.7,
+  "tramos": [
+   [
+    "35",
+    0.0,
+    4.6
+   ]
+  ],
+  "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoJABAAA4BaJYwCdAEPEJbhFRQA/tzcYE8RfkvFKIZ406QRcpsyxrNnuiNIlOiW9aPugjOZeU6M9QMpRFjHn4xkDgS2VjAA",
+  "kb": {
+   ".mp4": 298,
+   ".webm": 412,
+   "-poster.webp": 31
+  }
  }
 }
