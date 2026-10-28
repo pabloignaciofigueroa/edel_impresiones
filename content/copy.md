@@ -65,6 +65,7 @@ Todas las elecciones resueltas por Pablo el 2026-10-28.
 - Rótulo: «Equipo humano» [PIEZA IG-18]
 - H2: **«Detrás de cada negocio, existe un equipo humano que día a día lo da todo para brindarles el mejor servicio ✨»** [IG-18]
 - Bajada: «En Edel Impresiones nos preocupamos de siempre ser ese equipo que le trae soluciones y cumple los proyectos que necesitan 🧑‍💻👩‍💻» [IG-18]
+- Tarjetas que giran: dorso 1 = «En Edel Impresiones nos preocupamos de siempre ser ese equipo que le trae soluciones y cumple los proyectos que necesitan 🧑‍💻👩‍💻» [IG-18]; dorso 2 = «Gracias por siempre confiar en nosotros, seguiremos dando lo mejor ✨» [IG-18]. Rótulos de ayuda [UI]: «Toca las fotos para darlas vuelta», «Despega el sticker para ver el siguiente», «Siguiente trabajo».
 - Fotos IG-18 #3 y #4 (traen franja azul e isotipo chico del carrusel; aprobadas por Pablo), videos IG-33 e IG-38, sin nombres.
 - Momento festivo (elegido por Pablo): tarjeta que gira con el reel IG-35 y «No importa si eres Team Mate o Team Café, lo importante es que no te falte a la hora de trabajar 🙂‍↔️✨» / «Y tú, de que Team eres?» [IG-35, ortografía original] — botones «Team Mate» / «Team Café» que solo cambian el video/estado (juego, sin guardar nada).
 - Descartado por ahora: reel IG-33 «Si el cliente lo pide, quienes somos nosotros para negarnos 🙂‍↔️🙂‍↔️» (el más visto, 158 likes).

@@ -16,3 +16,4 @@
 ## Bitácora
 - 2026-10-28: repo creado, permisos (computer use, Chrome, Descargas). Medios bajados vía paquete .tar desde Chrome (diálogos "Guardar como" quedaron abiertos en el PC: cancelar al volver).
 - Pendiente revisar: destacadas IG (Trabajos, Clientes, adhesivos), reseñas Google.
+| 10–15. Secciones festivas | /nueva_v2/ (nv2), pendiente OK de Pablo |
