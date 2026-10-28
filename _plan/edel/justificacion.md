@@ -16,3 +16,4 @@
 - 2026-10-28 · Imagen para compartir: plotter de corte cortando etiquetas «RESERVADO» (IG-30). En una imprenta, lo que vende es la máquina trabajando.
 - 2026-10-28 · Prueba de carga con cabezal de impresión (`_qa/logo/cabezal_logo.mp4`): contorno a lápiz, cuatro pasadas de ida y vuelta que imprimen el isotipo, luego «edel» trazo a trazo. En celular se usa el logo vertical para que el isotipo se vea grande.
 - 2026-10-28 · Carga: se descarta el cabezal; queda la versión de dibujo a lápiz (`_qa/logo/dibujo_logo.mp4`): contorno, relleno, «edel» trazo a trazo y bajada (Pablo).
+- 2026-10-28 · Carga: se descarta el cabezal (Pablo: se veía feo y bajaba la calidad). Queda la versión de dibujo a lápiz (`_qa/logo/dibujo_logo.mp4`): contorno, relleno, «edel» trazo a trazo y bajada.
