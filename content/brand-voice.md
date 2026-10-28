@@ -41,12 +41,12 @@ Nombre en la web: **Edel Impresiones** (decisión de Pablo).
 - Bitácoras y anillados (IG-25, IG-40).
 - Diplomas (IG-47).
 - Estampado de prendas corporativas (IG-42).
-- Vasos grabados (IG-46 video: Dulce Enlatta).
+- Stickers transparentes impresos en blanco (IG-46 video: Dulce Enlatta; corregido en fase 19, antes decía «Vasos grabados»).
 - Diseño gráfico (IG-19).
 - Pendones, rollers, adhesivos (FB-INTRO).
 
 ## Clientes visibles en sus publicaciones 2026 [PIEZA]
-Puro Lomo (IG-39), Chiloé Náutica (IG-25, IG-31), Reiver Chiloé — Buceo Profesional (IG-32, IG-40, IG-45), La Cocina D'León (IG-22), Buena Pizza Social Club (IG-36), Miel Chiloé, Naguara y Berries & Miel Chiloé (IG-43), Dulce Enlatta (IG-46), SSC Rental (IG-42), Dekra (IG-47), RevelArte — Gala Inter Regional (IG-41, IG-44), Pilates & Skincare (IG-34), Federación de Taxis Colectivos «Nueva Esperanza» (IG-15).
+Puro Lomo (IG-39), Chiloé Náutica (IG-25, IG-31), Reiver Chiloé — Buceo Profesional (IG-32, IG-40, IG-45), La Cocina D'León (IG-22), Buena Pizza Social Club (IG-36), Miel Chiloé, Naguara y Berries & Hielo Chiloé (IG-43), Dulce Enlatta (IG-46), SSC Rental (IG-42), Dekra (IG-47), RevelArte — Gala Inter Regional (IG-41, IG-44), Pilates & Skincare (IG-34), Federación de Taxis Colectivos «Nueva Esperanza» (IG-15).
 Se identifican por la pieza, no por un @ (regla 2: solo la marca). Pendiente: confirmar nombres que se leen dudosos (XS Joyas IG-26, Sigma IG-28).
 
 ## Datos verificables

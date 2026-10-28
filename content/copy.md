@@ -58,7 +58,7 @@ Todas las elecciones resueltas por Pablo el 2026-10-28.
 - H2: **«El detalle hace la diferencia»** [IG-21] — EN «Detail makes the difference»
 - Bajada: «Estos son algunos de los trabajos que hemos realizado para emprendimientos locales, cuidando cada detalle para que sus productos, empaques y entregas tengan ese toque especial que los hace únicos. 🫶🏻» [IG-43]
 - Grilla (nombre del cliente leído en la pieza [PIEZA] + rótulo del trabajo [UI]):
-  Puro Lomo — gráfica vehicular (IG-39) · Chiloé Náutica — bitácoras (IG-25, IG-31) · Reiver Chiloé — bitácoras y check list (IG-32, IG-40, IG-45) · La Cocina D'León — tarjetas (IG-22) · Buena Pizza Social Club — stickers (IG-36) · Miel Chiloé, Naguara, Berries & Miel Chiloé — etiquetas (IG-43) · Dulce Enlatta — vasos grabados (IG-46) · SSC Rental — prendas (IG-42) · Dekra — diplomas (IG-47) · RevelArte — medallas (IG-44) · Pilates & Skincare — letrero (IG-34) · XS Joyas — etiquetas (IG-26) · Sigma — señaléticas (IG-28) · Despensa Chiloé — stickers plateados (IG-29)
+  Puro Lomo — gráfica vehicular (IG-39) · Chiloé Náutica — bitácoras (IG-25, IG-31) · Reiver Chiloé — bitácoras y check list (IG-32, IG-40, IG-45) · La Cocina D'León — tarjetas (IG-22) · Buena Pizza Social Club — stickers (IG-36) · Miel Chiloé, Naguara, Berries & Hielo Chiloé — etiquetas (IG-43) · Dulce Enlatta — stickers transparentes (IG-46) · SSC Rental — prendas (IG-42) · Dekra — diplomas (IG-47) · RevelArte — medallas (IG-44) · Pilates & Skincare — letrero (IG-34) · XS Joyas — etiquetas (IG-26) · Sigma — señaléticas (IG-28) · Despensa Chiloé — stickers plateados (IG-29)
   (XS Joyas, Sigma y Despensa Chiloé: se confirman en el dossier.)
 
 ## 6. Equipo — fondo Madera
