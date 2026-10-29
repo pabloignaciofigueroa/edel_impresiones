@@ -377,3 +377,61 @@ html{overflow-x:clip}
 @media (min-width:900px){.team{position:sticky;top:110px}}
 .menu-lang .lang span,.pie-lang .lang span{opacity:.78}
 html[data-lang="es"] .lang .es,html[data-lang="en"] .lang .en{opacity:1}
+
+/* ===================== nv9 · revisión de Pablo en computador ===================== */
+/* portada: título a la mitad en computador (el celular queda igual) y la tilde de IMPRESIÓN completa */
+.h1 .ln{padding-top:.12em;margin-top:-.12em}
+.h1 em{padding:.2em .12em 0;display:inline-block;line-height:1.05}
+@media (min-width:900px){.h1{font-size:clamp(52px,4.9vw,96px)}.hero-t{max-width:1100px}}
+@media (min-width:1900px){.h1{font-size:clamp(52px,4.4vw,120px)}}
+/* cifra «Pioneros en Chiloé»: el isotipo en lugar del emoji */
+.cifra-iso img{display:block;height:clamp(40px,7vw,64px);width:auto}
+/* «Y también»: la línea de corte avanza como el plotter y los tres productos caen como stickers */
+.serv-mas{border:0;position:relative;background-image:
+  linear-gradient(90deg,rgba(255,255,255,.75) 50%,transparent 50%),linear-gradient(90deg,rgba(255,255,255,.75) 50%,transparent 50%),
+  linear-gradient(0deg,rgba(255,255,255,.75) 50%,transparent 50%),linear-gradient(0deg,rgba(255,255,255,.75) 50%,transparent 50%);
+  background-repeat:repeat-x,repeat-x,repeat-y,repeat-y;background-size:14px 2px,14px 2px,2px 14px,2px 14px;
+  background-position:0 0,0 100%,0 0,100% 0;animation:corte 1.2s linear infinite}
+@keyframes corte{to{background-position:14px 0,-14px 100%,0 -14px,100% 14px}}
+.mas-s{display:flex;flex-wrap:wrap;gap:8px}
+.mas-s .banda{margin:0;animation:pega 4.8s cubic-bezier(.16,1,.3,1) infinite both;transform-origin:30% 0}
+.mas-s .banda:nth-child(2){animation-delay:.35s}.mas-s .banda:nth-child(3){animation-delay:.7s}
+@keyframes pega{0%{opacity:0;transform:translateY(-26px) rotate(-8deg) scale(1.15)}12%{opacity:1;transform:translateY(0) rotate(-2deg) scale(1)}
+  16%{transform:rotate(1deg)}20%,86%{opacity:1;transform:rotate(-1.5deg)}96%,100%{opacity:0;transform:translateY(8px) rotate(-1.5deg)}}
+/* proceso en computador: video grande y centrado */
+@media (min-width:900px){
+ .proc-sticky{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}
+ .proc-v{max-width:540px;max-height:84svh;width:100%}
+ .s-proc{padding:72px 0}
+}
+/* trabajos en computador: pila grande */
+@media (min-width:900px){
+ .s-trab .pila.pila-js{height:min(760px,80vh);max-width:640px}
+ .s-trab .w{column-gap:40px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+}
+/* equipo en computador: texto junto a Team, video junto a las fotos (sin vacío mostaza) */
+.eq-band{margin:0}
+.eq-vid .vid{width:100%;aspect-ratio:16/11;object-fit:cover;border-radius:12px;background-size:cover;display:block}
+@media (min-width:900px){
+ .eq{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-areas:"band band" "texto team" "video fotos";gap:28px 36px;align-items:start}
+ .eq-band{grid-area:band;justify-self:start}
+ .eq-t{grid-area:texto;grid-column:auto;max-width:none}
+ .team{grid-area:team;position:static}
+ .eq-vid{grid-area:video}
+ .eq-vid .vid{aspect-ratio:auto;height:100%;min-height:420px}
+ .eq-fotos{grid-area:fotos;align-self:stretch}
+}
+/* reseñas: tarjetas completas (sin marco que las corte) y carrusel infinito */
+.s-res{overflow-x:clip}
+.res-pista{display:flex;gap:22px;overflow:visible;scroll-snap-type:none;padding:22px 0 34px;will-change:transform;touch-action:pan-y;cursor:grab}
+.res-pista .resena{flex:0 0 min(84vw,440px)}
+.res-pista:active{cursor:grabbing}
+.sello span i{font-style:normal;opacity:.35}
+/* pie en dos columnas en computador */
+@media (min-width:900px){
+ .pie-w{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+ .pie-a p{margin:0;max-width:62ch}
+ .pie-b{text-align:right}.pie-b p{margin:0 0 8px}
+ .pie-lang{margin:12px 0 0}
+}
+@media (prefers-reduced-motion:reduce){.serv-mas,.mas-s .banda{animation:none}}

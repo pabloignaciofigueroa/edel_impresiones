@@ -1,4 +1,4 @@
-/* Edel Impresiones · nv8 (fase 19) sobre nv1 (fase 9). Sin JS la página se lee completa; con movimiento reducido no hay carga ni apertura. */
+/* Edel Impresiones · nv9 (revisión de Pablo en computador) sobre nv8 y nv1. Sin JS la página se lee completa; con movimiento reducido no hay carga ni apertura. */
 (() => {
   'use strict';
   const D = document, H = D.documentElement, B = D.body;
@@ -146,14 +146,14 @@
       H.classList.add('hero-ok');
       const tl = gsap.timeline();
       tl.from('.s-portada .banda', { xPercent: -110, duration: 0.8, ease: EASE })
-        .from('.h1 .ln>span', { yPercent: 108, clipPath: 'inset(0 100% 0 0)', duration: 0.9, stagger: 0.08, ease: EASE }, 0.1)
+        .from('.h1 .ln>span', { yPercent: 108, clipPath: 'inset(0 100% 0 0)', duration: 0.9, stagger: 0.08, ease: EASE, clearProps: 'clipPath,transform' }, 0.1)
         .from('.hero-b .btn', { y: 24, opacity: 0, duration: 0.6, stagger: 0.06, ease: EASE }, 0.45)
         .from('.nav', { opacity: 0, duration: 0.6 }, 0.2);
     };
     if (H.classList.contains('abierto')) heroIn(); else D.addEventListener('edel:abierto', heroIn, { once: true });
     // títulos h2: barrido de tinta línea a línea
     $$('main section:not(.s-portada) .h2').forEach(h => {
-      gsap.from($$('.ln>span', h), { yPercent: 100, clipPath: 'inset(0 100% 0 0)', duration: 0.9, stagger: 0.08, ease: EASE, scrollTrigger: { trigger: h, start: 'top 85%', once: true } });
+      gsap.from($$('.ln>span', h), { yPercent: 100, clipPath: 'inset(0 100% 0 0)', duration: 0.9, stagger: 0.08, ease: EASE, clearProps: 'clipPath,transform', scrollTrigger: { trigger: h, start: 'top 85%', once: true } });
     });
     $$('.banda').forEach(b => { if (b.closest('.s-portada')) return; gsap.from(b, { xPercent: -30, opacity: 0, duration: 0.7, ease: EASE, scrollTrigger: { trigger: b, start: 'top 90%', once: true } }); });
     // contadores
@@ -167,7 +167,7 @@
     if (se) gsap.timeline({ scrollTrigger: { trigger: se, start: 'top 85%', once: true } })
       .from(se, { scale: 2.6, rotate: -32, opacity: 0, duration: 0.42, ease: 'power4.in' })
       .to('.s-res .res-top', { x: 4, duration: 0.05, yoyo: true, repeat: 3, ease: 'none', clearProps: 'x' })
-      .from('.s-res .resena', { y: 30, opacity: 0, rotate: 6, duration: 0.6, stagger: 0.06, ease: EASE }, '-=0.1');
+      .from('.s-res .resena', { y: 30, opacity: 0, duration: 0.6, stagger: 0.06, ease: EASE, clearProps: 'transform,opacity' }, '-=0.1');
     // nv8: en táctil el brillo tornasol se mueve con el scroll (sin pedir permisos del sensor)
     if (matchMedia('(pointer:coarse)').matches) $$('.serv-torna').forEach(c => ScrollTrigger.create({ trigger: c, start: 'top bottom', end: 'bottom top', scrub: true,
       onUpdate: st => { c.style.setProperty('--tx', (st.progress * 100).toFixed(1) + '%'); c.style.setProperty('--ty', (100 - st.progress * 100).toFixed(1) + '%'); } }));
@@ -188,19 +188,37 @@
   /* ---------- Team Mate / Team Café ---------- */
   $$('.team-b button').forEach(b => b.addEventListener('click', () => { $$('.team-b button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); }));
 
-  /* ---------- reseñas: avanzan solas y se arrastran ---------- */
+  /* ---------- reseñas (nv9): carrusel infinito; la que sale vuelve al final. Tarjetas completas, sin marco que las corte ---------- */
   const pista = $('.res-pista');
   if (pista) {
-    let last = 0; const touch = () => last = performance.now();
-    ['pointerdown', 'wheel', 'touchstart', 'focusin'].forEach(ev => pista.addEventListener(ev, touch, { passive: true }));
-    const cur = () => { const x = pista.scrollLeft; return [...pista.children].reduce((b, c) => Math.abs(c.offsetLeft - pista.offsetLeft - x) < Math.abs(b.offsetLeft - pista.offsetLeft - x) ? c : b, pista.firstElementChild); };
-    const step0 = dir => { const c = pista.firstElementChild; const w = c.getBoundingClientRect().width + 18; let x = pista.scrollLeft + dir * w; if (x > pista.scrollWidth - pista.clientWidth + 4) x = 0; if (x < -4) x = pista.scrollWidth; pista.scrollTo({ left: x, behavior: reduce ? 'auto' : 'smooth' }); };
-    const step = dir => { if (reduce) return step0(dir); const c = cur(); c.classList.add('despega'); setTimeout(() => { step0(dir); setTimeout(() => c.classList.remove('despega'), 420); }, 260); };
-    $('.res-b .prev').addEventListener('click', () => { touch(); step(-1); }); $('.res-b .next').addEventListener('click', () => { touch(); step(1); });
-    if (!reduce) setInterval(() => { if (performance.now() - last > 8000 && !D.hidden) step(1); }, 5000);
-    let drag = null; pista.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; drag = { x: e.clientX, s: pista.scrollLeft }; pista.setPointerCapture(e.pointerId); });
-    pista.addEventListener('pointermove', e => { if (drag) pista.scrollLeft = drag.s - (e.clientX - drag.x); });
-    pista.addEventListener('pointerup', () => drag = null);
+    const rots = [-1.2, .9, -.4];
+    [...pista.children].forEach((c, i) => c.style.setProperty('--r', rots[i % 3] + 'deg'));
+    let last = 0, busy = false; const touch = () => last = performance.now();
+    ['pointerdown', 'focusin'].forEach(ev => pista.addEventListener(ev, touch, { passive: true }));
+    const paso = () => { const c = pista.firstElementChild; return c.getBoundingClientRect().width + parseFloat(getComputedStyle(pista).columnGap || 22); };
+    const mover = (dir, dur = 650) => {
+      if (busy) return; busy = true; const w = paso();
+      const fin = () => { pista.style.transition = 'none'; pista.style.transform = 'translateX(0)'; busy = false; };
+      if (dir > 0) {
+        const c = pista.firstElementChild; if (!reduce) c.classList.add('despega');
+        setTimeout(() => {
+          pista.style.transition = reduce ? 'none' : `transform ${dur}ms cubic-bezier(.16,1,.3,1)`; pista.style.transform = `translateX(${-w}px)`;
+          setTimeout(() => { c.classList.remove('despega'); pista.appendChild(c); fin(); }, reduce ? 0 : dur);
+        }, reduce ? 0 : 240);
+      } else {
+        const c = pista.lastElementChild; pista.style.transition = 'none'; pista.insertBefore(c, pista.firstElementChild); pista.style.transform = `translateX(${-w}px)`;
+        void pista.offsetWidth; pista.style.transition = reduce ? 'none' : `transform ${dur}ms cubic-bezier(.16,1,.3,1)`; pista.style.transform = 'translateX(0)';
+        setTimeout(() => { busy = false; }, reduce ? 0 : dur);
+      }
+    };
+    $('.res-b .prev').addEventListener('click', () => { touch(); mover(-1); }); $('.res-b .next').addEventListener('click', () => { touch(); mover(1); });
+    pista.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { touch(); mover(1); } if (e.key === 'ArrowLeft') { touch(); mover(-1); } });
+    if (!reduce) setInterval(() => { if (performance.now() - last > 8000 && !D.hidden && !busy) mover(1); }, 4200);
+    let drag = null;
+    pista.addEventListener('pointerdown', e => { if (busy) return; drag = { x: e.clientX, y: e.clientY, dx: 0 }; });
+    pista.addEventListener('pointermove', e => { if (!drag) return; drag.dx = e.clientX - drag.x; if (Math.abs(drag.dx) > Math.abs(e.clientY - drag.y)) { pista.style.transition = 'none'; pista.style.transform = `translateX(${drag.dx * 0.6}px)`; } });
+    const suelta = () => { if (!drag) return; const dx = drag.dx; drag = null; pista.style.transition = 'transform .3s'; pista.style.transform = 'translateX(0)'; if (Math.abs(dx) > 60) setTimeout(() => mover(dx < 0 ? 1 : -1), 120); };
+    pista.addEventListener('pointerup', suelta); pista.addEventListener('pointercancel', suelta); pista.addEventListener('pointerleave', suelta);
   }
 
   /* ===================== nv2 · fases 10–15 ===================== */
