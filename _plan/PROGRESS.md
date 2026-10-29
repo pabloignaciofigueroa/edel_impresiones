@@ -11,7 +11,7 @@
 | 6. Guion | hecho (elecciones de Pablo) |
 | 7. Medios | hecho (decisiones de Pablo) |
 | 8. Dirección de arte | hecho (OK Pablo) |
-| 9. Base y publicación | hecho — https://edelimpresiones.pages.dev/nueva/ (Cloudflare Pages, proyecto edelimpresiones, main, salida public) |
+| 9. Base y publicación | hecho |
 
 ## Bitácora
 - 2026-10-28: repo creado, permisos (computer use, Chrome, Descargas). Medios bajados vía paquete .tar desde Chrome (diálogos "Guardar como" quedaron abiertos en el PC: cancelar al volver).
@@ -19,3 +19,6 @@
 | 10–15. Secciones festivas | hecho (OK Pablo, /nueva_v2/) |
 | 16–17. Micro-interacciones, responsive y accesibilidad | hecho (OK Pablo, /nueva_v3/) |
 | 18. QA | hecho — correcciones en /nueva_v4/ (nv4) |
+| 18. QA | hecho (nv4–nv7 con revisiones de Pablo) |
+| 19. Evaluación independiente | hecho — dos rondas (v7 y v8), informes en _plan/edel/evaluaciones/ |
+| 20. Cierre | hecho — https://edelimpresiones.pages.dev/ (v8 en la raíz, /nueva*/ 301, noindex hasta que el cliente acepte, respaldo en rama respaldo-versiones). Traspaso para el dossier: _plan/edel/TRASPASO_DOSSIER.md |
