@@ -121,14 +121,14 @@ CARTA_REGALO = f'''<article class="lam free regalo" style="background:{PA}">
   <div class="letter2">
   <p>Equipo de Edel Impresiones:</p>
   <p>Les dejamos un sitio web hecho para ustedes, sin que nos lo pidieran. Ya está en línea en <b>edelimpresiones.pages.dev</b> y se puede abrir desde cualquier celular o computador.</p>
-  <p>Es gratis. No tiene costo, no los compromete a nada y no hay letra chica: está hecho para que lo miren, lo muestren y lo compartan si les gusta.</p>
-  <p>Todo salió de sus redes: sus textos, sus fotos y sus videos de Instagram y Facebook. Por ahora no aparece en Google; queda así hasta que ustedes decidan.</p>
+  <p>Es un regalo y es gratis: no los compromete a nada y no hay letra chica; está hecho para que lo miren, lo muestren y lo compartan si les gusta.</p>
+  <p>Todo salió de lo que ya está publicado: los textos de su Instagram, su Facebook y sus reseñas de Google, y las fotos y videos de su Instagram. Por ahora no aparece en Google; queda así hasta que ustedes decidan.</p>
   <p>Si algo no les gusta, o prefieren que no esté en internet, basta con decirnos y lo bajamos, sin problema.</p>
   <p>Este documento cuenta de dónde salió cada decisión del sitio.</p>
   </div>
   <p class="sign-r">Pablo Figueroa G.</p>
   <p class="role-r">Director de estudio · Bergerac</p>
-  <p class="contact-r"><a href="mailto:pablo@bergerac.cl">pablo@bergerac.cl</a> · <a href="tel:+56975892096">+56 9 7589 2096</a> · <a href="https://bergerac.cl">bergerac.cl</a></p>""")}
+  <p class="contact-r"><a href="mailto:pablo@bergerac.cl">pablo@bergerac.cl</a> · <a href="tel:+56975892096">+56 9 7589 2096</a> · <a href="https://bergerac.cl">Bergerac.cl</a></p>""")}
 </article>'''
 
 # ======================= LÁMINAS DEL DOSSIER =======================
@@ -148,7 +148,7 @@ L.append(lam(PA,
   <h2 class="t" style="color:{TI}">Un sitio hecho <em style="color:{BA}">con</em> lo que ustedes ya publican</h2>
   <div class="letter2">
   <p>Equipo de Edel Impresiones:</p>
-  <p>Cada título del sitio viene de sus posts, de su bio o de lo que sus clientes escribieron en Google y Facebook. No hay frases inventadas ni fotos de banco: las imágenes y los videos son los de su Instagram.</p>
+  <p>Cada título del sitio viene de sus posts, de su bio o de lo que sus clientes escribieron en Google y Facebook. Ninguna frase de la marca es inventada y no hay fotos de banco: las imágenes y los videos son los de su Instagram.</p>
   <p>La letra, los colores y el logo salen de sus propias piezas. Estas páginas cuentan de dónde viene cada decisión.</p>
   <p>Ojalá lo disfruten tanto como nosotros disfrutamos haciéndolo.</p>
   <p class="sign2">Pablo Figueroa G.</p></div>''')))
@@ -162,7 +162,7 @@ def big(nm, cap): return f'<div class="bign"><b>{nm}</b><span>{cap}</span></div>
 L.append(lam(AZ, polh +
   box(6.9, .65, 5.65, f'''<p class="k" style="color:{CL}">De dónde viene todo</p>
   <h2 class="t" style="color:#fff">Todo esto <em style="color:{NA}">ya</em> era suyo</h2>
-  <div class="bigs">{big(N_POSTS, f"publicaciones suyas de 2026, del {DESDE} al {HASTA}")}{big(N_REELS, "de ellas son videos: por eso el sitio se mueve")}{big(N_VIDEOS, f"videos en el sitio, armados con {N_REELS_USADOS} de sus reels")}{big(N_FOTOS, f"fotos suyas, de {N_POSTS_FOTOS} publicaciones")}</div>
+  <div class="bigs">{big(N_POSTS, "publicaciones suyas de 2026, del 15 de abril al 28 de septiembre")}{big(N_REELS, "de ellas son videos: por eso el sitio se mueve")}{big(N_VIDEOS, f"videos en el sitio, armados con {N_REELS_USADOS} de sus reels")}{big(N_FOTOS, f"fotos suyas, de {N_POSTS_FOTOS} publicaciones")}</div>
   <p class="p" style="color:#fff">Cada texto tiene su origen identificado: un post, su bio, su página de Facebook o una reseña. Lo que ustedes aún no publican, como el horario de atención, no se inventa: queda <b>por confirmar con ustedes</b>.</p>'''),
   nc='rgba(255,255,255,.7)'))
 
@@ -179,12 +179,12 @@ L.append(lam(PA, f'<div class="stripes">{sth}<div class="stripe torna" style="ba
   <div><h4 style="color:{AZ}">Color</h4><p>Viene de su logo, de sus piezas y de su taller: el azul y el naranja del isotipo, la madera de sus muros, la luz de la impresora UV y el brillo de los stickers plateados.</p></div>
   <div><h4 style="color:{BA}">Logo</h4><p>Se redibujó siguiendo su logo original, curva por curva, para que se vea nítido a cualquier tamaño: del ícono de la pestaña a un letrero.</p></div></div>''') +
   f'<img class="abs" src="{LOGO}" style="left:.55in;top:6.75in;width:2.6in" alt="">' +
-  box(3.6, 6.85, 3.8, '<p class="p sm">Los códigos de color sirven para repetirlos en cualquier imprenta o pantalla.</p>')))
+  box(3.6, 6.85, 3.8, '<p class="p sm">Estos códigos son de pantalla; para imprimir conviene llevarlos a CMYK o Pantone.</p>')))
 
 # 05 · RECORRIDO · tinta, 4 actos con medallones
 actos = [('d-hero', 'Entrar', 'La carga, la apertura y sus máquinas en marcha.', -3),
-         ('d-serv2', 'Elegir', f'Sus {N_SERV} servicios, con video y frase propia.', 2),
-         ('d-trab', 'Confiar', 'Trabajos para marcas de Chiloé, el equipo y sus reseñas.', -2),
+         ('d-serv2', 'Elegir', f'Sus {N_SERV} servicios, con video o foto y su propia frase.', 2),
+         ('d-trab', 'Confiar', 'Trabajos para sus clientes, el equipo y sus reseñas.', -2),
          ('d-cot', 'Cotizar', 'WhatsApp con el mensaje listo, Instagram y correo.', 3)]
 ah = ''
 for i, (s_, t_, p_, r_) in enumerate(actos):
@@ -201,20 +201,20 @@ L.append(lam(TI, iso(11.25, .45, 1.25, 1, .9) +
 L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed abs0" src="{shot("d-abre-450", 2400)}" style="object-position:70% 50%" alt="">' +
   fr('d-carga1c', .6, 4.35, 2.3, -4, 5) + fr('d-carga2c', 3.15, 4.75, 2.3, 3, 4) + medal(5.05, 4.2, 1.15, NA, TI, 'Así<br>carga', rot=10, fs=12, z=6) +
   box(.55, .6, 5.3, f'''<p class="k" style="color:{CL}">La llegada</p>
-  <h2 class="t" style="color:{TI}">Su “e”, <em style="color:{BA}">hecha</em> ventana</h2>
+  <h2 class="t" style="color:{TI}">Su letra e, <em style="color:{BA}">hecha</em> ventana</h2>
   <p class="p">Mientras el sitio carga, su logo se dibuja con una línea fina en sus propios colores, se rellena y escribe «edel» trazo a trazo. Al terminar, el hueco oscuro de la «e» se abre como una ventana y por ella entran sus máquinas trabajando.</p>
-  <p class="p">El número que avanza es real: muestra cuánto falta por cargar, y no hace esperar de más, ni siquiera con poca señal.</p>''', 'card', f'background:{PA};') +
+  <p class="p">El número avanza con lo que de verdad ya se descargó de la portada, y a los pocos segundos abre igual, aunque haya poca señal.</p>''', 'card', f'background:{PA};') +
   f'<span class="no" style="color:rgba(255,255,255,.7)">{nx():02d}</span></article>')
 
 # 07 · PORTADA DEL SITIO · tinta + UV, navegador y celular
 L.append(lam(UV,
   box(.55, .65, 4.3, f'''<p class="k" style="color:{CL}">La portada</p>
   <h2 class="t" style="color:#fff">Su frase <em style="color:{NA}">sobre</em> sus máquinas</h2>
-  <p class="p" style="color:rgba(255,255,255,.92)">El título es su propio post: «Tu marca empieza por una buena impresión». Funciona en los dos sentidos, como ustedes lo escribieron. Detrás, un video armado con sus reels: la impresora UV, el plotter, el láser y el depilado.</p>
+  <p class="p" style="color:rgba(255,255,255,.92)">El título es su propio post: «Tu marca empieza por una buena impresión». Funciona en los dos sentidos, como ustedes lo escribieron. Detrás, un video armado con sus reels: la impresora UV, el plotter de corte y el depilado.</p>
   <p class="p" style="color:rgba(255,255,255,.92)">La banda naranja repite su bio: «Pioneros en Chiloé · Más de 20 años de experiencia nos respaldan». Dos botones: cotizar por WhatsApp o ver trabajos.</p>''') +
   box(.55, 5.35, 4.1, Q('Tu marca empieza por una buena impresión 🔥', IG('16')), 'card', f'background:{PA};') +
   fr('d-hero', 5.3, .65, 7.25, 1.5) + ph('m-hero', 4.75, 3.55, 1.7, -5) +
-  box(6.85, 5.55, 5.7, f'<div class="pills">{pill("Pioneros en Chiloé", BA)}{pill("Más de 20 años", PA, TI)}{pill(f"{NOTA_G} en Google", NA, TI)}{pill(f"{FB_PCT} recomendado en Facebook", PA, TI)}</div><p class="p" style="color:rgba(255,255,255,.85);margin-top:.12in">Justo debajo, sus cuatro cifras, que se cuentan solas al aparecer.</p>'),
+  box(6.85, 5.55, 5.7, f'<div class="pills">{pill("Pioneros en Chiloé", BA)}{pill("Más de 20 años", PA, TI)}{pill(f"{NOTA_G} en Google", NA, TI)}{pill(f"{FB_PCT} recomendado en Facebook", PA, TI)}</div><p class="p" style="color:rgba(255,255,255,.85);margin-top:.12in">Justo debajo, sus cuatro datos; los números se cuentan solos al aparecer.</p>'),
   nc='rgba(255,255,255,.7)'))
 
 # 08 · SERVICIOS · azul, troquel, banda naranja, celular en dos columnas
@@ -222,7 +222,7 @@ L.append(lam(AZ,
   box(.55, .55, 5.6, f'''<p class="k" style="color:{CL}">Los servicios</p>
   <h2 class="t" style="color:#fff">{N_SERV} servicios, <em style="color:{NA}">con</em> su línea de corte</h2>
   <p class="p" style="color:rgba(255,255,255,.92)">Cada tarjeta lleva el rótulo en la banda naranja de sus piezas, su video o foto, y la frase de su propio post: «Nuestros stickers troquelados tienen cortes precisos…», «Un letrero bien pensado es una inversión para tu negocio».</p>
-  <p class="p" style="color:rgba(255,255,255,.92)">Al aparecer, cada tarjeta queda rodeada por una línea punteada que se traza sola, como el corte de sus stickers troquelados. La de los plateados brilla en tornasol al pasar el dedo, como en su reel.</p>
+  <p class="p" style="color:rgba(255,255,255,.92)">Al aparecer, cada tarjeta queda rodeada por una línea punteada que se traza sola, como el corte de sus stickers troquelados. La de los plateados brilla en tornasol al mover el mouse o al recorrer la página en el celular, como en su reel.</p>
   <p class="p" style="color:rgba(255,255,255,.92)">En el celular van de a dos, para que todo el catálogo se recorra de un vistazo. El último recuadro recoge lo que ofrecen en Facebook: pendones, rollers y adhesivos.</p>''') +
   fr('d-serv3', 6.45, .55, 6.1, 1.2) + ph('m-serv', 6.0, 4.1, 1.55, -5, 5) + ph('m-serv2', 7.75, 4.4, 1.55, 3, 4) +
   box(9.6, 4.55, 3.0, f'<div class="pills" style="flex-direction:column;align-items:flex-start">{banda("STICKERS Y ETIQUETAS")}{banda("IMPRESIÓN UV")}{banda("CORTE Y GRABADO LÁSER")}{banda("GRÁFICA VEHICULAR")}{banda("MEDALLAS")}</div>'),
@@ -236,7 +236,7 @@ L.append(lam(UV,
   box(4.75, .65, 4.2, f'''<p class="k" style="color:{CL}">El proceso</p>
   <h2 class="t" style="color:#fff">Así nace <em style="color:{NA}">cada</em> etiqueta</h2>
   <div class="pasos">{pah}</div>
-  <p class="k" style="color:rgba(255,255,255,.7)">{IG("30")} · tal como lo escribieron</p>
+  <p class="k" style="color:rgba(255,255,255,.7)">{IG("30")} · con sus mismas palabras</p>
   <p class="p" style="color:rgba(255,255,255,.92)">Su reel ya contaba el proceso en tres pasos. En el sitio, un solo video recorre las tres máquinas y el paso que se ve en pantalla se enciende en la lista. En el celular, primero el título y los pasos; después, el video.</p>''') +
   fr('d-proc', 9.3, .9, 3.3, 2.5) + ph('m-proc', 10.35, 3.85, 1.55, -4, 5),
   nc='rgba(255,255,255,.7)'))
@@ -245,7 +245,7 @@ L.append(lam(UV,
 cli = ''.join(pill(c_, [AZ, BA, TI, UV][i % 4]) for i, c_ in enumerate(CLIENTES))
 L.append(lam(PA, f'<div class="tornabar" style="background:{TORNA}"></div>' +
   box(.55, .75, 5.8, f'''<p class="k" style="color:{BA}">Los trabajos</p>
-  <h2 class="t" style="color:{TI}">Marcas de Chiloé, <em style="color:{AZ}">en</em> una pila de stickers</h2>
+  <h2 class="t" style="color:{TI}">Sus clientes, <em style="color:{AZ}">en</em> una pila de stickers</h2>
   <p class="p">Ustedes hacen stickers, así que sus trabajos se muestran como una pila de stickers: se despegan con el dedo o con un botón, y se levanta la esquina como en una lámina real. Son {N_TRAB} trabajos que ustedes publicaron, cada uno con su cliente:</p>
   <div class="pills" style="margin:.1in 0 .16in">{cli}</div>
   <p class="p">La barra de colores viene de sus stickers plateados con efecto tornasol.</p>''') +
@@ -261,18 +261,18 @@ L.append(lam(MA,
   <p class="p">Arriba va su post del equipo: «Detrás de cada negocio, existe un equipo humano que día a día lo da todo…». Sus fotos giran al tocarlas y, por detrás, muestran frases de ese mismo post. Van sin nombres hasta que ustedes digan si quieren aparecer.</p>''') +
   box(.55, 3.4, 5.4, f'''{Q("Y tú, de que Team eres?", IG("35"))}
   <p class="p">Su reel preguntaba «Team Mate o Team Café». En el sitio, la pregunta tiene dos botones: al elegir, saltan mates o tazas por la pantalla.</p>''', 'card', f'background:{PA};') +
-  box(.55, 6.25, 5.4, Q('Personal super amables y el servicio excelente.', 'Silvana · Google'), '', '') +
-  fr('d-team', 6.45, .6, 6.1, 1.5) + fr('d-flip', 6.85, 4.4, 5.4, -2, 3),
+  box(.55, 6.25, 5.4, Q('Los mejores de Castro! Personal super amables y el servicio excelente.', 'Silvana · Google'), '', '') +
+  fr('d-team', 6.45, .6, 6.1, 1.5) + fr('d-flipc', 6.85, 4.55, 5.4, -2, 3),
   nc='rgba(5,38,63,.5)'))
 
 # 12 · RESEÑAS Y COTIZA · naranja, sello 4,6, WhatsApp
 L.append(lam(NA,
-  medal(.55, .55, 1.9, TI, '#fff', f'<b style="font-size:44pt;line-height:1">{NOTA_G}</b><br><small style="color:#ffd166">★★★★★</small><br><small>Google</small>', rot=-8, z=5) +
+  medal(.55, .55, 1.9, TI, '#fff', f'<b style="font-size:44pt;line-height:1">{NOTA_G}</b><br><small style="color:#ffd166">★★★★<span style="opacity:.35">★</span></small><br><small>Google</small>', rot=-8, z=5) +
   box(2.75, .6, 4.2, f'''<p class="k" style="color:{TI}">Lo que dicen sus clientes</p>
   <h2 class="t" style="color:{TI}">Una nota <em style="color:#fff">que</em> se estampa</h2>''') +
-  box(.55, 2.85, 6.2, f'''<p class="p">{N_RES} reseñas, al pie de la letra: {N_RES_G} de Google y {N_RES_F} de Facebook. Lo que más repiten es la responsabilidad, la calidad y el buen trato:</p>
+  box(.55, 2.85, 6.2, f'''<p class="p">{N_RES} reseñas en el sitio, al pie de la letra: {N_RES_G} de Google y {N_RES_F} de Facebook. Además de «excelente», hablan de responsabilidad, calidad y buen trato:</p>
   {Q("Muy responsables en la fecha de entrega.", "Chilwe Gourmet · Google")}
-  {Q("Super preocupados de hacer el trabajo que exactamente uno quiere. Atención personalizada.", "Fernando · Facebook")}
+  {Q("…Super preocupados de hacer el trabajo que exactamente uno quiere. Atención personalizada…", "Fernando · Facebook")}
   <p class="p">Por eso su nota va como un sello que cae y se estampa, y cada reseña se despega como un sticker al pasar a la siguiente.</p>''') +
   fr('d-res', 7.15, .55, 5.4, 2) +
   box(7.15, 4.1, 5.4, f'''<p class="k" style="color:{CL}">Cotizar</p>
@@ -284,9 +284,9 @@ L.append(lam(NA,
 phs = ''.join(ph(k, .65 + i * 2.45, .45 + (0, .3, 0, .3, 0)[i], 2.0, (-4, 3, -2, 4, -3)[i], crop=3.95) for i, k in enumerate(['m-carga', 'm-intro', 'm-serv2', 'm-menu', 'm-res']))
 dots = ''.join(f'<div class="dot" style="left:{.45 + i * 2.45}in;top:{1.3 + (0, .3, 0, .3, 0)[i]}in;background:{c_}"></div>' for i, c_ in enumerate([TI, AZ, NA, UV, MA]))
 det = [('Celular primero', 'Como su Instagram, se lee en el teléfono: botones grandes, el catálogo de a dos y un menú a pantalla completa con su azul y su letra.', AZ),
-       ('Español e inglés', 'Un botón ES · EN traduce botones y rótulos. Sus frases se quedan en español y llevan debajo una ayuda en inglés para quien viene de visita.', BA),
+       ('Español e inglés', 'Un botón ES · EN traduce botones y rótulos. Sus frases se quedan en español; los títulos llevan debajo una ayuda en inglés para quien viene de visita.', BA),
        ('Cuidado con los datos', 'En su reel de diplomas se leían nombres de alumnos y un código QR: en el sitio van difuminados. Las publicaciones de 2022 y 2023 y el teléfono antiguo quedaron fuera.', UV),
-       ('Sin tropiezos', 'La página no salta mientras carga, se lee con holgura incluso con sol y cada foto y video tiene su descripción en español y en inglés.', TI)]
+       ('Sin tropiezos', 'La página no salta mientras carga, se lee bien incluso con sol y cada foto y video tiene su descripción en español y en inglés.', TI)]
 deth = ''.join(box(.55 + i * 3.1, 5.55, 2.85, f'<div class="bar" style="background:{c_}"></div><h3 class="t4">{t_}</h3><p class="p">{p_}</p>') for i, (t_, p_, c_) in enumerate(det))
 L.append(lam(PA, dots + phs + deth))
 
@@ -295,8 +295,8 @@ L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed a
   box(6.75, .5, 5.75, f'''<img src="{png_file("brand/png/isotipo.png", 300)}" class="mk" alt="">
   <p class="k" style="color:{BA}">Lo que sigue</p><h2 class="t" style="color:{TI}">Hacerlo <em style="color:{AZ}">suyo</em></h2>
   <p class="p">Este sitio se hizo solo con lo que ya estaba publicado. Con un par de conversaciones podría ir mucho más lejos:</p>
-  <ul class="next2"><li>Fotos y videos propios del taller y de las máquinas, en alta y en horizontal</li>
-    <li>Horario, nombres del equipo y nuevos trabajos contados por ustedes</li>
+  <ul class="next2"><li>Fotos y videos propios del taller y de las máquinas, en alta resolución</li>
+    <li>Horario, nombres del equipo y confirmar si XS Joyas, Sigma y Despensa Chiloé quieren aparecer como clientes</li>
     <li>Dominio propio .cl y alojamiento a nombre de Edel Impresiones</li>
     <li>Cotizaciones que lleguen a su WhatsApp ordenadas por servicio, medida y fecha</li></ul>
   <p class="invite2">Cuando quieran, lo conversamos.</p>
