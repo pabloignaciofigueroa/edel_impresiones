@@ -6,3 +6,9 @@ _qa/
 *.master.*
 dossier/out/
 dossier/*.pdf
+dossier/shots/
+dossier/pages/
+dossier/*.html
+dossier/*.png
+dossier/fotos/
+dossier/*.jpg
