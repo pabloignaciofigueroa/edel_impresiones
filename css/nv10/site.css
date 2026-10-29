@@ -1,0 +1,469 @@
+/* Edel Impresiones · nv1 (fase 9: base). Paleta en css/tokens.css, fuentes en css/fonts.css. Mínimo 16 px en todo texto. */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:auto}
+body{margin:0;background:var(--tinta);color:var(--tinta);font:500 18px/1.55 var(--f-text);overflow-x:clip}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--cian-luz);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.saltar{position:fixed;left:16px;top:-80px;z-index:200;background:#fff;color:var(--tinta);padding:10px 14px;border-radius:6px;font-size:16px}
+.saltar:focus{top:16px}
+.w{width:min(1240px,100% - 32px);margin-inline:auto}
+section{position:relative}
+
+/* ---------- tipografía ---------- */
+.h1,.h2{font-family:var(--f-display);font-weight:400;text-transform:uppercase;line-height:1.22;letter-spacing:.005em;margin:0}
+.h1{font-size:clamp(46px,12.4vw,138px)}
+.h2{font-size:clamp(40px,8.6vw,92px);margin-bottom:18px}
+.h2-m{font-size:clamp(30px,5.2vw,58px)}
+.ln{display:block;overflow:clip;padding-bottom:.02em}
+.ln>span{display:inline-block}
+.h1 em{font-style:normal;color:var(--naranja)}
+.lead{font-size:clamp(18px,1.6vw,21px);max-width:36em;margin:0 0 28px}
+.banda{display:inline-block;margin:0 0 16px;font:600 16px/1.2 var(--f-kicker);letter-spacing:.16em;text-transform:uppercase;padding:9px 12px 8px;color:#fff}
+.b-nar{background:var(--naranja-banda)}
+.b-tinta{background:var(--tinta);color:#fff}
+.glosa,.glosa-h{display:none;font:500 16px/1.4 var(--f-text);opacity:.82;margin:6px 0 18px;text-transform:none;letter-spacing:0}
+html[data-lang="en"] .glosa,html[data-lang="en"] .glosa-h{display:block}
+
+/* ---------- botones ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 20px;border-radius:999px;font:600 16px/1.2 var(--f-text);text-decoration:none;border:2px solid currentColor;transition:transform .5s cubic-bezier(.16,1,.3,1),background-color .3s,color .3s}
+.btn-wa{background:var(--naranja-banda);border-color:var(--naranja-banda);color:#fff}
+.btn-wa:hover{background:#b33a03;border-color:#b33a03}
+.btn-l{background:transparent}
+.btn-cot{background:var(--naranja-banda);border-color:var(--naranja-banda);color:#fff;min-height:42px;padding:9px 16px}
+
+/* ---------- carga y apertura ---------- */
+#carga{display:none}
+.js #carga{display:block;position:fixed;inset:0;z-index:100;pointer-events:none}
+.js #carga.listo{display:none}
+#ov{position:absolute;inset:0;width:100%;height:100%}
+.pct{position:absolute;left:0;right:0;text-align:center;color:#fff;font:600 16px/1 var(--f-kicker);letter-spacing:.2em;margin:0;top:var(--pct-y,78%)}
+/* nv7: el isotipo se dibuja animando su máscara (mismo path, trazo hacia adentro): ver _qa/agentes/diseno/especificacion.md */
+#mkA path,#mkN path{fill:none;stroke:#fff;stroke-width:0;stroke-linejoin:round;stroke-linecap:round}
+#mkA .cierre,#mkN .cierre{fill:#fff;stroke:none;visibility:hidden}
+.ov-on #ov{visibility:visible}
+.js #carga:not(.ov-on) .pct{visibility:hidden}
+#edel path{stroke-dasharray:1;stroke-dashoffset:1}
+#sub1,#sub2{opacity:0}
+.js body.cargando{overflow:hidden}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;gap:16px;padding:12px 16px;color:#fff;transition:background-color .4s,box-shadow .4s}
+.nav.solido{background:rgba(5,38,63,.94);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.js body.cargando .nav{opacity:0}
+.nav-logo{display:block;width:118px;color:#fff}
+.logo-nav{width:100%;height:auto;display:block}
+.nav-links{display:none;gap:22px;margin-left:auto}
+.nav-links a{font:600 16px/1 var(--f-kicker);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--naranja);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-acc{margin-left:auto;display:flex;align-items:center;gap:10px}
+.lang{background:none;border:2px solid rgba(255,255,255,.5);border-radius:999px;min-height:42px;padding:6px 12px;font:600 16px/1 var(--f-kicker);letter-spacing:.1em}
+.lang span{opacity:.5}.lang .es{margin-right:6px}
+html[data-lang="es"] .lang .es,html[data-lang="en"] .lang .en{opacity:1}
+@media (min-width:1000px){.nav{padding:14px 32px}.nav-links{display:flex}.nav-acc{margin-left:28px}.nav-logo{width:140px}}
+
+/* ---------- portada ---------- */
+.s-portada{height:100svh;min-height:560px;color:#fff;overflow:clip;background:var(--tinta)}
+.hero-v{position:absolute;inset:-6% 0;}
+.hero-video{width:100%;height:100%;object-fit:cover;background-size:cover}
+.js:not(.abierto) .hero-video{visibility:hidden}
+.hero-v::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,38,63,.35) 0%,rgba(5,38,63,.15) 35%,rgba(5,38,63,.85) 100%)}
+.hero-t{position:absolute;left:0;right:0;bottom:0;padding:0 16px max(28px,env(safe-area-inset-bottom));z-index:2}
+.hero-t .banda{max-width:100%}
+.js:not(.hero-ok) .hero-t{visibility:hidden}
+.hero-b{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.hero-b .btn-l{color:#fff}
+@media (min-width:900px){.hero-t{padding:0 6vw 7vh}}
+
+/* ---------- intro ---------- */
+.s-intro{background:var(--papel);padding:96px 0 88px}
+.s-intro .h2{color:var(--azul)}
+.cifras{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px}
+.cifras li{border-top:3px solid var(--azul);padding-top:12px;font-size:16px}
+.cifras b{display:block;font:400 clamp(40px,7vw,64px)/1.1 var(--f-display);color:var(--azul)}
+@media (min-width:900px){.cifras{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* ---------- servicios ---------- */
+.s-serv{background:var(--azul);color:#fff;padding:96px 0 100px}
+.serv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:20px}
+.serv{background:rgba(5,38,63,.35);border-radius:14px;overflow:hidden}
+.serv-m{aspect-ratio:4/5;overflow:hidden;background:var(--tinta)}
+.serv-m .vid,.serv-m img{width:100%;height:100%;object-fit:cover;background-size:cover}
+.serv-t{padding:16px 16px 20px}
+.serv-t .banda{background:var(--naranja-banda);margin:0 0 10px;font-size:16px}
+.serv-t p{margin:0;font-size:17px}
+.serv-mas{font:600 16px/1.4 var(--f-kicker);letter-spacing:.16em;text-transform:uppercase;margin:32px 0 0;opacity:.9}
+@media (min-width:700px){.serv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.serv-grid .serv:nth-child(2n){transform:translateY(64px)}.s-serv{padding-bottom:160px}}
+@media (min-width:1100px){.serv-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.serv-grid .serv:nth-child(2n){transform:none}.serv-grid .serv:nth-child(3n+2){transform:translateY(90px)}.serv-grid .serv:nth-child(3n){transform:translateY(36px)}}
+
+/* ---------- proceso ---------- */
+.s-proc{background:var(--uv);color:#fff;min-height:100svh;padding:88px 0;box-shadow:inset 0 -140px 160px -80px var(--uv-luz)}
+.proc-sticky{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:center}
+.proc-v{max-width:420px;width:100%;margin-inline:auto;aspect-ratio:9/16;max-height:72svh;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(84,95,224,.8)}
+.proc-video{width:100%;height:100%;object-fit:cover;background-size:cover}
+.pasos{list-style:none;padding:0;margin:8px 0 22px;display:grid;gap:14px}
+.pasos li{display:flex;gap:14px;align-items:flex-start;opacity:.55;transition:opacity .5s,transform .5s cubic-bezier(.16,1,.3,1)}
+.pasos li.on{opacity:1;transform:translateX(6px)}
+.pasos b{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:2px solid #fff;font:400 22px/1 var(--f-display)}
+.pasos li.on b{background:#fff;color:var(--uv)}
+.pasos span{font-size:clamp(18px,1.6vw,22px);padding-top:8px}
+.nota{opacity:.9;margin:0}
+@media (min-width:900px){.proc-sticky{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);min-height:calc(100svh - 176px)}}
+
+/* ---------- trabajos ---------- */
+.s-trab{background:var(--papel);padding:96px 0}
+.tornasol{height:10px;border-radius:5px;background:var(--tornasol);background-size:200% 100%;margin:4px 0 24px;max-width:540px}
+.pila{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}
+.sticker{background:#fff;border-radius:18px;padding:10px 10px 12px;box-shadow:0 2px 0 rgba(5,38,63,.08),0 14px 30px -18px rgba(5,38,63,.45);transform:rotate(var(--r,0deg))}
+.sticker:nth-child(3n+1){--r:-1.6deg}.sticker:nth-child(3n+2){--r:1.2deg}.sticker:nth-child(3n){--r:-.6deg}
+.st-m{aspect-ratio:1;border-radius:12px;overflow:hidden;background:#ddd}
+.st-m img,.st-m .vid{width:100%;height:100%;object-fit:cover;background-size:cover}
+.sticker p{margin:10px 2px 0;font-size:16px;line-height:1.35}
+@media (min-width:900px){.pila{grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 24px}}
+
+/* ---------- equipo ---------- */
+.s-equipo{background:var(--madera);padding:96px 0}
+.eq{display:grid;gap:32px}
+.eq-fotos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.eq-fotos img,.eq-fotos .vid{width:100%;height:100%;object-fit:cover;border-radius:12px;background-size:cover;aspect-ratio:4/5}
+.eq-fotos .vid{grid-column:span 2;aspect-ratio:16/11}
+.team{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:18px;align-items:center;background:var(--tinta);color:#fff;border-radius:16px;padding:14px}
+.team-v{aspect-ratio:9/16;border-radius:10px;overflow:hidden}
+.team-v .vid{width:100%;height:100%;object-fit:cover;background-size:cover}
+.team-t p{margin:0 0 12px;font-size:17px}
+.team-q{font:400 clamp(26px,4vw,40px)/1.22 var(--f-display);text-transform:uppercase}
+.team-b{display:flex;flex-wrap:wrap;gap:10px}
+.team-b button{min-height:48px;padding:10px 18px;border-radius:999px;border:2px solid #fff;background:none;font:600 16px/1 var(--f-kicker);letter-spacing:.1em;text-transform:uppercase}
+.team-b button[aria-pressed="true"]{background:var(--naranja);border-color:var(--naranja);color:var(--tinta)}
+@media (min-width:900px){.eq{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.eq-t{grid-column:1/-1;max-width:980px}}
+
+/* ---------- reseñas ---------- */
+.s-res{background:var(--naranja);padding:90px 0}
+.res-pista{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,460px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:none}
+.res-pista::-webkit-scrollbar{display:none}
+.resena{scroll-snap-align:start;margin:0;background:#fff;border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between;min-height:240px;border:2px dashed rgba(5,38,63,.25);outline:6px solid #fff;outline-offset:-1px}
+.resena blockquote{margin:0 0 18px;font:500 clamp(18px,1.7vw,21px)/1.5 var(--f-text)}
+.resena figcaption{font:600 16px/1.3 var(--f-kicker);letter-spacing:.08em;text-transform:uppercase;color:var(--tinta)}
+.res-b{display:flex;gap:10px;margin-top:6px}
+.res-b button{width:52px;height:52px;border-radius:50%;border:2px solid var(--tinta);background:none;font-size:20px}
+
+/* ---------- cotiza ---------- */
+.s-cot{background:var(--tinta);color:#fff;min-height:100svh;padding:104px 0 80px;display:flex;align-items:center}
+.s-cot .h2{color:var(--cian-luz)}
+.cot{display:grid;gap:30px}
+.cot-b{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin:26px 0}
+.cot-b .btn-l{color:#fff}
+.btn-wa small{display:block;font:500 16px/1.2 var(--f-text);opacity:.9}
+.cot-b .btn-wa{flex-direction:column;align-items:flex-start;border-radius:18px;gap:2px}
+address{font-style:normal;font-size:18px}
+.mapa{border-radius:16px;overflow:hidden;min-height:320px;background:#0b3352}
+.mapa iframe{width:100%;height:100%;min-height:320px;border:0;display:block}
+@media (min-width:900px){.cot{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center}.mapa,.mapa iframe{min-height:460px}}
+
+/* ---------- pie ---------- */
+.pie{background:var(--tinta);color:#c9d3dc;padding:40px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.08)}
+.pie img{width:180px;height:auto;margin-bottom:16px}
+.pie p{font-size:16px;margin:0 0 8px}
+
+/* ---------- movimiento reducido ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js #carga{display:none}
+  .js:not(.abierto) .hero-video{visibility:visible}
+  .js:not(.hero-ok) .hero-t{visibility:visible}
+  .js body.cargando .nav{opacity:1}
+}
+
+/* ===================== nv2 · fases 10–15 ===================== */
+/* --- servicios: troquel (línea de corte punteada que se dibuja) --- */
+.serv{position:relative;overflow:visible}
+.serv>.serv-m{border-radius:14px 14px 0 0}
+.troquel{position:absolute;inset:-7px;border:2px dashed rgba(255,255,255,.75);border-radius:20px;pointer-events:none;clip-path:inset(0 0 0 0)}
+.js .serv:not(.cortado) .troquel{clip-path:inset(0 100% 100% 0)}
+.js .serv:not(.cortado) .serv-m,.js .serv:not(.cortado) .serv-t{opacity:0;transform:scale(.965)}
+.serv .serv-m,.serv .serv-t,.serv .troquel{transition:clip-path .9s cubic-bezier(.16,1,.3,1),opacity .6s .35s,transform .8s .35s cubic-bezier(.16,1,.3,1)}
+/* --- plateados: brillo tornasol que sigue el dedo / el puntero --- */
+.serv-torna .serv-m{position:relative}
+.serv-torna .serv-m::after{content:"";position:absolute;inset:0;background:var(--tornasol);background-size:250% 250%;background-position:var(--tx,50%) var(--ty,50%);mix-blend-mode:color-dodge;opacity:.42;pointer-events:none;transition:background-position .25s}
+.tornasol{animation:torna 6s linear infinite}
+@keyframes torna{to{background-position:200% 0}}
+/* --- escritorio: el primer servicio es la pieza grande a un lado --- */
+.serv-grid .col{display:contents}
+.serv-grid .serv{transform:none!important}
+@media (min-width:700px) and (max-width:1099px){.serv-grid .serv:nth-child(2n){margin-top:0}}
+@media (min-width:1100px){
+ .serv-grid{display:flex;gap:26px;align-items:flex-start}
+ .serv-grid .col{display:flex;flex-direction:column;gap:26px;flex:1 1 0;min-width:0}
+ .serv-grid .col-2{padding-top:110px}
+ .serv-grid .col-3{padding-top:44px}
+ .serv-grid .col-1 .serv:first-child .serv-m{aspect-ratio:3/5}
+}
+
+/* --- trabajos: pila de stickers que se despegan --- */
+.trab-w{display:grid;gap:22px;align-items:center}
+.pila.pila-js{display:block;position:relative;height:min(118vw,560px);max-width:440px;margin-inline:auto;width:100%;touch-action:pan-y}
+.pila-js .sticker{position:absolute;inset:0;margin:auto;width:86%;height:max-content;cursor:grab;user-select:none;-webkit-user-select:none;will-change:transform}
+.pila-js .sticker:active{cursor:grabbing}
+.pila-js .sticker img,.pila-js .sticker video{pointer-events:none}
+.pila-js .sticker::after{content:"";position:absolute;right:0;bottom:0;width:var(--peel,0px);height:var(--peel,0px);border-radius:0 0 18px 0;background:linear-gradient(135deg,transparent 49%,#dcd6cc 50%,#fff 75%);box-shadow:-4px -4px 10px rgba(5,38,63,.18);pointer-events:none}
+.pila-ui[hidden]{display:none}
+.pila-ui{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;justify-content:center}
+.pila-tip{margin:0;font-size:16px;width:100%;text-align:center;opacity:.8}
+.pila-next{color:var(--tinta)}
+.pila-n{margin:0;font:600 16px/1 var(--f-kicker);letter-spacing:.14em}
+@media (min-width:900px){.trab-w{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.pila.pila-js{height:560px}.pila-ui{justify-content:flex-start}.pila-tip{text-align:left}}
+
+/* --- equipo: tarjetas que giran (solo por aria-pressed) --- */
+.flip{all:unset;display:block;cursor:pointer;perspective:1200px;border-radius:12px}
+.js .flip{aspect-ratio:4/5}
+html:not(.js) .flip-a{display:block;aspect-ratio:4/5}
+.flip:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
+.flip-in{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.js .flip[aria-pressed="true"] .flip-in{transform:rotateY(180deg)}
+.js .flip-a,.js .flip-b{position:absolute;inset:0}
+.flip-a,.flip-b{backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;overflow:hidden}
+.flip-a img{width:100%;height:100%;object-fit:cover;aspect-ratio:auto}
+.js .flip-b{transform:rotateY(180deg)}
+.flip-b{background:var(--tinta);color:#fff;display:flex;align-items:center;padding:18px;font:500 17px/1.45 var(--f-text)}
+.eq-tip{font-size:16px;margin-top:4px}
+/* --- Team Mate / Team Café: estallido --- */
+.team{position:relative;overflow:hidden}
+.burst{position:absolute;inset:0;pointer-events:none}
+.burst span{position:absolute;font-size:30px;line-height:1;will-change:transform,opacity}
+/* --- cotiza: botón magnético --- */
+.mag{will-change:transform}
+
+@media (prefers-reduced-motion:reduce){
+ .js .serv:not(.cortado) .troquel{clip-path:none}
+ .js .serv:not(.cortado) .serv-m,.js .serv:not(.cortado) .serv-t{opacity:1;transform:none}
+ .tornasol{animation:none}
+ .flip-in{transition:none}
+}
+
+/* ===================== nv3 · fases 16–17 ===================== */
+/* títulos: sin palabras solas en una línea */
+.h1,.h2,.lead,.team-q,.resena blockquote{text-wrap:balance}
+p{text-wrap:pretty}
+/* menú del celular */
+.menu-b{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;border:2px solid rgba(255,255,255,.55);background:none;padding:0}
+.menu-ico,.menu-ico::before,.menu-ico::after{display:block;width:20px;height:2px;background:#fff;border-radius:2px;position:relative;content:""}
+.menu-ico::before{position:absolute;top:-6px}.menu-ico::after{position:absolute;top:6px}
+@media (min-width:1000px){.menu-b{display:none}}
+.menu{position:fixed;inset:0;z-index:120;background:var(--azul);color:#fff;display:flex;flex-direction:column;padding:max(16px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain}
+.menu[hidden]{display:none}
+.menu-x{align-self:flex-end;min-height:46px;padding:8px 16px;border-radius:999px;border:2px solid #fff;background:none;font:600 16px/1 var(--f-kicker);letter-spacing:.12em;text-transform:uppercase}
+.menu nav{display:flex;flex-direction:column;gap:2px;margin:26px 0 30px}
+.menu nav a{font:400 clamp(40px,11vw,64px)/1.22 var(--f-display);text-transform:uppercase;text-decoration:none;padding:4px 0}
+.menu nav a:nth-child(odd){color:#fff}.menu nav a:nth-child(even){color:var(--naranja)}
+.menu .btn-wa{flex-direction:column;align-items:flex-start;border-radius:18px;gap:2px;align-self:flex-start}
+.menu-dir{margin:22px 0 0;font-size:16px;opacity:.9}
+body.menu-abierto{overflow:hidden}
+/* botones: el subrayado crece y el botón responde */
+.btn:active{transform:scale(.97)}
+.btn-l:hover{background:rgba(255,255,255,.12)}
+.s-trab .btn-l:hover,.pila-next:hover{background:rgba(5,38,63,.08)}
+/* nada enfocable mientras está invisible */
+.js body.cargando .nav{visibility:hidden}
+/* pantallas muy anchas */
+@media (min-width:1900px){body{font-size:20px}.w{width:min(1560px,100% - 64px)}.h1{font-size:clamp(46px,8.2vw,220px)}}
+/* pantallas chicas: banda y botones que no se pisan */
+@media (max-width:380px){.banda{letter-spacing:.1em}.hero-b .btn{padding:11px 16px}.nav-logo{width:100px}.nav-acc{gap:8px}.btn-cot{padding:8px 13px}}
+
+/* ===================== nv5 · revisión de Pablo ===================== */
+.nav .lang{display:none}
+.menu-lang{margin:18px 0 0}
+.menu-lang .lang,.pie-lang .lang{color:#fff;border-color:rgba(255,255,255,.55)}
+.pie-lang{margin:14px 0 0}
+.hero-t .banda{margin:16px 0 0}
+
+/* ===================== nv8 · fase 19 (evaluación independiente + decisiones de Pablo) ===================== */
+/* contraste: portada */
+.hero-v::after{background:linear-gradient(180deg,rgba(5,38,63,.42) 0%,rgba(5,38,63,.5) 40%,rgba(5,38,63,.92) 100%)}
+.h1 em{color:#fff;background:var(--naranja-banda);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.h1,.hero-t .glosa-h{text-shadow:0 2px 22px rgba(5,38,63,.55)}
+@media (min-width:900px){.s-portada::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(5,38,63,.82) 0,rgba(5,38,63,.5) 50%,rgba(5,38,63,0) 78%)}}
+/* contraste: proceso, WhatsApp, menú, foco */
+.pasos li{opacity:1;color:#c9c6f2}
+.pasos li b{border-color:#c9c6f2}
+.pasos li.on{color:#fff}.pasos li.on b{border-color:#fff}
+.btn-wa small{opacity:1;font-weight:400}
+.menu nav a:nth-child(even){color:#fff;text-decoration:underline;text-decoration-color:var(--naranja);text-decoration-thickness:4px;text-underline-offset:8px}
+:focus-visible{outline:3px solid var(--tinta);box-shadow:0 0 0 6px #fff}
+.s-portada :focus-visible,.s-serv :focus-visible,.s-proc :focus-visible,.s-cot :focus-visible,.nav :focus-visible,.menu :focus-visible,.pie :focus-visible,.team :focus-visible{outline-color:#fff;box-shadow:0 0 0 6px var(--tinta)}
+/* emojis como cifra (🚀) */
+.cifras b[aria-hidden]{font-family:var(--f-text);font-size:clamp(34px,6vw,54px);line-height:1.3}
+/* ayuda según el puntero */
+.tip-clic{display:none}
+@media (hover:hover) and (pointer:fine){.tip-clic{display:inline}.tip-toca{display:none}}
+
+/* servicios en celular: grilla de 2 columnas, medio cuadrado, banda pegada sobre el borde del medio (Pablo) */
+@media (max-width:699px){
+ .serv-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}
+ .serv-m{aspect-ratio:1}
+ .serv>.serv-m{border-radius:12px 12px 0 0}
+ .serv-t{padding:0 10px 14px;position:relative}
+ .serv-t .banda{display:block;margin:-20px -10px 10px;padding:9px 10px 8px;font-size:16px;letter-spacing:.06em;line-height:1.15;position:relative}
+ .serv-t p{font-size:16px;line-height:1.45}
+ .troquel{inset:-5px;border-radius:17px}
+ .serv-grid .col-1 .serv:first-child .serv-m{aspect-ratio:1}
+}
+/* «Pendones, Rollers, Adhesivos»: última pieza de la grilla (cierra el rectángulo: 13 + 1) */
+.serv-mas{margin:0;opacity:1;letter-spacing:0;border:2px dashed rgba(255,255,255,.55);border-radius:14px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;padding:20px 14px;min-height:160px}
+.mas-t{font:400 clamp(28px,3vw,44px)/1.22 var(--f-display);text-transform:uppercase}
+.serv-mas .banda{margin:0;line-height:1.5}
+/* escritorio: grilla pareja de 3 (la primera pieza ocupa dos filas); sin columnas desfasadas que rematan disparejas */
+@media (min-width:1100px){
+ .serv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 26px;align-items:stretch}
+ .serv-grid .col{display:contents}
+ .serv-grid .col-2,.serv-grid .col-3{padding-top:0}
+ .serv-grid .serv[style*="order:0"]{grid-row:span 2;display:flex;flex-direction:column}
+ .serv-grid .serv[style*="order:0"] .serv-m{flex:1;aspect-ratio:auto}
+ .serv-grid .col-1 .serv:first-child .serv-m{aspect-ratio:auto}
+ .serv-mas{padding:28px}
+}
+
+/* proceso en celular: primero el título y los pasos, después el video */
+@media (max-width:899px){.proc-t{order:-1}.proc-v{max-height:62svh}}
+
+/* trabajos en escritorio: pila a la vista junto al título */
+@media (min-width:900px){
+ .s-trab{padding:84px 0}
+ .s-trab .w{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;align-items:center}
+ .s-trab .w>*{grid-column:1}
+ .s-trab .trab-w{grid-column:2;grid-row:1 / span 5;grid-template-columns:minmax(0,1fr)}
+ .s-trab .pila-ui{justify-content:center}.s-trab .pila-tip{text-align:center}
+ .s-trab .pila.pila-js{height:min(560px,62vh)}
+}
+
+/* equipo en escritorio: tarjetas más grandes, Team ajustada a su contenido */
+@media (min-width:900px){
+ .eq{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:start}
+ .eq-fotos{gap:18px}
+ .team{align-self:start;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center}
+}
+/* Team Mate / Café: estallido más grande, sin recorte */
+.team{overflow:visible}
+.team-v{overflow:hidden}
+.burst{inset:-120px -40px -40px;z-index:5}
+.burst span{font-size:38px}
+.team-b button.pop{animation:pop .45s cubic-bezier(.16,1,.3,1)}
+@keyframes pop{40%{transform:scale(1.14)}100%{transform:scale(1)}}
+
+/* reseñas: sello 4,6 que se estampa y reseñas como stickers troquelados que se despegan (Pablo) */
+.res-top{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-bottom:22px}
+.res-top .banda{margin:0}
+.sello{margin:0;width:128px;height:128px;border-radius:50%;background:var(--tinta);color:#fff;display:grid;place-content:center;text-align:center;
+ box-shadow:0 0 0 5px var(--naranja),0 0 0 7px var(--tinta);transform:rotate(-8deg);flex:none}
+.sello b{font:400 48px/1 var(--f-display)}
+.sello span{font-size:16px;letter-spacing:.05em;color:#ffd166;line-height:1.1}
+.sello small{font:600 16px/1.1 var(--f-kicker);letter-spacing:.14em;text-transform:uppercase}
+.resena{position:relative;border-radius:16px;transform:rotate(var(--r,0deg));transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.resena:nth-child(3n+1){--r:-1.2deg}.resena:nth-child(3n+2){--r:.9deg}.resena:nth-child(3n){--r:-.4deg}
+.resena::after{content:"";position:absolute;right:-1px;bottom:-1px;width:var(--peel,0px);height:var(--peel,0px);border-radius:0 0 16px 0;background:linear-gradient(135deg,transparent 49%,#dcd6cc 50%,#fff 75%);box-shadow:-4px -4px 10px rgba(5,38,63,.18);transition:width .35s,height .35s;pointer-events:none}
+.resena.despega{--peel:46px;transform:rotate(calc(var(--r,0deg) + 3deg)) translateY(-6px)}
+@media (min-width:900px){.sello{width:150px;height:150px}.sello b{font-size:58px}}
+
+/* movimiento reducido: los videos quedan en su póster */
+@media (prefers-reduced-motion:reduce){.resena,.resena::after{transition:none}}
+/* segunda ronda: el estallido no ensancha la página; las reseñas giradas no se cortan abajo */
+.s-equipo{overflow-x:clip}
+.res-pista{padding:14px 6px 30px}
+html{overflow-x:clip}
+@media (min-width:700px) and (max-width:1099px){.serv-m{aspect-ratio:1}}
+@media (min-width:900px){.team{position:sticky;top:110px}}
+.menu-lang .lang span,.pie-lang .lang span{opacity:.78}
+html[data-lang="es"] .lang .es,html[data-lang="en"] .lang .en{opacity:1}
+
+/* ===================== nv9 · revisión de Pablo en computador ===================== */
+/* portada: título a la mitad en computador (el celular queda igual) y la tilde de IMPRESIÓN completa */
+.h1 .ln{padding-top:.12em;margin-top:-.12em}
+.h1 em{padding:.2em .12em 0;display:inline-block;line-height:1.05}
+@media (min-width:900px){.h1{font-size:clamp(52px,4.9vw,96px)}.hero-t{max-width:1100px}}
+@media (min-width:1900px){.h1{font-size:clamp(52px,4.4vw,120px)}}
+/* cifra «Pioneros en Chiloé»: el isotipo en lugar del emoji */
+.cifra-iso img{display:block;height:clamp(40px,7vw,64px);width:auto}
+/* «Y también»: la línea de corte avanza como el plotter y los tres productos caen como stickers */
+.serv-mas{border:0;position:relative;background-image:
+  linear-gradient(90deg,rgba(255,255,255,.75) 50%,transparent 50%),linear-gradient(90deg,rgba(255,255,255,.75) 50%,transparent 50%),
+  linear-gradient(0deg,rgba(255,255,255,.75) 50%,transparent 50%),linear-gradient(0deg,rgba(255,255,255,.75) 50%,transparent 50%);
+  background-repeat:repeat-x,repeat-x,repeat-y,repeat-y;background-size:14px 2px,14px 2px,2px 14px,2px 14px;
+  background-position:0 0,0 100%,0 0,100% 0;animation:corte 1.2s linear infinite}
+@keyframes corte{to{background-position:14px 0,-14px 100%,0 -14px,100% 14px}}
+.mas-s{display:flex;flex-wrap:wrap;gap:8px}
+.mas-s .banda{margin:0;animation:pega 4.8s cubic-bezier(.16,1,.3,1) infinite both;transform-origin:30% 0}
+.mas-s .banda:nth-child(2){animation-delay:.35s}.mas-s .banda:nth-child(3){animation-delay:.7s}
+@keyframes pega{0%{opacity:0;transform:translateY(-26px) rotate(-8deg) scale(1.15)}12%{opacity:1;transform:translateY(0) rotate(-2deg) scale(1)}
+  16%{transform:rotate(1deg)}20%,86%{opacity:1;transform:rotate(-1.5deg)}96%,100%{opacity:0;transform:translateY(8px) rotate(-1.5deg)}}
+/* proceso en computador: video grande y centrado */
+@media (min-width:900px){
+ .proc-sticky{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}
+ .proc-v{max-width:540px;max-height:84svh;width:100%}
+ .s-proc{padding:72px 0}
+}
+/* trabajos en computador: pila grande */
+@media (min-width:900px){
+ .s-trab .pila.pila-js{height:min(760px,80vh);max-width:640px}
+ .s-trab .w{column-gap:40px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+}
+/* equipo en computador: texto junto a Team, video junto a las fotos (sin vacío mostaza) */
+.eq-band{margin:0}
+.eq-vid .vid{width:100%;aspect-ratio:16/11;object-fit:cover;border-radius:12px;background-size:cover;display:block}
+@media (min-width:900px){
+ .eq{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-areas:"band band" "texto team" "video fotos";gap:28px 36px;align-items:start}
+ .eq-band{grid-area:band;justify-self:start}
+ .eq-t{grid-area:texto;grid-column:auto;max-width:none}
+ .team{grid-area:team;position:static}
+ .eq-vid{grid-area:video}
+ .eq-vid .vid{aspect-ratio:auto;height:100%;min-height:420px}
+ .eq-fotos{grid-area:fotos;align-self:stretch}
+}
+/* reseñas: tarjetas completas (sin marco que las corte) y carrusel infinito */
+.s-res{overflow-x:clip}
+.res-pista{display:flex;gap:22px;overflow:visible;scroll-snap-type:none;padding:22px 0 34px;will-change:transform;touch-action:pan-y;cursor:grab}
+.res-pista .resena{flex:0 0 min(84vw,440px)}
+.res-pista:active{cursor:grabbing}
+.sello span i{font-style:normal;opacity:.35}
+/* pie en dos columnas en computador */
+@media (min-width:900px){
+ .pie-w{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+ .pie-a p{margin:0;max-width:62ch}
+ .pie-b{text-align:right}.pie-b p{margin:0 0 8px}
+ .pie-lang{margin:12px 0 0}
+}
+@media (prefers-reduced-motion:reduce){.serv-mas,.mas-s .banda{animation:none}}
+
+/* ===================== nv10 · segunda revisión de Pablo en computador ===================== */
+/* trabajos: controles bajo el texto (computador) y la pila como baraja */
+.pila-js .sticker{box-shadow:0 2px 0 rgba(5,38,63,.08),0 18px 34px -16px rgba(5,38,63,.45)}
+@media (min-width:900px){
+ .s-trab .w{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
+ .s-trab .trab-w{display:contents}
+ .s-trab .pila.pila-js{grid-column:2;grid-row:1 / span 6;align-self:center}
+ .s-trab .pila-ui{grid-column:1;justify-content:flex-start;margin-top:6px}
+ .s-trab .pila-tip{text-align:left}
+}
+/* «Y también»: la tarjeta no cambia; su contenido llena el espacio */
+@media (min-width:1100px){
+ .serv-mas{padding:44px 40px;justify-content:center;gap:28px}
+ .mas-t{font-size:clamp(56px,5.2vw,92px);line-height:1.12}
+ .mas-s{flex-direction:column;align-items:flex-start;gap:18px}
+ .mas-s .banda{font-size:clamp(22px,1.9vw,32px);letter-spacing:.14em;padding:14px 22px 12px}
+ .mas-s .banda:nth-child(1){--g:-3deg}.mas-s .banda:nth-child(2){--g:2deg;margin-left:28px}.mas-s .banda:nth-child(3){--g:-1.5deg;margin-left:8px}
+ @keyframes pega{0%{opacity:0;transform:translateY(-30px) rotate(-10deg) scale(1.15)}12%{opacity:1;transform:translateY(0) rotate(var(--g,0deg)) scale(1)}
+  16%{transform:rotate(calc(var(--g,0deg) + 2deg))}20%,86%{opacity:1;transform:rotate(var(--g,0deg))}96%,100%{opacity:0;transform:translateY(10px) rotate(var(--g,0deg))}}
+}
+/* equipo en computador: arriba texto + dos fotos; abajo video + Team, del mismo alto; la cara en el tercio superior */
+@media (min-width:900px){
+ .eq{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"band band" "texto fotos" "video team";align-items:stretch}
+ .eq-t{align-self:center}
+ .eq-fotos{align-self:start}
+ .team{align-self:stretch}
+ .eq-vid{position:relative;min-height:0}
+ .eq-vid .vid{position:absolute;inset:0;width:100%;height:100%;min-height:0;aspect-ratio:auto;object-position:50% 22%}
+}
+/* reseñas: cinta sin fin (las copias hacen que nunca desaparezca una tarjeta) */
+.res-pista .resena[aria-hidden="true"]{pointer-events:none}

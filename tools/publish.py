@@ -22,7 +22,7 @@ OUT = ROOT / 'public'
 # Fase 20 (cierre): la versión aprobada (nv8) vive en la raíz; las copias de trabajo /nueva*/ dejan de publicarse y
 # redirigen con 301 a /. Todas las versiones quedan respaldadas en la rama respaldo-versiones.
 INCLUDE_FILES = ['index.html', '404.html', 'robots.txt']
-INCLUDE_DIRS = ['vendor', 'assets/fonts', 'assets/video', 'assets/img', 'brand', 'css', 'js/nv9']
+INCLUDE_DIRS = ['vendor', 'assets/fonts', 'assets/video', 'assets/img', 'brand', 'css', 'js/nv10']
 ALL_DIRS = []
 BLOCKED_EXT = {'.md', '.py', '.csv', '.json', '.pyc', '.sh', '.ipynb'}
 BLOCKED_DIRS = {'assets/raw'}
