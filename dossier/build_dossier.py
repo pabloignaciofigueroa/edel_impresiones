@@ -106,15 +106,16 @@ def seal(x, y, d, rot=-8):
   <text x="100" y="128" text-anchor="middle" font-family="Anton" font-size="30" fill="#fff">REGALO</text>
 </svg>'''
 LOGO_CLARO = png_file('brand/png/logo-horizontal-claro.png', 1000)
+LOGO_VERT = png_file('brand/png/logo-vertical-claro.png', 900)
 LOGO = png_file('brand/png/logo-horizontal.png', 1000)
 
 
 # ======================= LÁMINAS DEL DOSSIER =======================
-# 01 · PORTADA · la impresora UV a doble página, solo el logo
+# 01 · PORTADA · franja tinta con el logo vertical (como la pantalla de carga) y la impresora UV de Edel
 nx()
-L.append(f'''<article class="lam spread">
-  <img class="bleed" src="{fot("portada.jpg", 2600, 86)}" style="object-position:50% 50%" alt="">
-  <div class="spread-tab"><img class="spread-logo" src="{LOGO}" alt="Edel Impresiones"></div>
+L.append(f'''<article class="lam spread" style="background:{TI}">
+  <div class="port-marca"><img src="{LOGO_VERT}" alt="Edel Impresiones"></div>
+  <img class="port-foto" src="{fot("portada-uv.jpg", 1440, 90)}" alt="">
 </article>''')
 
 # 02 · CARTA · papel, foto del equipo, sello
@@ -304,6 +305,9 @@ body{{font-family:"Montserrat",Arial,sans-serif;color:{TI};-webkit-print-color-a
 .spread .bleed{{position:absolute;inset:0}}
 .spread-tab{{position:absolute;left:0;top:.45in;background:#fff;opacity:.75;padding:.2in .34in .2in .5in;border-radius:0 .18in .18in 0}}
 .spread-logo{{width:2.3in;display:block}}
+.port-marca{{position:absolute;left:0;top:0;width:5.6in;height:8.5in;display:flex;align-items:center;justify-content:center}}
+.port-marca img{{width:3.3in;display:block}}
+.port-foto{{position:absolute;left:5.6in;top:0;width:7.4in;height:8.5in;object-fit:cover;display:block}}
 .no{{position:absolute;right:.4in;bottom:.28in;font-weight:700;font-size:7pt;letter-spacing:.2em;z-index:20}}
 .tx{{position:absolute;z-index:4}}
 .card{{border-radius:.22in;padding:.3in .34in;box-shadow:0 10pt 30pt rgba(0,0,0,.2)}}

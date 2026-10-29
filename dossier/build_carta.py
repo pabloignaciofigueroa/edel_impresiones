@@ -26,7 +26,7 @@ def qr(url):
     return 'data:image/png;base64,' + base64.b64encode(buf.getvalue()).decode()
 
 # imagen: la portada del brochure (la impresora UV con su logo), no una captura con texto (Pablo)
-LOGO = D.parent / 'brand/png/logo-horizontal.png'
+LOGOV = D.parent / 'brand/png/logo-vertical-claro.png'  # misma portada del brochure: franja tinta + impresora UV
 
 HTML = f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{MARCA} · Carta de Bergerac</title><style>
 @font-face{{font-family:"Alfa";src:url({font("alfa-slab-one-latin-400-normal.woff2")}) format("woff2")}}
@@ -56,7 +56,10 @@ h1 em{{font-style:normal;color:{ROJO}}}
 .der .p{{font-size:9.1pt;line-height:1.62;margin-bottom:.14in}}
 .der .y{{color:{AMARILLO};font-weight:600;font-size:18.2pt;line-height:1.25;margin-bottom:.16in}}
 .captura{{border-radius:.16in;overflow:hidden;margin:0 0 .14in;height:1.95in;position:relative}}
-.captura>img{{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}}
+.captura{{display:flex;background:#05263f}}
+.captura .cm{{width:2.2in;flex:none;display:flex;align-items:center;justify-content:center}}
+.captura .cm img{{height:1.5in;display:block}}
+.captura .cf{{flex:1;min-width:0;height:100%;object-fit:cover;object-position:50% 22%;display:block}}
 .captura .tab{{position:absolute;left:0;top:.2in;background:#fff;opacity:.85;padding:.08in .16in .08in .2in;border-radius:0 .1in .1in 0}}
 .captura .tab img{{width:1.15in;display:block}}
 .cap{{display:flex;justify-content:space-between;align-items:center;gap:.2in;margin-bottom:.16in}}
@@ -81,7 +84,7 @@ h1 em{{font-style:normal;color:{ROJO}}}
 <section class="der">
   <p class="p">Nos gusta trabajar en proyectos que nos motivan, así que decidimos hacer algo con eso. Construimos un sitio web para {MARCA} usando únicamente lo que ya comparten: sus publicaciones, sus fotografías, sus videos y las reseñas públicas de sus clientes.</p>
   <p class="p y">Es un regalo. Si les gusta, es suyo.</p>
-  <div class="captura"><img src="{b64(D / "fotos/portada.jpg", 1800)}" alt=""><div class="tab"><img src="{b64(LOGO, 600, "PNG")}" alt="Edel Impresiones"></div></div>
+  <div class="captura"><div class="cm"><img src="{b64(LOGOV, 500, "PNG")}" alt="Edel Impresiones"></div><img class="cf" src="{b64(D / "fotos/portada-uv.jpg", 1440)}" alt=""></div>
   <div class="cap"><p>El sitio que hicimos para {MARCA}.<br>Escanea el código o entra a<b>{URL}</b></p><img src="{qr("https://" + URL)}" alt=""></div>
   <p class="p">Solo les pedimos una cosa a cambio, y únicamente si están de acuerdo: poder nombrar a {MARCA} en nuestra página, con su nombre y su logo, entre los trabajos que hemos realizado en la isla. Y si por cualquier motivo prefieren que no siga en línea, lo retiramos sin problema.</p>
   <p class="p">Junto a esta carta va también el dossier de decisiones de diseño, donde explicamos cada elección que tomamos a partir del material que encontramos.</p>
