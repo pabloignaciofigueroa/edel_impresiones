@@ -55,7 +55,7 @@ h1 em{{font-style:normal;color:{ROJO}}}
 .base{{position:absolute;left:.54in;bottom:.36in;font-size:6.2pt;letter-spacing:.26em;color:#8a8987;text-transform:uppercase}}
 .der .p{{font-size:9.1pt;line-height:1.62;margin-bottom:.14in}}
 .der .y{{color:{AMARILLO};font-weight:600;font-size:18.2pt;line-height:1.25;margin-bottom:.16in}}
-.captura{{border-radius:.16in;overflow:hidden;margin:0 0 .14in;height:2.3in;position:relative}}
+.captura{{border-radius:.16in;overflow:hidden;margin:0 0 .14in;height:1.95in;position:relative}}
 .captura>img{{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}}
 .captura .tab{{position:absolute;left:0;top:.2in;background:#fff;opacity:.85;padding:.08in .16in .08in .2in;border-radius:0 .1in .1in 0}}
 .captura .tab img{{width:1.15in;display:block}}
@@ -63,7 +63,7 @@ h1 em{{font-style:normal;color:{ROJO}}}
 .cap p{{font-size:8pt;line-height:1.5;color:#cfcecc}}
 .cap b{{display:block;color:#fff;font-weight:900;font-size:15pt;letter-spacing:.005em;margin-top:.05in}}
 .cap img{{width:1.1in;height:1.1in;display:block;border-radius:3pt;flex:none}}
-.firma{{position:absolute;left:.49in;right:.5in;bottom:.5in;border-top:.6pt solid #555;padding-top:.13in;display:flex;justify-content:space-between;align-items:flex-end}}
+.firma{{position:absolute;left:.49in;right:.5in;bottom:.36in;border-top:.6pt solid #555;padding-top:.13in;display:flex;justify-content:space-between;align-items:flex-end}}
 .firma .who{{font-family:"Alfa";font-size:11pt;color:#fff;letter-spacing:.02em}}
 .firma .rol{{font-size:8pt;color:#cfcecc;margin-top:.03in}}
 .firma a{{font-family:"Alfa";font-size:13pt;color:{AMARILLO};text-decoration:none;letter-spacing:.02em}}
