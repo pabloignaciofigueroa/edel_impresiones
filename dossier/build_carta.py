@@ -9,7 +9,7 @@ D = pathlib.Path(__file__).resolve().parent
 K = D / 'carta'
 URL = 'edelimpresiones.pages.dev'
 MARCA = 'Edel Impresiones'
-ROJO = '#ce4204'   # el color de la marca destinataria (en Chiloé Mágico, su rojo); aquí la banda naranja de Edel
+ROJO = '#fb0278'   # fucsia Bergerac (bergerac.cl), en la segunda línea del titular (Pablo)
 AMARILLO, GRAFITO, CREMA = '#ffb701', '#282828', '#fdfcfa'
 
 def b64(path, w=None, fmt='JPEG', q=84):
