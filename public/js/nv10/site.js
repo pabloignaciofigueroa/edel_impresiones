@@ -1,4 +1,4 @@
-/* Edel Impresiones · nv9 (revisión de Pablo en computador) sobre nv8 y nv1. Sin JS la página se lee completa; con movimiento reducido no hay carga ni apertura. */
+/* Edel Impresiones · nv10 (segunda revisión de Pablo) sobre nv9, nv8 y nv1. Sin JS la página se lee completa; con movimiento reducido no hay carga ni apertura. */
 (() => {
   'use strict';
   const D = document, H = D.documentElement, B = D.body;
@@ -188,36 +188,34 @@
   /* ---------- Team Mate / Team Café ---------- */
   $$('.team-b button').forEach(b => b.addEventListener('click', () => { $$('.team-b button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); }));
 
-  /* ---------- reseñas (nv9): carrusel infinito; la que sale vuelve al final. Tarjetas completas, sin marco que las corte ---------- */
+  /* ---------- reseñas (nv10): cinta sin fin. Tres copias seguidas: la que sale por la izquierda sigue a la vista
+     y la misma tarjeta vuelve a aparecer al final; al completar una vuelta se recoloca sin que se note ---------- */
   const pista = $('.res-pista');
   if (pista) {
-    const rots = [-1.2, .9, -.4];
-    [...pista.children].forEach((c, i) => c.style.setProperty('--r', rots[i % 3] + 'deg'));
-    let last = 0, busy = false; const touch = () => last = performance.now();
-    ['pointerdown', 'focusin'].forEach(ev => pista.addEventListener(ev, touch, { passive: true }));
-    const paso = () => { const c = pista.firstElementChild; return c.getBoundingClientRect().width + parseFloat(getComputedStyle(pista).columnGap || 22); };
-    const mover = (dir, dur = 650) => {
-      if (busy) return; busy = true; const w = paso();
-      const fin = () => { pista.style.transition = 'none'; pista.style.transform = 'translateX(0)'; busy = false; };
-      if (dir > 0) {
-        const c = pista.firstElementChild; if (!reduce) c.classList.add('despega');
-        setTimeout(() => {
-          pista.style.transition = reduce ? 'none' : `transform ${dur}ms cubic-bezier(.16,1,.3,1)`; pista.style.transform = `translateX(${-w}px)`;
-          setTimeout(() => { c.classList.remove('despega'); pista.appendChild(c); fin(); }, reduce ? 0 : dur);
-        }, reduce ? 0 : 240);
-      } else {
-        const c = pista.lastElementChild; pista.style.transition = 'none'; pista.insertBefore(c, pista.firstElementChild); pista.style.transform = `translateX(${-w}px)`;
-        void pista.offsetWidth; pista.style.transition = reduce ? 'none' : `transform ${dur}ms cubic-bezier(.16,1,.3,1)`; pista.style.transform = 'translateX(0)';
-        setTimeout(() => { busy = false; }, reduce ? 0 : dur);
-      }
+    const rots = [-1.2, .9, -.4], orig = [...pista.children], N = orig.length;
+    orig.forEach((c, i) => c.style.setProperty('--r', rots[i % 3] + 'deg'));
+    const copia = () => orig.map(c => { const k = c.cloneNode(true); k.setAttribute('aria-hidden', 'true'); return k; });
+    pista.prepend(...copia()); pista.append(...copia());
+    let idx = N, last = 0, busy = false; const touch = () => last = performance.now();
+    const paso = () => pista.children[1].offsetLeft - pista.children[0].offsetLeft;   // sin el giro de la tarjeta
+    const pon = (anim, extra = 0) => { pista.style.transition = anim && !reduce ? 'transform .65s cubic-bezier(.16,1,.3,1)' : 'none'; pista.style.transform = `translateX(${-idx * paso() + extra}px)`; };
+    pon(false); addEventListener('resize', () => pon(false));
+    const mover = dir => {
+      if (busy) return; busy = true;
+      const c = pista.children[idx]; if (dir > 0 && !reduce) c.classList.add('despega');
+      setTimeout(() => {
+        idx += dir; pon(true);
+        setTimeout(() => { c.classList.remove('despega'); if (idx >= 2 * N) idx -= N; if (idx < N) idx += N; pon(false); busy = false; }, reduce ? 0 : 680);
+      }, dir > 0 && !reduce ? 220 : 0);
     };
+    ['pointerdown', 'focusin'].forEach(ev => pista.addEventListener(ev, touch, { passive: true }));
     $('.res-b .prev').addEventListener('click', () => { touch(); mover(-1); }); $('.res-b .next').addEventListener('click', () => { touch(); mover(1); });
     pista.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { touch(); mover(1); } if (e.key === 'ArrowLeft') { touch(); mover(-1); } });
     if (!reduce) setInterval(() => { if (performance.now() - last > 8000 && !D.hidden && !busy) mover(1); }, 4200);
     let drag = null;
     pista.addEventListener('pointerdown', e => { if (busy) return; drag = { x: e.clientX, y: e.clientY, dx: 0 }; });
-    pista.addEventListener('pointermove', e => { if (!drag) return; drag.dx = e.clientX - drag.x; if (Math.abs(drag.dx) > Math.abs(e.clientY - drag.y)) { pista.style.transition = 'none'; pista.style.transform = `translateX(${drag.dx * 0.6}px)`; } });
-    const suelta = () => { if (!drag) return; const dx = drag.dx; drag = null; pista.style.transition = 'transform .3s'; pista.style.transform = 'translateX(0)'; if (Math.abs(dx) > 60) setTimeout(() => mover(dx < 0 ? 1 : -1), 120); };
+    pista.addEventListener('pointermove', e => { if (!drag) return; drag.dx = e.clientX - drag.x; if (Math.abs(drag.dx) > Math.abs(e.clientY - drag.y)) pon(false, drag.dx * 0.6); });
+    const suelta = () => { if (!drag) return; const dx = drag.dx; drag = null; if (Math.abs(dx) > 60) { pon(false); mover(dx < 0 ? 1 : -1); } else pon(true); };
     pista.addEventListener('pointerup', suelta); pista.addEventListener('pointercancel', suelta); pista.addEventListener('pointerleave', suelta);
   }
 
@@ -244,7 +242,8 @@
     const idx = $('.pila-i'); let shownN = 1, busy = false;
     const layout = () => order.forEach((c, i) => {
       c.style.zIndex = N - i; c.style.transition = 'transform .5s cubic-bezier(.16,1,.3,1), opacity .3s';
-      c.style.transform = i < 4 ? `translateY(${i * 10}px) rotate(${rots[(i + shownN) % 5]}deg) scale(${1 - i * 0.035})` : 'translateY(30px) scale(.88)';
+      const B_ = [[0, 0, 0], [26, 14, 5], [-28, 24, -6], [36, 36, 9]];   // nv10: las de atrás se asoman como baraja
+      c.style.transform = i === 0 ? `rotate(${rots[shownN % 5]}deg)` : i < 4 ? `translate(${B_[i][0]}px, ${B_[i][1]}px) rotate(${B_[i][2] + rots[(i + shownN) % 5] * .3}deg) scale(${1 - i * 0.02})` : 'translateY(30px) scale(.9)';
       c.style.opacity = i < 4 ? 1 : 0; c.style.setProperty('--peel', '0px');
       c.setAttribute('aria-hidden', i ? 'true' : 'false');
     });
