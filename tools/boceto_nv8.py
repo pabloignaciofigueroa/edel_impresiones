@@ -395,7 +395,7 @@ page = f'''<!doctype html>
    <p class="sello" aria-hidden="true"><b data-en="4.6">4,6</b><span>★★★★★</span><small>Google</small></p>
    <p class="banda b-tinta">{t("4,6 en Google · 100 % recomendado en Facebook", "4.6 on Google · 100% recommended on Facebook")}</p>
   </div>
-  <div class="res-pista" tabindex="0" aria-label="Reseñas" data-aria-en="Reviews">{"".join(resena(*r) for r in RESENAS)}</div>
+  <div class="res-pista" tabindex="0" role="region" aria-label="Reseñas" data-aria-en="Reviews">{"".join(resena(*r) for r in RESENAS)}</div>
   <div class="res-b"><button type="button" class="prev" aria-label="Reseña anterior" data-aria-en="Previous review">←</button><button type="button" class="next" aria-label="Reseña siguiente" data-aria-en="Next review">→</button></div>
  </div>
 </section>

@@ -88,10 +88,11 @@
     // primeros videos de Servicios). Lo descargado queda en memoria y los videos lo usan sin volver a pedirlo.
     let lista = []; try { const P = JSON.parse($('#precarga').textContent); lista = innerWidth >= 900 ? P.grande : P.movil; } catch (e) {}
     const total = lista.flat().reduce((m, [, b]) => m + b, 0) || 1; let recibido = 0;
+    const ctl = 'AbortController' in window ? new AbortController() : null; // nv8: al abrir se corta la precarga (el <video> pide lo que falte)
     const bajar = async ([u, peso]) => {
       let got = 0; const abs = new URL(u, location.href).href;
       try {
-        const r = await fetch(u); if (!r.ok || !r.body) throw 0;
+        const r = await fetch(u, ctl ? { signal: ctl.signal } : {}); if (!r.ok || !r.body) throw 0;
         const rd = r.body.getReader(), parts = [];
         for (;;) { const { done, value } = await rd.read(); if (done) break; parts.push(value); got += value.length; recibido += Math.min(value.length, Math.max(0, peso - (got - value.length))); }
         if (/\.mp4$/.test(u)) BLOBS[abs] = URL.createObjectURL(new Blob(parts, { type: 'video/mp4' }));
@@ -100,7 +101,7 @@
     (async () => { for (const grupo of lista) await Promise.all(grupo.map(bajar)); })();
     const real = () => clamp(recibido / total);
     const t0 = 0; // nv6: mínimo 3 s y tope 8 s contados desde que empezó a cargar la página (performance.now() parte en 0)
-    const TOPE = 6300; // nv8: se fuerza a 6,3 s para que la apertura (0,35 s de rampa + 1,3 s) termine antes de los 8 s
+    const TOPE = 6000; // nv8: se fuerza a 6,0 s para que la apertura (0,35 s de rampa + 1,3 s) termine antes de los 8 s
     let shown = 0, force = null, done = false, opening = false;
     const tick = () => {
       if (done) return; const el = performance.now() - t0;
@@ -114,7 +115,7 @@
     setTimeout(() => { if (!H.classList.contains('abierto')) { done = true; clearInterval(iv); finish(); } }, 13000); // red de seguridad
 
     function open() {
-      opening = true;
+      opening = true; if (ctl && force) ctl.abort();
       const W = geo.W, Hh = geo.H, s1 = Math.hypot(W / 2, Hh / 2) / 40 * 1.3;
       heroSrc(); if (hv) { try { hv.currentTime = 0; } catch (e) {} }
       const go = () => { H.classList.add('abierto'); if (hv) hv.play().catch(() => {}); };
@@ -159,7 +160,7 @@
     $$('[data-cuenta]').forEach(b => {
       const end = parseFloat(b.dataset.cuenta), dec = end % 1 ? 1 : 0, txt = b.textContent, o = { v: 0 };
       gsap.to(o, { v: end, duration: 1.6, ease: 'power3.out', scrollTrigger: { trigger: b, start: 'top 90%', once: true },
-        onUpdate: () => { b.textContent = txt.replace(/[\d.,]+/, o.v.toFixed(dec).replace('.', ',')); }, onComplete: () => b.textContent = txt });
+        onUpdate: () => { const en = H.dataset.lang === 'en'; b.textContent = (en && b.dataset.en ? b.dataset.en : (b.dataset.es || txt)).replace(/[\d.,]+/, en ? o.v.toFixed(dec) : o.v.toFixed(dec).replace('.', ',')); }, onComplete: () => { b.textContent = H.dataset.lang === 'en' && b.dataset.en ? b.dataset.en : (b.dataset.es || txt); } });
     });
     // nv8: el 4,6 se estampa como sello
     const se = $('.sello');

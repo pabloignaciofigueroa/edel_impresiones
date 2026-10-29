@@ -375,3 +375,5 @@ body.menu-abierto{overflow:hidden}
 html{overflow-x:clip}
 @media (min-width:700px) and (max-width:1099px){.serv-m{aspect-ratio:1}}
 @media (min-width:900px){.team{position:sticky;top:110px}}
+.menu-lang .lang span,.pie-lang .lang span{opacity:.78}
+html[data-lang="es"] .lang .es,html[data-lang="en"] .lang .en{opacity:1}
