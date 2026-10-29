@@ -159,7 +159,7 @@
     $$('[data-cuenta]').forEach(b => {
       const end = parseFloat(b.dataset.cuenta), dec = end % 1 ? 1 : 0, txt = b.textContent, o = { v: 0 };
       gsap.to(o, { v: end, duration: 1.6, ease: 'power3.out', scrollTrigger: { trigger: b, start: 'top 90%', once: true },
-        onUpdate: () => { b.textContent = txt.replace(/[\d.,]+/, o.v.toFixed(dec).replace('.', ',')); }, onComplete: () => b.textContent = txt });
+        onUpdate: () => { const en = H.dataset.lang === 'en'; b.textContent = (en && b.dataset.en ? b.dataset.en : (b.dataset.es || txt)).replace(/[\d.,]+/, en ? o.v.toFixed(dec) : o.v.toFixed(dec).replace('.', ',')); }, onComplete: () => { b.textContent = H.dataset.lang === 'en' && b.dataset.en ? b.dataset.en : (b.dataset.es || txt); } });
     });
     // nv8: el 4,6 se estampa como sello
     const se = $('.sello');

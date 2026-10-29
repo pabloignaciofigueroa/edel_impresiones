@@ -40,7 +40,7 @@ VIDEOS={
  'p1-imprimir8':([('45',1.62,3.55,{}),('30',0.0,1.8,{}),('37',2.15,3.55,{})],'IG-45, IG-30, IG-37','proceso 1'),
  'letreros8': ([('34',4.52,7.3,{}),('37',8.05,11.03,{}),('34',17.9,21.7,{})],'IG-34, IG-37','servicio: letreros (Pilates & Skincare), sin rótulos ni póster intruso'),
  'diplomas8': ([('47',1.65,2.85,{'v':0.95}),('47',4.12,5.7,{'v':0.95,'cens':True}),('47',5.75,7.8,{'v':0.95,'cens':True}),('47',7.85,9.55,{'v':0.95,'cens':True}),('47',10.27,11.9,{'v':0.95,'cens':True}),('47',11.97,13.98,{'v':0.95,'cens':True})],'IG-47','servicio: diplomas (Dekra), nombres y QR difuminados'),
- 'tarjetas8': ([('45',5.75,7.82,{'v':0.62,'interp':True}),('31',3.05,4.48,{'v':0.62,'interp':True}),('40',9.3,11.05,{'v':0.62,'interp':True}),('40',0.0,1.08,{'v':0.62,'interp':True})],'IG-45, IG-31, IG-40','servicio: tarjetas (Hojalatería Erice, XS Joyas, Sigma), sin el cuaderno Reiver'),
+ 'tarjetas8': ([('45',5.75,7.82,{'v':0.55,'interp':True}),('31',3.05,4.48,{'v':0.55,'interp':True}),('40',9.3,11.05,{'v':0.55,'interp':True})],'IG-45, IG-31, IG-40','servicio: tarjetas (Hojalatería Erice, XS Joyas, Sigma), sin el cuaderno Reiver ni los volantes (segunda ronda)'),
  'team8':     ([('35',1.12,4.5,{'v':0.4,'interp':True})],'IG-35','equipo: Team Mate o Team Café; el loop se funde con el rótulo ya quieto'),
  'medallas8': ([('44',1.32,3.0,{}),('44',3.5,5.22,{}),('44',5.25,7.45,{}),('44',7.52,10.2,{}),('44',10.52,12.58,{})],'IG-44','servicio: medallas (RevelArte): láser, UV, medalla y entrega'),
  'stickers8': ([('37',0.0,2.1,{'v':0.9}),('37',2.17,3.58,{'v':0.9}),('37',3.62,5.62,{'v':0.9}),('31',10.4,11.85,{'v':0.9}),('31',12.0,13.28,{'v':0.9}),('31',13.33,14.72,{'v':0.9})],'IG-37, IG-31','servicio: stickers y etiquetas'),

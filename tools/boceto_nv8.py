@@ -207,7 +207,7 @@ RESENAS = [
 
 
 def resena(txt, quien, fuente):
-    return (f'<figure class="resena"><blockquote lang="es">“{e(txt)}”</blockquote>'
+    return (f'<figure class="resena"><blockquote lang="es">“{e(txt).rstrip().replace(" .", "\u00a0.")}”</blockquote>'
             f'<figcaption>{e(quien)}, {t("Chile", "Chile")} · {t("vía", "via")} {fuente}</figcaption></figure>')
 
 
@@ -313,8 +313,8 @@ page = f'''<!doctype html>
   <ul class="cifras">
    <li><b data-cuenta="20">+20</b>{t("años de experiencia", "years of experience")}</li>
    <li><b aria-hidden="true">🚀</b>{t("Pioneros en Chiloé", "Pioneers in Chiloé")}</li>
-   <li><b data-cuenta="4.6">4,6</b>{t("en Google", "on Google")}</li>
-   <li><b data-cuenta="100">100 %</b>{t("recomendado en Facebook", "recommended on Facebook")}</li>
+   <li><b data-cuenta="4.6" data-en="4.6">4,6</b>{t("en Google", "on Google")}</li>
+   <li><b data-cuenta="100" data-en="100%">100 %</b>{t("recomendado en Facebook", "recommended on Facebook")}</li>
   </ul>
  </div>
 </section>
@@ -392,7 +392,7 @@ page = f'''<!doctype html>
  <div class="w">
   <h2 class="sr" id="res-h">{t("Reseñas", "Reviews")}</h2>
   <div class="res-top">
-   <p class="sello" aria-hidden="true"><b>4,6</b><span>★★★★★</span><small>Google</small></p>
+   <p class="sello" aria-hidden="true"><b data-en="4.6">4,6</b><span>★★★★★</span><small>Google</small></p>
    <p class="banda b-tinta">{t("4,6 en Google · 100 % recomendado en Facebook", "4.6 on Google · 100% recommended on Facebook")}</p>
   </div>
   <div class="res-pista" tabindex="0" aria-label="Reseñas" data-aria-en="Reviews">{"".join(resena(*r) for r in RESENAS)}</div>

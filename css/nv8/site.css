@@ -369,3 +369,9 @@ body.menu-abierto{overflow:hidden}
 
 /* movimiento reducido: los videos quedan en su póster */
 @media (prefers-reduced-motion:reduce){.resena,.resena::after{transition:none}}
+/* segunda ronda: el estallido no ensancha la página; las reseñas giradas no se cortan abajo */
+.s-equipo{overflow-x:clip}
+.res-pista{padding:14px 6px 30px}
+html{overflow-x:clip}
+@media (min-width:700px) and (max-width:1099px){.serv-m{aspect-ratio:1}}
+@media (min-width:900px){.team{position:sticky;top:110px}}

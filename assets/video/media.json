@@ -726,15 +726,15 @@
  },
  "tarjetas8": {
   "fuente": "IG-45, IG-31, IG-40",
-  "uso": "servicio: tarjetas (Hojalatería Erice, XS Joyas, Sigma), sin el cuaderno Reiver",
-  "duracion": 8.4,
+  "uso": "servicio: tarjetas (Hojalatería Erice, XS Joyas, Sigma), sin el cuaderno Reiver ni los volantes (segunda ronda)",
+  "duracion": 8.03,
   "tramos": [
    [
     "45",
     5.75,
     7.82,
     {
-     "v": 0.62,
+     "v": 0.55,
      "interp": true
     }
    ],
@@ -743,7 +743,7 @@
     3.05,
     4.48,
     {
-     "v": 0.62,
+     "v": 0.55,
      "interp": true
     }
    ],
@@ -752,25 +752,16 @@
     9.3,
     11.05,
     {
-     "v": 0.62,
-     "interp": true
-    }
-   ],
-   [
-    "40",
-    0.0,
-    1.08,
-    {
-     "v": 0.62,
+     "v": 0.55,
      "interp": true
     }
    ]
   ],
-  "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAwAgCdASoJABAAA4BaJYwCdAYoBuK1aecmAAD+i6FJAB30HRGgOCtIZiBFXLdORCKFyWilFuaB8UFKGTDl+vJYq+oCBAAA",
+  "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoJABAAA4BaJYwCdAYqXvbnAAD+jLJasV1D4GQ4N2XSG3Nl5aVj8KZQ+vIEm6BOo+pC4ys6O91UdPKwbQAvAAAA",
   "kb": {
-   ".mp4": 352,
-   ".webm": 448,
-   "-poster.webp": 18
+   ".mp4": 307,
+   ".webm": 393,
+   "-poster.webp": 19
   }
  },
  "team8": {
