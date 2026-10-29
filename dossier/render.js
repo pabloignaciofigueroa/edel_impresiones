@@ -13,10 +13,13 @@ const { chromium } = require('playwright');
       return bad.length ? i + ':' + bad.join(' | ') : null; }).filter(Boolean));
     console.log(name, 'overflow', JSON.stringify(over));
     await p.pdf({ path: __dirname + '/' + name + '.pdf', width: '13in', height: '8.5in', printBackground: true });
-    if (name === 'edel-dossier-diseno') {
+    {
+      const pre = name === 'edel-carta-regalo' ? 'c' : 'p';
       const lams = await p.$$('.lam');
-      for (let i = 0; i < lams.length; i++) await lams[i].screenshot({ path: `${__dirname}/pages/p-${String(i).padStart(2, '0')}.png` });
+      for (let i = 0; i < lams.length; i++) await lams[i].screenshot({ path: `${__dirname}/pages/${pre}-${String(i + 1).padStart(2, '0')}.png` });
     }
   }
   await b.close();
+  // PDF para anillar: carta de regalo de Bergerac + dossier
+  require('child_process').execFileSync('qpdf', ['--empty', '--pages', __dirname + '/edel-carta-regalo.pdf', __dirname + '/edel-dossier-diseno.pdf', '--', __dirname + '/edel-brochure-imprimir.pdf']);
 })();

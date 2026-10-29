@@ -1,6 +1,5 @@
 # Dossier-brochure · Edel Impresiones (Bergerac, oct 2026)
-# Genera dossier/edel-dossier-diseno.html (autocontenido) y dossier/edel-carta-regalo.html.
-# La primera hoja del anillado es la carta de regalo de Bergerac; después, las 14 láminas del dossier.
+# Genera dossier/edel-dossier-diseno.html (autocontenido). La carta de regalo de Bergerac va aparte (build_carta.py).
 # Adaptado de chiloe_magico_tours/dossier/build_dossier.py. Cifras calculadas desde los archivos.
 import base64, html, io, json, pathlib, re
 from PIL import Image, ImageOps
@@ -109,27 +108,6 @@ def seal(x, y, d, rot=-8):
 LOGO_CLARO = png_file('brand/png/logo-horizontal-claro.png', 1000)
 LOGO = png_file('brand/png/logo-horizontal.png', 1000)
 
-# ======================= CARTA DE REGALO (primera hoja del anillado) =======================
-CARTA_REGALO = f'''<article class="lam free regalo" style="background:{PA}">
-  <div class="rg-col" style="background:{TI}">
-    <img src="{LOGO_CLARO}" alt="Edel Impresiones" class="rg-logo">
-    <p class="rg-url">edelimpresiones.pages.dev</p>
-  </div>
-  {seal(1.15, 5.35, 2.0, -10)}
-  {box(5.0, .7, 7.3, f"""<p class="k" style="color:{BA}">Castro, octubre de 2026</p>
-  <h2 class="t" style="color:{TI}">Un sitio web <em style="color:{BA}">de</em> regalo</h2>
-  <div class="letter2">
-  <p>Equipo de Edel Impresiones:</p>
-  <p>Les dejamos un sitio web hecho para ustedes, sin que nos lo pidieran. Ya está en línea en <b>edelimpresiones.pages.dev</b> y se puede abrir desde cualquier celular o computador.</p>
-  <p>Es un regalo y es gratis: no los compromete a nada y no hay letra chica; está hecho para que lo miren, lo muestren y lo compartan si les gusta.</p>
-  <p>Todo salió de lo que ya está publicado: los textos de su Instagram, su Facebook y sus reseñas de Google, y las fotos y videos de su Instagram. Por ahora no aparece en Google; queda así hasta que ustedes decidan.</p>
-  <p>Si algo no les gusta, o prefieren que no esté en internet, basta con decirnos y lo bajamos, sin problema.</p>
-  <p>Este documento cuenta de dónde salió cada decisión del sitio.</p>
-  </div>
-  <p class="sign-r">Pablo Figueroa G.</p>
-  <p class="role-r">Director de estudio · Bergerac</p>
-  <p class="contact-r"><a href="mailto:pablo@bergerac.cl">pablo@bergerac.cl</a> · <a href="tel:+56975892096">+56 9 7589 2096</a> · <a href="https://bergerac.cl">Bergerac.cl</a></p>""")}
-</article>'''
 
 # ======================= LÁMINAS DEL DOSSIER =======================
 # 01 · PORTADA · la impresora UV a doble página, solo el logo
@@ -402,7 +380,7 @@ def doc(title, body):
     return f'''<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title><style>{CSS}</style></head><body>{body}</body></html>'''
-(D / 'edel-dossier-diseno.html').write_text(doc('Edel Impresiones · Carta de regalo y decisiones de diseño del sitio web', CARTA_REGALO + ''.join(L)), encoding='utf-8')
-(D / 'edel-carta-regalo.html').write_text(doc('Edel Impresiones · Carta de regalo', CARTA_REGALO), encoding='utf-8')
-print('láminas', n, '+ carta de regalo · MB', round(len(doc('', CARTA_REGALO + ''.join(L))) / 1e6, 1))
+(D / 'edel-dossier-diseno.html').write_text(doc('Edel Impresiones · Decisiones de diseño del sitio web', ''.join(L)), encoding='utf-8')
+# la carta de regalo de Bergerac se genera aparte (build_carta.py) y render.js la antepone en el PDF para anillar
+print('láminas', n, '· MB', round(len(doc('', ''.join(L))) / 1e6, 1))
 print('cifras', dict(posts=N_POSTS, reels=N_REELS, videos=N_VIDEOS, reels_usados=N_REELS_USADOS, fotos=N_FOTOS, posts_fotos=N_POSTS_FOTOS, res=(N_RES, N_RES_G, N_RES_F), clientes=CLIENTES, desde=DESDE, hasta=HASTA))
