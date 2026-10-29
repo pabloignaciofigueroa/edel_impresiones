@@ -140,7 +140,7 @@ def big(nm, cap): return f'<div class="bign"><b>{nm}</b><span>{cap}</span></div>
 L.append(lam(AZ, polh +
   box(6.9, .65, 5.65, f'''<p class="k" style="color:{CL}">De dónde viene todo</p>
   <h2 class="t" style="color:#fff">Todo esto <em style="color:{NA}">ya</em> era suyo</h2>
-  <div class="bigs">{big(N_POSTS, "publicaciones suyas de 2026, del 15 de abril al 28 de septiembre")}{big(N_REELS, "de ellas son videos: por eso el sitio se mueve")}{big(N_VIDEOS, f"videos en el sitio, armados con {N_REELS_USADOS} de sus reels")}{big(N_FOTOS, f"fotos suyas, de {N_POSTS_FOTOS} publicaciones")}</div>
+  <div class="bigs">{big(N_POSTS, "publicaciones suyas de 2026, del 15 de abril al 28 de septiembre")}{big(N_REELS_USADOS, "de sus reels dan vida a los videos del sitio")}{big(N_SERV, "servicios, cada uno con su video o su foto")}{big(N_RES, "reseñas de sus clientes, al pie de la letra")}</div>
   <p class="p" style="color:#fff">Cada texto tiene su origen identificado: un post, su bio, su página de Facebook o una reseña. Lo que ustedes aún no publican, como el horario de atención, no se inventa: queda <b>por confirmar con ustedes</b>.</p>'''),
   nc='rgba(255,255,255,.7)'))
 
@@ -157,7 +157,7 @@ L.append(lam(PA, f'<div class="stripes">{sth}<div class="stripe torna" style="ba
   <div><h4 style="color:{AZ}">Color</h4><p>Viene de su logo, de sus piezas y de su taller: el azul y el naranja del isotipo, la madera de sus muros, la luz de la impresora UV y el brillo de los stickers plateados.</p></div>
   <div><h4 style="color:{BA}">Logo</h4><p>Se redibujó siguiendo su logo original, curva por curva, para que se vea nítido a cualquier tamaño: del ícono de la pestaña a un letrero.</p></div></div>''') +
   f'<img class="abs" src="{LOGO}" style="left:.55in;top:6.75in;width:2.6in" alt="">' +
-  box(3.6, 6.85, 3.8, '<p class="p sm">Estos códigos son de pantalla; para imprimir conviene llevarlos a CMYK o Pantone.</p>')))
+  box(3.6, 6.85, 3.8, '<p class="p sm">Estos códigos son de pantalla; para imprimir conviene llevarlos a CMYK o Pantone.</p>'), cls='no-izq'))
 
 # 05 · RECORRIDO · tinta, 4 actos con medallones
 actos = [('d-hero', 'Entrar', 'La carga, la apertura y sus máquinas en marcha.', -3),
@@ -221,7 +221,7 @@ L.append(lam(UV,
 
 # 10 · TRABAJOS · papel + tornasol, pila de stickers, clientes en cápsulas
 cli = ''.join(pill(c_, [AZ, BA, TI, UV][i % 4]) for i, c_ in enumerate(CLIENTES))
-L.append(lam(PA, f'<div class="tornabar" style="background:{TORNA}"></div>' +
+L.append(lam(PA, cls='claro', inner=f'<div class="tornabar" style="background:{TORNA}"></div>' +
   box(.55, .75, 5.8, f'''<p class="k" style="color:{BA}">Los trabajos</p>
   <h2 class="t" style="color:{TI}">Sus clientes, <em style="color:{AZ}">en</em> una pila de stickers</h2>
   <p class="p">Ustedes hacen stickers, así que sus trabajos se muestran como una pila de stickers: se despegan con el dedo o con un botón, y se levanta la esquina como en una lámina real. Son {N_TRAB} trabajos que ustedes publicaron, cada uno con su cliente:</p>
@@ -241,7 +241,7 @@ L.append(lam(MA,
   <p class="p">Su reel preguntaba «Team Mate o Team Café». En el sitio, la pregunta tiene dos botones: al elegir, saltan mates o tazas por la pantalla.</p>''', 'card', f'background:{PA};') +
   box(.55, 6.25, 5.4, Q('Los mejores de Castro! Personal super amables y el servicio excelente.', 'Silvana · Google'), '', '') +
   fr('d-team', 6.45, .6, 6.1, 1.5) + fr('d-flipc', 6.85, 4.55, 5.4, -2, 3),
-  nc='rgba(5,38,63,.5)'))
+  nc='rgba(5,38,63,.5)', cls='claro'))
 
 # 12 · RESEÑAS Y COTIZA · naranja, sello 4,6, WhatsApp
 L.append(lam(NA,
@@ -262,25 +262,26 @@ L.append(lam(NA,
 phs = ''.join(ph(k, .65 + i * 2.45, .45 + (0, .3, 0, .3, 0)[i], 2.0, (-4, 3, -2, 4, -3)[i], crop=3.95) for i, k in enumerate(['m-carga', 'm-intro', 'm-serv2', 'm-menu', 'm-res']))
 dots = ''.join(f'<div class="dot" style="left:{.45 + i * 2.45}in;top:{1.3 + (0, .3, 0, .3, 0)[i]}in;background:{c_}"></div>' for i, c_ in enumerate([TI, AZ, NA, UV, MA]))
 det = [('Celular primero', 'Como su Instagram, se lee en el teléfono: botones grandes, el catálogo de a dos y un menú a pantalla completa con su azul y su letra.', AZ),
-       ('Español e inglés', 'Un botón ES · EN traduce botones y rótulos. Sus frases se quedan en español; los títulos llevan debajo una ayuda en inglés para quien viene de visita.', BA),
+       ('Listo para compartir', 'Al mandar el enlace por WhatsApp aparece una imagen con su logo y su plotter cortando etiquetas, en vez de un enlace suelto.', BA),
        ('Cuidado con los datos', 'En su reel de diplomas se leían nombres de alumnos y un código QR: en el sitio van difuminados. Las publicaciones de 2022 y 2023 y el teléfono antiguo quedaron fuera.', UV),
-       ('Sin tropiezos', 'La página no salta mientras carga, se lee bien incluso con sol y cada foto y video tiene su descripción en español y en inglés.', TI)]
+       ('Sin tropiezos', 'La página no salta mientras carga, se lee bien incluso con sol y cada foto y video tiene su descripción para quien no puede verlos.', TI)]
 deth = ''.join(box(.55 + i * 3.1, 5.55, 2.85, f'<div class="bar" style="background:{c_}"></div><h3 class="t4">{t_}</h3><p class="p">{p_}</p>') for i, (t_, p_, c_) in enumerate(det))
 L.append(lam(PA, dots + phs + deth))
 
-# 14 · CIERRE · foto a sangre del equipo y tarjeta
-L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed abs0" src="{raw(R["equipo4"], 2400)}" style="object-position:50% 45%" alt="">' +
-  box(6.75, .5, 5.75, f'''<img src="{png_file("brand/png/isotipo.png", 300)}" class="mk" alt="">
-  <p class="k" style="color:{BA}">Lo que sigue</p><h2 class="t" style="color:{TI}">Hacerlo <em style="color:{AZ}">suyo</em></h2>
-  <p class="p">Este sitio se hizo solo con lo que ya estaba publicado. Con un par de conversaciones podría ir mucho más lejos:</p>
+# 14 · CIERRE · foto a sangre del equipo y la tarjeta abajo, para que se vean sus caras
+L.append(f'<article class="lam free" style="background:{TI}"><img class="bleed abs0" src="{raw(R["equipo4"], 2400)}" style="object-position:50% 22%" alt="">' +
+  box(.5, 5.25, 12.0, f'''<div class="cierre3">
+  <div><img src="{png_file("brand/png/isotipo.png", 300)}" class="mk" alt="">
+  <p class="k" style="color:{BA}">Lo que sigue</p><h2 class="t" style="color:{TI};margin-bottom:.08in">Hacerlo <em style="color:{AZ}">suyo</em></h2>
+  <p class="p">Este sitio se hizo solo con lo que ya estaba publicado. Con un par de conversaciones podría ir mucho más lejos:</p></div>
   <ul class="next2"><li>Fotos y videos propios del taller y de las máquinas, en alta resolución</li>
-    <li>Horario, nombres del equipo y confirmar si XS Joyas, Sigma y Despensa Chiloé quieren aparecer como clientes</li>
+    <li>Horario de atención y nombres del equipo, contados por ustedes</li>
     <li>Dominio propio .cl y alojamiento a nombre de Edel Impresiones</li>
     <li>Cotizaciones que lleguen a su WhatsApp ordenadas por servicio, medida y fecha</li></ul>
-  <p class="invite2">Cuando quieran, lo conversamos.</p>
+  <div class="firma3"><p class="invite2">Cuando quieran, lo conversamos.</p>
   <p class="who2">Pablo Figueroa G.</p><p class="role2">Director de estudio</p>
   <p class="contact2"><a href="mailto:pablo@bergerac.cl">pablo@bergerac.cl</a> · <a href="tel:+56975892096">+56 9 7589 2096</a></p>
-  <p class="link2"><a href="https://bergerac.cl">Bergerac.cl</a></p>''', 'card', f'background:{PA};padding:.42in .5in;') +
+  <p class="link2"><a href="https://bergerac.cl">Bergerac.cl</a></p></div></div>''', 'card', f'background:{PA};padding:.3in .4in;') +
   f'<span class="no" style="color:rgba(255,255,255,.7)">{nx():02d}</span></article>')
 
 # ======================= CSS =======================
@@ -322,7 +323,12 @@ body{{font-family:"Montserrat",Arial,sans-serif;color:{TI};-webkit-print-color-a
 .pic{{position:absolute;overflow:hidden;box-shadow:0 12pt 34pt rgba(0,0,0,.22)}}
 .pic img{{width:100%;height:100%;object-fit:cover;display:block}}
 .troq{{position:absolute;border:2pt dashed;pointer-events:none}}
-.fr{{position:absolute;border-radius:8pt;overflow:hidden;box-shadow:0 14pt 34pt rgba(0,0,0,.3);background:#fff}}
+.fr{{position:absolute;border-radius:8pt;overflow:hidden;box-shadow:0 14pt 34pt rgba(0,0,0,.3);background:transparent;outline:1.8pt dashed rgba(255,255,255,.75);outline-offset:5pt}}
+.claro .fr{{outline-color:rgba(5,38,63,.45)}}
+.no-izq .no{{right:auto;left:7.5in}}
+.cierre3{{display:grid;grid-template-columns:1.05fr 1.25fr .9fr;gap:.4in;align-items:start}}
+.cierre3 .next2{{margin:.05in 0 0}}
+.cierre3 .mk{{width:.42in;margin-bottom:.08in}}
 .fr img{{width:100%;display:block}}
 .ph{{position:absolute;border-radius:16pt;overflow:hidden;border:4pt solid #111;box-shadow:0 14pt 30pt rgba(0,0,0,.32);background:#111}}
 .ph img{{width:100%;display:block;border-radius:12pt}}
