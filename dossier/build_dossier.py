@@ -191,8 +191,8 @@ L.append(lam(UV,
   <p class="p" style="color:rgba(255,255,255,.92)">El título es su propio post: «Tu marca empieza por una buena impresión». Funciona en los dos sentidos, como ustedes lo escribieron. Detrás, un video armado con sus reels: la impresora UV, el plotter de corte y el depilado.</p>
   <p class="p" style="color:rgba(255,255,255,.92)">La banda naranja repite su bio: «Pioneros en Chiloé · Más de 20 años de experiencia nos respaldan». Dos botones: cotizar por WhatsApp o ver trabajos.</p>''') +
   box(.55, 5.35, 4.1, Q('Tu marca empieza por una buena impresión 🔥', IG('16')), 'card', f'background:{PA};') +
-  fr('d-hero', 5.3, .65, 7.25, 1.5) + ph('m-hero', 4.75, 3.55, 1.7, -5) +
-  box(6.85, 5.55, 5.7, f'<div class="pills">{pill("Pioneros en Chiloé", BA)}{pill("Más de 20 años", PA, TI)}{pill(f"{NOTA_G} en Google", NA, TI)}{pill(f"{FB_PCT} recomendado en Facebook", PA, TI)}</div><p class="p" style="color:rgba(255,255,255,.85);margin-top:.12in">Justo debajo, sus cuatro datos; los números se cuentan solos al aparecer.</p>'),
+  fr('d-hero', 5.3, .65, 7.25, 1.5) + ph('m-hero', 11.15, 3.45, 1.6, 5) +
+  box(6.85, 5.55, 4.1, f'<div class="pills">{pill("Pioneros en Chiloé", BA)}{pill("Más de 20 años", PA, TI)}{pill(f"{NOTA_G} en Google", NA, TI)}{pill(f"{FB_PCT} recomendado en Facebook", PA, TI)}</div><p class="p" style="color:rgba(255,255,255,.85);margin-top:.12in">Justo debajo, sus cuatro datos; los números se cuentan solos al aparecer.</p>'),
   nc='rgba(255,255,255,.7)'))
 
 # 08 · SERVICIOS · azul, troquel, banda naranja, celular en dos columnas
