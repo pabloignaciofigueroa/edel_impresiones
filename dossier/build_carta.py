@@ -25,18 +25,19 @@ def qr(url):
     buf = io.BytesIO(); q.make_image(fill_color='black', back_color='white').save(buf, 'PNG')
     return 'data:image/png;base64,' + base64.b64encode(buf.getvalue()).decode()
 
-# portada del sitio (captura del computador, recortada a la proporción de la de Chiloé Mágico)
-im = Image.open(D / 'shots/d-hero.jpg'); W, H = im.size; ch = round(W / 1.707)
-portada = im; portada.save(K / 'portada-sitio.jpg', quality=90)
+# imagen: la portada del brochure (la impresora UV con su logo), no una captura con texto (Pablo)
+LOGO = D.parent / 'brand/png/logo-horizontal.png'
 
 HTML = f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{MARCA} · Carta de Bergerac</title><style>
 @font-face{{font-family:"Alfa";src:url({font("alfa-slab-one-latin-400-normal.woff2")}) format("woff2")}}
 @font-face{{font-family:"Alfa";src:url({font("alfa-slab-one-latin-ext-400-normal.woff2")}) format("woff2");unicode-range:U+0100-024F}}
 @font-face{{font-family:"Mona";font-weight:300;src:url({font("mona-sans-latin-300-normal.woff2")}) format("woff2")}}
+@font-face{{font-family:"Mona";font-weight:500;src:url({font("mona-sans-latin-500-normal.woff2")}) format("woff2")}}
 @font-face{{font-family:"Mona";font-weight:600;src:url({font("mona-sans-latin-600-normal.woff2")}) format("woff2")}}
+@font-face{{font-family:"Mona";font-weight:900;src:url({font("mona-sans-latin-900-normal.woff2")}) format("woff2")}}
 @page{{size:13in 8.5in;margin:0}}
 *{{box-sizing:border-box;margin:0;padding:0}}
-body{{font-family:"Mona",Arial,sans-serif;font-weight:300;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+body{{font-family:"Mona",Arial,sans-serif;font-weight:500;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 .hoja{{width:13in;height:8.5in;position:relative;overflow:hidden;display:flex}}
 .izq{{width:6.5in;height:100%;background:{CREMA};color:{GRAFITO};position:relative;padding:.5in .54in}}
 .der{{width:6.5in;height:100%;background:{GRAFITO};color:#e3e2e0;position:relative;padding:.58in .5in .5in .49in}}
@@ -53,13 +54,15 @@ h1 em{{font-style:normal;color:{ROJO}}}
 .izq .p.hola{{margin-top:.34in}}
 .base{{position:absolute;left:.54in;bottom:.36in;font-size:6.2pt;letter-spacing:.26em;color:#8a8987;text-transform:uppercase}}
 .der .p{{font-size:9.1pt;line-height:1.62;margin-bottom:.14in}}
-.der .y{{color:{AMARILLO};font-weight:600}}
-.captura{{border-radius:.16in;overflow:hidden;margin:.06in 0 .12in;height:2.75in}}
-.captura img{{width:100%;height:100%;object-fit:cover;object-position:50% 100%;display:block}}
-.cap{{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.16in}}
-.cap p{{font-size:6.6pt;line-height:1.6;color:#a6a6a5}}
-.cap b{{color:#fff;font-weight:600}}
-.cap img{{width:.62in;height:.62in;display:block;border-radius:2pt}}
+.der .y{{color:{AMARILLO};font-weight:600;font-size:18.2pt;line-height:1.25;margin-bottom:.16in}}
+.captura{{border-radius:.16in;overflow:hidden;margin:0 0 .14in;height:2.3in;position:relative}}
+.captura>img{{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}}
+.captura .tab{{position:absolute;left:0;top:.2in;background:#fff;opacity:.85;padding:.08in .16in .08in .2in;border-radius:0 .1in .1in 0}}
+.captura .tab img{{width:1.15in;display:block}}
+.cap{{display:flex;justify-content:space-between;align-items:center;gap:.2in;margin-bottom:.16in}}
+.cap p{{font-size:8pt;line-height:1.5;color:#cfcecc}}
+.cap b{{display:block;color:#fff;font-weight:900;font-size:15pt;letter-spacing:.005em;margin-top:.05in}}
+.cap img{{width:1.1in;height:1.1in;display:block;border-radius:3pt;flex:none}}
 .firma{{position:absolute;left:.49in;right:.5in;bottom:.5in;border-top:.6pt solid #555;padding-top:.13in;display:flex;justify-content:space-between;align-items:flex-end}}
 .firma .who{{font-family:"Alfa";font-size:11pt;color:#fff;letter-spacing:.02em}}
 .firma .rol{{font-size:8pt;color:#cfcecc;margin-top:.03in}}
@@ -78,8 +81,8 @@ h1 em{{font-style:normal;color:{ROJO}}}
 <section class="der">
   <p class="p">Nos gusta trabajar en proyectos que nos motivan, así que decidimos hacer algo con eso. Construimos un sitio web para {MARCA} usando únicamente lo que ya comparten: sus publicaciones, sus fotografías, sus videos y las reseñas públicas de sus clientes.</p>
   <p class="p y">Es un regalo. Si les gusta, es suyo.</p>
-  <div class="captura"><img src="{b64(K / "portada-sitio.jpg", 1700)}" alt=""></div>
-  <div class="cap"><p>Portada del sitio que hicimos para {MARCA}.<br>Escanea el código o entra a <b>{URL}</b></p><img src="{qr("https://" + URL)}" alt=""></div>
+  <div class="captura"><img src="{b64(D / "fotos/portada.jpg", 1800)}" alt=""><div class="tab"><img src="{b64(LOGO, 600, "PNG")}" alt="Edel Impresiones"></div></div>
+  <div class="cap"><p>El sitio que hicimos para {MARCA}.<br>Escanea el código o entra a<b>{URL}</b></p><img src="{qr("https://" + URL)}" alt=""></div>
   <p class="p">Solo les pedimos una cosa a cambio, y únicamente si están de acuerdo: poder nombrar a {MARCA} en nuestra página, con su nombre y su logo, entre los trabajos que hemos realizado en la isla. Y si por cualquier motivo prefieren que no siga en línea, lo retiramos sin problema.</p>
   <p class="p">Junto a esta carta va también el dossier de decisiones de diseño, donde explicamos cada elección que tomamos a partir del material que encontramos.</p>
   <p class="p">Ante todo, muchas gracias por darse el tiempo de revisarlo. Lo hicimos con esmero y dedicación. Ojalá les guste.</p>
