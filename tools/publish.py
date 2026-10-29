@@ -19,14 +19,16 @@ OUT = ROOT / 'public'
 
 # Trabajo (fase 9): la versión en curso vive en /nueva/ (noindex). La raíz redirige ahí mientras se trabaja.
 # Al cerrar (fase 20): la versión aprobada pasa a la raíz y las /nueva*/ quedan con 301 a /.
-INCLUDE_FILES = ['nueva/index.html', 'nueva_v2/index.html', 'nueva_v3/index.html', 'nueva_v4/index.html', 'nueva_v5/index.html', 'nueva_v6/index.html', 'nueva_v7/index.html', 'nueva_v8/index.html', '404.html', 'robots.txt']
-INCLUDE_DIRS = ['vendor', 'assets/fonts', 'assets/video', 'assets/img', 'brand', 'css', 'js/nv1', 'js/nv2', 'js/nv3', 'js/nv4', 'js/nv5', 'js/nv6', 'js/nv7', 'js/nv8']
+# Fase 20 (cierre): la versión aprobada (nv8) vive en la raíz; las copias de trabajo /nueva*/ dejan de publicarse y
+# redirigen con 301 a /. Todas las versiones quedan respaldadas en la rama respaldo-versiones.
+INCLUDE_FILES = ['index.html', '404.html', 'robots.txt']
+INCLUDE_DIRS = ['vendor', 'assets/fonts', 'assets/video', 'assets/img', 'brand', 'css', 'js/nv8']
 ALL_DIRS = []
 BLOCKED_EXT = {'.md', '.py', '.csv', '.json', '.pyc', '.sh', '.ipynb'}
 BLOCKED_DIRS = {'assets/raw'}
 BLOCKED_NAMES = {'.DS_Store', 'Thumbs.db', '__pycache__', 'node_modules', '.git'}
 MAX_BYTES = 25 * 1024 * 1024
-EXTRA = ['assets/og.jpg']  # se referencia con URL absoluta (og:image); se publica siempre
+EXTRA = ['assets/og-edel.jpg']  # se referencia con URL absoluta (og:image); se publica siempre
 
 # Caché (regla de la skill): assets una semana + swr un día; vendor 30 días immutable; brand una semana; css/js una hora + swr.
 HEADERS = """\
@@ -49,8 +51,7 @@ HEADERS = """\
 /js/*
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 """
-REDIRECTS = """/ /nueva_v7/ 302
-"""
+REDIRECTS = "".join(f"/{d} / 301\n/{d}/* / 301\n" for d in ['nueva'] + [f'nueva_v{i}' for i in range(2, 9)])
 
 
 def is_internal(rel: pathlib.PurePosixPath) -> str | None:

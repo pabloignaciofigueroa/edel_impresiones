@@ -44,3 +44,27 @@
   · Agente de diseño: cada medialuna es un solo elemento (el relleno real) y se anima su máscara con el mismo path: línea de 1 px hacia adentro (Pablo: «el contorno hacia adentro, para que cuando entre el real no exista diferencia»; 60 % más delgada), que luego se engrosa hacia adentro hasta llenar. Medido: 0 px de diferencia en el borde contra el logo final. Línea azul algo más clara al inicio (#1aa8d8→#0a6cb0) que vuelve al degradado del logo antes de engrosar (aprobado por Pablo). Especificación: _qa/agentes/diseno/especificacion.md.
   · «d» de «edel» dibujada primero la panza y luego el asta (antes se leía «J»).
 - Pendiente: brand/*.svg y PNG del logo siguen con el calco potrace; pasar a brand/_iso_vector.json antes del cierre (fase 20).
+- 2026-10-28 · nv7 aprobada por Pablo («Quedó increíble»). Método de carga marcado ★ para la skill (_plan/edel/lecciones_para_skill.md).
+- 2026-10-28 · Fase 19, primera ronda (4 evaluadores independientes sobre nv7; informes en _qa/fase19/ y copia en _plan/edel/evaluaciones/): juez dueño 17/20; voz 15,5; imagen 12,5; servicios y color 14; entretención 16 (global 3/4); QA técnico con 3 bloqueantes (carga a 9,7 s en 4G, dorso de Equipo sin JS, contraste AA).
+- 2026-10-28 · nv8 (/nueva_v8/; /nueva_v7/ congelada en 9a5679f). Correcciones sin decisión de diseño:
+  · Destello al reiniciar el loop: el reel IG-45 cambia de impresora a los 1,633 s y el loop parte 0,9 s después del inicio del tramo; los tramos IG-45 parten ahora en 1,62 s e IG-34 en 4,52 s. Se sacaron otros fragmentos de 3–7 cuadros (IG-37, IG-44, IG-30).
+  · Privacidad: Diplomas (IG-47) mostraba un QR escaneable y nombres completos de alumnos de Dekra. Se difuminan cuadro a cuadro (texto y QR); el video luce desenfocado a propósito. La portada ya no usa el tramo de diplomas.
+  · Tarjetas: se quitó la libreta de Reiver Chiloé (no es una tarjeta); 8,4 s con tomas de Erice, XS Joyas y Sigma.
+  · Loops a 8–10 s donde el material alcanza (UV, Láser, Medallas, Stickers, Letreros). Trabajos usa cortes propios para Medallas (entrega en escenario), Letreros (póster terminado) y Bitácoras.
+  · Textos: Dulce Enlatta = «Stickers transparentes» (IG-46; antes decía «Vasos grabados», error); «1º» → 🚀 (bio); Medallas con la frase completa de IG-44; glosas EN en Proceso, Equipo y Cotiza; «Message us on Instagram»; «Holographic silver stickers»; «Haz clic» con mouse y «Toca» en táctil; emojis finales pegados a su palabra.
+  · Contraste AA: velo detrás del titular; «IMPRESIÓN» en blanco sobre banda naranja #ce4204 (como en sus piezas); pasos de Proceso en lila sólido; teléfono de WhatsApp sin opacidad; enlaces del menú en blanco; anillo de foco visible en fondos claros y oscuros.
+  · Proceso: el paso marcado sigue al video (2,6 s y 7,3 s, revisado cuadro a cuadro); en celular el título va antes del video.
+  · Accesibilidad: el dorso de las tarjetas de Equipo se lee sin JS; nada se enfoca durante la carga; el foco va a la sección al usar el menú; con movimiento reducido los loops quedan en su póster; Reseñas con título.
+- 2026-10-28 · nv8, decisiones de Pablo:
+  · Carga: el % cuenta solo la portada (fuentes, póster y video de portada); Servicios baja al abrir. La apertura se fuerza a los 6,3 s para terminar antes de 8 s. Medido: 4G medio abre a los 4,8 s (antes 9,7 s).
+  · Servicios en celular: grilla de 2 columnas con medio cuadrado y banda pegada al borde: 3.353 px (antes 9.030).
+  · Servicios en escritorio: grilla pareja de 3 (la primera pieza ocupa dos filas) y pieza final «Y también: Pendones, Rollers, Adhesivos» [FB-INTRO] que cierra el rectángulo.
+  · Trabajos en escritorio: la pila de stickers junto al título, a la vista.
+  · Extras: WhatsApp con mensaje prellenado «Hola Edel, quiero cotizar un trabajo» [UI] (EN «Hi Edel, I would like a quote for a job»); en Reseñas el «4,6» se estampa como sello y cada reseña se despega como sticker al avanzar.
+  · Estallido Team Mate/Café más grande y sin recorte; brillo tornasol que en celular se mueve con el scroll.
+- 2026-10-28 · Fase 20 (cierre, OK de Pablo): versión final nv8 en la raíz; /nueva*/ con 301 a /; todo respaldado en la rama respaldo-versiones. Se mantiene noindex y robots Disallow hasta que el cliente acepte (es su marca). Logo (brand/*.svg, PNG, favicon) pasado al vector limpio; imagen para compartir nueva (assets/og-edel.jpg). Sin correo: Pablo va en persona (prohibido enviar correos).
+## Pedidos al cliente (fase 19)
+- Tomas más largas (≥ 10 s, sin rótulos) de: Team Mate/Café (hoy 7,6 s), prendas (IG-42, hoy 6,2 s con destellos), medallas, letreros y bitácoras terminados.
+- Diplomas: tomas sin datos personales (o autorización), para no tener que difuminar.
+- Captura o enlace de sus reseñas de Google (el 4,6 se tomó el 2026-10-28).
+- Confirmar la URL de Facebook (facebook.com/edel.chiloe).

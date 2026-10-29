@@ -43,7 +43,7 @@ def crescent(out,cut):
 import json as _j
 # Trazado final: potrace sobre las manchas del original a 4x (brand/_iso_trazado.json). Las medialunas geométricas
 # (círculo menos círculo) daban IoU 0,93/0,90 y no reproducían las puntas largas; el trazado sí.
-_T=_j.load(open('brand/_iso_trazado.json'))
+_T=_j.load(open('brand/_iso_vector.json'))  # fase 20: vector limpio (IoU 0,991/0,993) en vez del trazado potrace
 BLUE=_T['blue']; ORANGE=_T['orange']
 
 # «edel»: centro de lóbulo y=458, radio 56, trazo 40

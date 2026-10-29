@@ -8,13 +8,14 @@ import json, html, pathlib, sys, re, urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = 'https://edelimpresiones.pages.dev/'
-OUT = ROOT / 'nueva_v8' / 'index.html'
+FINAL = '--final' in sys.argv  # fase 20: versión definitiva en la raíz (rutas sin ../)
+OUT = ROOT / ('index.html' if FINAL else 'nueva_v8/index.html')
 V = json.load(open(ROOT / 'assets/video/media.json'))
 F = json.load(open(ROOT / 'assets/img/media.json'))
 L = json.load(open(ROOT / 'brand/_logo_paths.json'))
 ROT = json.load(open(ROOT / 'brand/_iso_rotado.json'))  # vector limpio (agente vectorial), reordenado para partir en la punta (agente de diseño)
 D_PATH_INV = 'M750 402A56 56 0 0 0 690 458A56 56 0 0 0 746 514A56 56 0 0 0 802 458V340'  # «d»: primero la panza, después el asta (no se lee «J»)
-UP = '../'  # /nueva/ → raíz
+UP = '' if FINAL else '../'  # /nueva_v8/ → raíz
 WA0 = 'https://wa.me/56982823772'
 WA_ES = 'Hola Edel, quiero cotizar un trabajo'  # fase 19: mensaje prellenado (Pablo)
 WA_EN = 'Hi Edel, I would like a quote for a job'
@@ -227,7 +228,7 @@ def _lista(hero):
 PRECARGA = {'movil': _lista(HERO_M), 'grande': _lista(HERO)}
 SCHEMA = {
     "@context": "https://schema.org", "@type": "LocalBusiness", "name": "Edel Impresiones",
-    "alternateName": "Imprenta y Gráfica Edel", "url": SITE, "image": SITE + "assets/og.jpg", "logo": SITE + "brand/png/isotipo.png",
+    "alternateName": "Imprenta y Gráfica Edel", "url": SITE, "image": SITE + "assets/og-edel.jpg", "logo": SITE + "brand/png/isotipo.png",
     "telephone": "+56982823772", "email": "edelimpresiones@hotmail.com",
     "address": {"@type": "PostalAddress", "streetAddress": "Eduardo Provasoli 619", "addressLocality": "Castro", "addressRegion": "Los Lagos", "addressCountry": "CL"},
     "sameAs": [IG, FB], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "10"},
@@ -250,9 +251,9 @@ page = f'''<!doctype html>
 <meta property="og:type" content="website"><meta property="og:locale" content="es_CL">
 <meta property="og:title" content="Edel Impresiones · Tu marca empieza por una buena impresión">
 <meta property="og:description" content="{DESC_ES}">
-<meta property="og:url" content="{SITE}"><meta property="og:image" content="{SITE}assets/og.jpg">
+<meta property="og:url" content="{SITE}"><meta property="og:image" content="{SITE}assets/og-edel.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{SITE}assets/og-edel.jpg">
 <link rel="icon" href="{UP}brand/favicon.svg" type="image/svg+xml"><link rel="icon" href="{UP}brand/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="{UP}brand/png/favicon-180.png">
 <link rel="preload" href="{UP}assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -431,4 +432,4 @@ page = f'''<!doctype html>
 '''
 OUT.parent.mkdir(exist_ok=True)
 OUT.write_text(page)
-print('nueva_v8/index.html', len(page) // 1024, 'KB')
+print(OUT.relative_to(ROOT), len(page) // 1024, 'KB')
