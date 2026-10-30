@@ -101,6 +101,13 @@ def copy_tree(stage: pathlib.Path) -> list[str]:
             sys.exit(f'ERROR: falta {f}')
         (stage / f).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, stage / f)
+        if f.endswith('.html'):  # versión por contenido en css/js: un cambio llega al tiro, sin esperar la caché del celular
+            import hashlib, re
+            def ver(m):
+                ref = m.group(2); fp = ROOT / ref
+                return m.group(0) if not fp.is_file() else f'{m.group(1)}="{ref}?v={hashlib.md5(fp.read_bytes()).hexdigest()[:8]}"'
+            t = (stage / f).read_text()
+            (stage / f).write_text(re.sub(r'(href|src)="((?:css|js)/[^"?]+\.(?:css|js))"', ver, t))
     for d in INCLUDE_DIRS:
         base = ROOT / d
         if not base.is_dir():
