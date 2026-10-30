@@ -285,6 +285,7 @@ body.menu-abierto{overflow:hidden}
 .hero-v::after{background:linear-gradient(180deg,rgba(5,38,63,.42) 0%,rgba(5,38,63,.5) 40%,rgba(5,38,63,.92) 100%)}
 .h1 em{color:#fff;background:var(--naranja-banda);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .h1,.hero-t .glosa-h{text-shadow:0 2px 22px rgba(5,38,63,.55)}
+.h1 em{text-shadow:none}  /* la sombra de las letras oscurecía el naranja del rectángulo (Pablo) */
 @media (min-width:900px){.s-portada::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(5,38,63,.82) 0,rgba(5,38,63,.5) 50%,rgba(5,38,63,0) 78%)}}
 /* contraste: proceso, WhatsApp, menú, foco */
 .pasos li{opacity:1;color:#c9c6f2}
